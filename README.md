@@ -16,7 +16,8 @@ Things you may want to cover:
 * __Juan Carlos Gama Roa__  - Scrum master/Desarrollador
 * __Diego Cruz Moreno__ - Desarrollador
 * __David Felipe Rodriguez__ - Desarrollador
-* __ALejandro Sierra Mancera__ - Desarrollador
+* __Alejandro Sierra Mancera__ - Desarrollador
+* __Juan David Quintero__ - Desarrollador
 
 ## Configuration
 
