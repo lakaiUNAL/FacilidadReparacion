@@ -1,0 +1,79 @@
+Jueves 31 de Agosto de 2017
+
+
+*Se creo la rama Sprint1 
+
+*Se modelo la base de datos en workbench con 4 tablas:
+
+------------
+| Cliente  |
+|----------|
+|Id        |
+|Nombre    |
+|Password  |
+|Tarjeta   |
+|Edad      |
+|Direccion |
+|Correo    |
+|Telefono  |
+|Username  |
+------------
+
+----------------
+|   Tecnico    |
+|--------------|
+|Id            |
+|Nombre        |
+|Password      |
+|CuentaBancaria|
+|Edad          |
+|Direccion     |
+|Correo        |   
+|Telefono      |
+|Username      |
+|Calificacion  |
+----------------
+
+----------------
+|  Servicios   |
+|--------------|
+|Id            |
+|Tipo_servicio |
+|Id_cliente    |
+|Id_tecnico    |
+|Fecha         |
+|Tipo_pago     |
+|Comentarios   |   
+----------------
+
+----------------
+| Comentarios  |
+|--------------|
+|Id            |
+|Id_tecnico    |
+|id_servicio   |
+|Fecha         |
+|Comentario    |   
+----------------
+
+
+
+
+------------         -----------        -------------   
+| Cliente  ||<-----||| Tecnico |||---->|| Servicios |     
+|----------|         |---------|        |-----------|
+                                              -
+                                              -
+                                              |
+                                              |
+                 ----------------             |
+                 | Comemtarios  |||-----------|
+                 |--------------|
+
+
+
+* Se diseño el mockup para el home de la app.
+
+* Se diseño el mapa de navegación
+
+* Se descargaron las fuentes que seran utilizadas en el proyecto 
