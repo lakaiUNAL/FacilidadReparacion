@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
   
@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   get 'user/tec_register'
   get 'user/user_register'
 
+  devise_for :workers, controllers:{registrations: 'workers/registrations'} 
+  devise_for :customers, controllers:{registrations: 'customers/registrations'}
+  
 end
