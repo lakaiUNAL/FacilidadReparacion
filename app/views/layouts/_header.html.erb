@@ -25,7 +25,10 @@
             </select>
           </li>
           <li> <a href="#.">Login</a> </li>
-          <li> <a href="#.">Registrarse</a> </li>
+          <li> <a href="#.">Registrarse <%= link_to register_path do %>
+        <span class="glyphicon glyphicon-user"></span> Registrarse
+      <% end %></a> </li>
+           
         </ul>
       </div>
     </div>
