@@ -1,61 +1,63 @@
-<h1>Worker</h1>
-<h2>Sign up</h2>
+<div id="wrap">
+  <div class="container text-center">
+    <h1>Técnico</h1>
+<h2>Registro</h2>
 
 <%= form_for(resource, as: resource_name, url: worker_registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :Nombre %><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :user_name %><br />
+    <%= f.label :Nombre_de_usuario %><br />
     <%= f.text_field :user_name %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :Correo %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :birth_date %><br />
+    <%= f.label :Fecha_de_nacimiento %><br />
     <%= f.date_field :birth_date %>
   </div>
 
   <div class="field">
-    <%= f.label :number_card %><br />
+    <%= f.label :Tarjeta_de_credito %><br />
     <%= f.text_field :number_card %>
   </div>
 
   <div class="field">
-    <%= f.label :address %><br />
+    <%= f.label :Direccion %><br />
     <%= f.text_field :address %>
   </div>
 
   <div class="field">
-    <%= f.label :phone_number %><br />
+    <%= f.label :Numero_de_telefono %><br />
     <%= f.text_field :phone_number %>
   </div>
 
   <div class="field">
-    <%= f.label :score %><br />
+    <%= f.label :Puntaje %><br />
     <%= f.text_field :score %>
   </div>
 
 
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :Contrasena %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> caracteres minimo)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :Confirmacion_contrasena %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
@@ -65,3 +67,5 @@
 <% end %>
 
 <%= render "workers/shared/links" %>
+  </div>
+</div>

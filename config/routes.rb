@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/nosotros' => 'static_pages#about', as: 'about'
   get '/contacto' => 'static_pages#contact', as: 'contact'
   get '/registro' => 'static_pages#register', as: 'register'
+  get '/iniciar_sesion' => 'static_pages#start_session', as: 'start_session'
 
   #Paginas de inicio de sesion, registro y demas relacionada a usuarios
   get 'user/login'
