@@ -520,12 +520,12 @@ section {
 	background: none;
 }
 .bg-slide-1 {
-	background: url(../images/sub-bnr-img.jpg) no-repeat;
+	background: url(assets/images/sub-bnr-img.jpg) no-repeat;
 	background-size: cover;
 	min-height: 675px;
 }
 .bg-slide-2 {
-	background: url(../images/sub-bnr-img-1.jpg) no-repeat;
+	background: url(assets/images/sub-bnr-img-1.jpg) no-repeat;
 	background-size: cover;
 	min-height: 675px;
 }
