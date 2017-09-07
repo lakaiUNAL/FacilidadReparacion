@@ -25,10 +25,7 @@
             </select>
           </li>
           <li> <a href="#.">Login</a> </li>
-          <li> <a href="#.">Registrarse </a> </li>
-          <%= link_to register_path do %>
-        <span class="glyphicon glyphicon-user"></span> Registrarse
-      <% end %>
+          <li> <%= link_to 'Registrarse', register_path %> </li>
            
         </ul>
       </div>
@@ -41,7 +38,7 @@
       <div class="container"> 
         
         <!-- Logo -->
-        <div class="logo"> <a href="index.html"> <%= image_tag 'logo.png', class: 'img-responsive', alt: 'logo' %>FACILIDAD EN SERVICIOS</a> </div>
+        <div class="logo"> <%= link_to image_tag('logo.png',class: 'img-responsive', alt: 'logo'), root_path  %>FACILIDAD EN SERVICIOS</a> </div>
         <!-- Navigation -->
         <nav class="navbar"> 
           <!-- NAV -->
