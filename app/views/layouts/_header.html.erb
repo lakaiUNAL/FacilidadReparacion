@@ -1,47 +1,58 @@
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<nav class="navbar navbar-default" role="navigation">
 
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    
-    <ul class="nav navbar-nav navbar-right">
-      <li>
-      <%= link_to register_path do %>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container"> 
+      
+      <!-- Social Icons -->
+      <div class="social"> <a href="#."><i class="fa fa-facebook"></i></a> <a href="#."><i class="fa fa-twitter"></i></a> <a href="#."><i class="fa fa-instagram"></i></a> </div>
+      
+      <!-- Pull Right -->
+      <div class="pull-right">
+        <ul class="login-info">
+          <li>
+            <select class="selectpicker">
+              <option>ENG</option>
+              <option>FR</option>
+              <option>AR</option>
+            </select>
+          </li>
+          <li> <a href="#.">Login</a> </li>
+          <li> <a href="#.">Registrarse </a> </li>
+          <%= link_to register_path do %>
         <span class="glyphicon glyphicon-user"></span> Registrarse
-      <% end %>  
-      </li>
-    </ul>
-
-    <ul class="nav navbar-nav navbar-left">
-        <li>
-        <%= link_to "http://www.facebook.com" do%>
-          <span class="fa fa-facebook">
-        <% end %>
-        </li>
-        <li>
-        <%= link_to "http://www.twitter.com" do%>
-          <span class="fa fa-twitter">
-        <% end %>
-        </li>
-    </ul>
-
-  </div>
-
-  <div class="navbar-header">
-  <a class="navbar-brand" href="/">FACILIDAD EN SERVICIOS </a>
-  </div>
-
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Inicio", root_path  %></li>
-      <li><%= link_to 'Servicios', '#' %></li>
-      <li><%= link_to 'Nosotros', about_path %></li>
-      <li><%= link_to 'Contacto', contact_path %></li>
-      <li><%= link_to 'Blog', blog_path %></li>
-    </ul>
+      <% end %>
+           
+        </ul>
+      </div>
+    </div>
   </div>
   
-</nav>
-
+  <!-- header -->
+  <header>
+    <div class="sticky">
+      <div class="container"> 
+        
+        <!-- Logo -->
+        <div class="logo"> <a href="index.html"> <%= image_tag 'logo.png', class: 'img-responsive', alt: 'logo' %>FACILIDAD EN SERVICIOS</a> </div>
+        <!-- Navigation -->
+        <nav class="navbar"> 
+          <!-- NAV -->
+          <ul class="nav ownmenu">
+            <li><%= link_to "Inicio", root_path  %></li>
+            <li><%= link_to 'Servicios', '#' %></li>
+            <li><%= link_to 'Nosotros', about_path %></li>
+            <li><%= link_to 'Contacto', contact_path %></li>
+            <li><%= link_to 'Blog', blog_path %></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
