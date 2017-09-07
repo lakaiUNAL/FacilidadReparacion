@@ -10,6 +10,7 @@ Things you may want to cover:
 
 * Ruby 2.4.0
 * Rails 5.1.3
+* Bootstrap 3.3.4
 
 ## Integrantes
 
@@ -20,6 +21,8 @@ Things you may want to cover:
 * __Juan David Quintero__ - Desarrollador
 
 ## Configuration
+
+
 
 ## Database creation
 
