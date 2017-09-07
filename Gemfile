@@ -5,7 +5,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+########################### GEMAS QUE USAMOS
 
+# Gema para la libreria de javascript Jquery3
+gem 'jquery-rails'
+# Gema para el manejo de usuarios, registro y sesiones
+gem 'devise'
+# Bootstrao con soporte para sass
+gem 'bootstrap-sass', '~> 3.3.7'
+
+########################### GEMAS POR DEFECTO DE RAILS
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use sqlite3 as the database for Active Record
@@ -18,8 +27,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-#gem bootstrap
-gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

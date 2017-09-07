@@ -1,0 +1,38 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<nav class="navbar navbar-default" role="navigation">
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+      <%= link_to register_path do %>
+        <span class="glyphicon glyphicon-log-in"></span> Acceder
+      <% end %>  
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-left">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+    </ul>
+
+  </div>
+
+  <div class="navbar-header">
+  <a class="navbar-brand" href="/">FACILIDAD EN SERVICIOS </a>
+  </div>
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Inicio", root_path  %></li>
+      <li><%= link_to 'Servicios', '#' %></li>
+      <li><%= link_to 'Nosotros', about_path %></li>
+      <li><%= link_to 'Contacto', contact_path %></li>
+      <li><%= link_to 'Blog', blog_path %></li>
+    </ul>
+  </div>
+  
+</nav>
+
