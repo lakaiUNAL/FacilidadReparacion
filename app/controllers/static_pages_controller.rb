@@ -11,6 +11,6 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-  def registrer
+  def register
   end
 end

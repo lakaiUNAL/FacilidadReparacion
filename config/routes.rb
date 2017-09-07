@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/registro' => 'static_pages#register', as: 'register'
 
   #Paginas de inicio de sesion, registro y demas relacionada a usuarios
+  
   get 'user/login'
   get 'user/register'
   get 'user/tec_register'
