@@ -1,5 +1,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <nav class="navbar navbar-default" role="navigation">
 
@@ -8,14 +9,22 @@
     <ul class="nav navbar-nav navbar-right">
       <li>
       <%= link_to register_path do %>
-        <span class="glyphicon glyphicon-log-in"></span> Acceder
+        <span class="glyphicon glyphicon-user"></span> Registrarse
       <% end %>  
       </li>
     </ul>
 
     <ul class="nav navbar-nav navbar-left">
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
+        <li>
+        <%= link_to "http://www.facebook.com" do%>
+          <span class="fa fa-facebook">
+        <% end %>
+        </li>
+        <li>
+        <%= link_to "http://www.twitter.com" do%>
+          <span class="fa fa-twitter">
+        <% end %>
+        </li>
     </ul>
 
   </div>
