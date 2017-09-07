@@ -1,0 +1,44 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+///////////////////////////////////
+.navbar-collapse {
+    background-color: white;
+}
+
+.overlay { 
+  color:#0033FF;
+  position:absolute;
+  z-index:12;
+  top:300px;
+  right: 220px;
+  width:100%;
+  text-align:center;
+}
+
+
+.boton a{
+  color: white;
+}
+
+.boton {
+    background-color: blue;
+    z-index: 12;
+    position: absolute;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    top: 600px;
+    left: 280px;
+} 
+
+.carousel-inner{
+  margin: 0 auto;
+}
