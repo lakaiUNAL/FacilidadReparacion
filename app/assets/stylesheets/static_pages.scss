@@ -99,3 +99,53 @@ block-body p {
 .zmin {
     z-index: 1;
 }
+
+//Blog
+
+section#about.bg-primary{
+    background: #fff;
+}
+
+body { padding-top: 50px; }
+
+#myCarousel .carousel-caption {
+    left:0;
+	right:0;
+	bottom:0;
+	text-align:left;
+	padding:10px;
+	background:rgba(0,0,0,0.6);
+	text-shadow:none;
+}
+
+#myCarousel .list-group {
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+
+#myCarousel .list-group-item {
+	border-radius:0px;
+	cursor:pointer;
+}
+#myCarousel .list-group .active {
+	background-color:#eee;	
+}
+
+@media (min-width: 900px) { 
+	#myCarousel {padding-right:33.3333%;}
+	#myCarousel .carousel-controls {display:none;} 	
+}
+@media (max-width: 900px) { 
+	.carousel-caption p,
+	#myCarousel .list-group {display:none;} 
+}
+
+.col-lg-8.mx-auto.text-center {
+    padding-bottom: 80px;
+}
+
+ul{
+    text-align:left;
+}
