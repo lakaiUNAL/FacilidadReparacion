@@ -1,75 +1,150 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// // Place all the styles related to the static_pages controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.carousel-control.left,.carousel-control.right  {width:25px;}
-.carousel-control.left {left:-25px;}
-.carousel-control.right {right:-25px;}
+// .carousel-control.left,.carousel-control.right  {width:25px;}
+// .carousel-control.left {left:-25px;}
+// .carousel-control.right {right:-25px;}
 
-/*.footer {
-	width: 100%;
-	height: 200px;
-	background-color: #000000;
-}*/
+// .footer {
+// 	width: 100%;
+// 	height: 300px;
 
-.overlay{
-	color:black;
-}
+// 	background-color: #000000;
+// }
+// .overlay{
+// 	color:black;
+// }
 
-.black-block {
-    padding-bottom: 34px;
-}
+// .black-block {
+//     padding-bottom: 34px;
+// }
 
-.block-text {
-    background-color: #000000;
-    color: #626262;
-    font-size: 14px;
-    margin-top: 27px;
-    padding: 15px 18px;
-}
+// .block-text {
+//     background-color: #000000;
+//     color: #626262;
+//     font-size: 14px;
+//     margin-top: 27px;
+//     padding: 15px 18px;
+//     border-radius: 5px;
+// }
 
-.block-text a {
- 	color: #ffffff;
-    font-size: 25px;
-    font-weight: bold;
-    line-height: 21px;
-    text-decoration: none;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
+// .block-text a {
+//  	color: #ffffff;
+//     font-size: 25px;
+//     font-weight: bold;
+//     line-height: 21px;
+//     text-decoration: none;
+//     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+// }
 
-.block-text p {
-    color: #585858;
-    font-family: Georgia;
-    line-height: 20px;
-}
+// .block-text p {
+//     color: #585858;
+//     font-family: Georgia;
+//     line-height: 20px;
+// }
 
-.block-foot {
-    background-color: #ffffff;
-    color: #626262;
-    font-size: 14px;
-    margin-top: 27px;
-    padding: 15px 18px;
-}
+// .block-foot {
+//     background-color: #ffffff;
+//     color: #626262;
+//     font-size: 14px;
+//     margin-top: 27px;
+//     padding: 15px 18px;
+//     border-radius: 5px;
+// }
 
-.block-foot a {
-    color: #000000;
-    font-size: 25px;
-    font-weight: bold;
-    line-height: 21px;
-    text-decoration: none;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
+// .block-foot a {
+//     color: #000000;
+//     font-size: 25px;
+//     font-weight: bold;
+//     line-height: 21px;
+//     text-decoration: none;
+//     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+// }
 
-.block-foot p {
-    color: #585858;
-    font-family: Georgia;
-    line-height: 20px;
-}
+// .block-foot p {
+//     color: #585858;
+//     font-family: Georgia;
+//     line-height: 20px;
+// }
 
-.block {
-    display: block;
-}
+// .block-body {
+//     background-color: #ffffff;
+//     color: #626262;
+//     font-size: 14px;
+//     margin-top: 27px;
+//     padding: 15px 18px;
+//     border-radius: 5px;
+// }
 
-.zmin {
-    z-index: 1;
-}
+// .block-body a {
+//     color: #000000;
+//     font-size: 38px;
+// }
+
+// block-body p {
+//     color: #585858;
+//     line-height: 20px;
+// }
+
+// .block {
+//     display: block;
+// }
+
+// .container {
+//     color: #000000;
+// }
+
+// .zmin {
+//     z-index: 1;
+// }
+
+// //Blog
+
+// section#about.bg-primary{
+//     background: #fff;
+// }
+
+// body { padding-top: 50px; }
+
+// #myCarousel .carousel-caption {
+//     left:0;
+// 	right:0;
+// 	bottom:0;
+// 	text-align:left;
+// 	padding:10px;
+// 	background:rgba(0,0,0,0.6);
+// 	text-shadow:none;
+// }
+
+// #myCarousel .list-group {
+// 	position:absolute;
+// 	top:0;
+// 	right:0;
+// }
+
+
+// #myCarousel .list-group-item {
+// 	border-radius:0px;
+// 	cursor:pointer;
+// }
+// #myCarousel .list-group .active {
+// 	background-color:#eee;	
+// }
+
+// @media (min-width: 900px) { 
+// 	#myCarousel {padding-right:33.3333%;}
+// 	#myCarousel .carousel-controls {display:none;} 	
+// }
+// @media (max-width: 900px) { 
+// 	.carousel-caption p,
+// 	#myCarousel .list-group {display:none;} 
+// }
+
+// .col-lg-8.mx-auto.text-center {
+//     padding-bottom: 80px;
+// }
+
+// ul{
+//     text-align:left;
+// }

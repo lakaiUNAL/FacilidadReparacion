@@ -520,12 +520,12 @@ section {
 	background: none;
 }
 .bg-slide-1 {
-	background: url(../images/sub-bnr-img.jpg) no-repeat;
+	background: url('/assets/sub-bnr-img.jpg') no-repeat;
 	background-size: cover;
 	min-height: 675px;
 }
 .bg-slide-2 {
-	background: url(../images/sub-bnr-img-1.jpg) no-repeat;
+	background: url('assets/sub-bnr-img-1.jpg') no-repeat;
 	background-size: cover;
 	min-height: 675px;
 }
@@ -812,7 +812,7 @@ header .is-sticky .sticky li.active a:before {
 	bottom: -10px;
 }
 .sub-baner {
-	background: url(../images/img-small-brn.jpg) center center fixed no-repeat;
+	background: url('/assets/img-small-brn.jpg') center center fixed no-repeat;
 	background-size: cover;
 	padding: 50px 0;
 }
@@ -841,7 +841,7 @@ header .is-sticky .sticky li.active a:before {
       SLIDER
 ========================================================*/
 .bg-parrall {
-	background: url(../images/bg-img.jpg) center center no-repeat;
+	background: url('/assets/bgtestimonial.jpg') center center no-repeat;
 	background-size: cover;
 }
 .bg-parrall h2 {
@@ -867,7 +867,7 @@ header .is-sticky .sticky li.active a:before {
       Testimonial
 ========================================================*/
 .testimonial {
-	background: url(../images/testi-bg.jpg) center center no-repeat;
+	background: url('/assets/testi-bg.jpg') center center no-repeat;
 	background-size: cover;
 }
 .testimonial .heading h2 {
@@ -1774,7 +1774,7 @@ article.blog-post {
       SUB BANNER
 ========================================================*/
 .sub-bnr {
-	background: url(../images/sub-bnr-bg.jpg) no-repeat;
+	background: url('/assets/slider3.jpg') no-repeat;
 	background-size: cover !important;
 	min-height: 610px;
 	text-align: center;
@@ -2043,7 +2043,7 @@ footer p {
 }
 .map-block.tri-white-top:before {
 	top: 0px;
-	background: url(../images/tri-promo-bottom-white.png) repeat-x;
+	background: url('/assets/tri-promo-bottom-white.png') repeat-x;
 }
 footer h6 {
 	color: #fff;
@@ -2169,5 +2169,11 @@ footer .service-link li a:hover {
 }
 .rights.tri-white-top:before {
 	top: -7px;
-	background: url(../images/tri-promo-bottom-rights.png) repeat-x;
+	background: url('/assets/tri-promo-bottom-rights.png') repeat-x;
+}
+
+.registro {
+height:150px;
+margin-top:32px;
+margin-bottom:32px;
 }
