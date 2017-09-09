@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'user/tec_register'
   get 'user/user_register'
 
-  devise_for :workers, controllers:{registrations: 'workers/registrations'} 
-  devise_for :customers, controllers:{registrations: 'customers/registrations'}
+  devise_for :workers, controllers:{registrations: 'workers/registrations', sessions: 'workers/sessions'} 
+  devise_for :customers, controllers:{registrations: 'customers/registrations', sessions: 'customers/sessions'}
   
 end

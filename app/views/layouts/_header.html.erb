@@ -1,12 +1,3 @@
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-
   <!-- Top Bar -->
   <div class="top-bar">
     <div class="container"> 
@@ -24,8 +15,14 @@
               <option>AR</option>
             </select>
           </li>
-          <li> <%= link_to 'Iniciar Session', start_session_path %></li>
-          <li> <%= link_to 'Registrarse', register_path %> </li>
+          <% if  not (worker_signed_in? or customer_signed_in?) %>
+            <li> <%= link_to 'Iniciar Session', start_session_path %></li>
+            <li> <%= link_to 'Registrarse', register_path %> </li>
+          <% elsif worker_signed_in? %>
+            <li><%= link_to "Salir", destroy_worker_session_path, method: :delete %></li>
+          <% elsif customer_signed_in? %>
+            <li><%= link_to "Salir", destroy_customer_session_path, method: :delete %></li>
+          <% end -%>
            
         </ul>
       </div>
