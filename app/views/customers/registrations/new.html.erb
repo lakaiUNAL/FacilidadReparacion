@@ -45,61 +45,92 @@
 -->
 
 <div class="container">
-  <div class="row main">
-  	<div class="main-login main-center">
-  	<h5>Ingresa tus datos para ser un cliente</h5>
-  		<form class="" method="post" action="#">
-  			
-  			<div class="form-group">
-  				<label for="name" class="cols-sm-2 control-label">Nombre</label>
-  				<div class="cols-sm-10">
-  					<div class="input-group">
-  						<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-  						<input type="text" class="form-control" name="name" id="name"  placeholder="Ingrese su nombre"/>
-  					</div>
-  				</div>
-  			</div>
-  
-  			<div class="form-group">
-  				<label for="email" class="cols-sm-2 control-label">Correo</label>
-  				<div class="cols-sm-10">
-  					<div class="input-group">
-  						<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-  						<input type="text" class="form-control" name="email" id="email"  placeholder="Ingrese su correo"/>
-  					</div>
-  				</div>
-  			</div>
-  
-  			<div class="form-group">
-  				<label for="password" class="cols-sm-2 control-label">Contraseña</label>
-  				<div class="cols-sm-10">
-  					<div class="input-group">
-  						<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-  						<input type="password" class="form-control" name="password" id="password"  placeholder="Ingrese su contraseña"/>
-  					</div>
-  				</div>
-  			</div>
-  
-  			<div class="form-group">
-  				<label for="confirm" class="cols-sm-2 control-label">Confirme su contraseña</label>
-  				<div class="cols-sm-10">
-  					<div class="input-group">
-  						<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-  						<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirmar su contraseña"/>
-  					</div>
-  				</div>
-  			</div>
-  
-  			<div class="form-group ">
-  				<a href="http://deepak646.blogspot.in" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Registrarse</a>
-  			</div>
-  			
-  		</form>
-  	</div>
-  </div>
+	<%= form_for(resource, as: resource_name, url: customer_registration_path) do |f| %>
+  <%= devise_error_messages! %>
+		<div class="row main">
+			<div class="main-login main-center">
+			<h5>Ingresa tus datos como cliente</h5>
+				<form class="" method="post" action="#">
+					
+					<div class="form-group">
+							<div class="field">
+		    				<%= f.label :Nombre %><br />
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+										<div class="form-control" placeholder="Ingrese su nombre">
+											<%= f.text_field :name, autofocus: true %>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+	
+				<div class="form-group">
+							<div class="field">
+		    				<%= f.label :Nombre_de_usuario %><br />
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+										<div class="form-control" placeholder="Ingrese su nombre">
+											<%= f.text_field :user_name %>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+	
+				<div class="form-group">
+							<div class="field">
+		    				<%= f.label :Correo %><br />
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+										<div class="form-control" placeholder="Ingrese su nombre">
+											<%= f.email_field :email, autofocus: true %>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+	
+					<div class="form-group">
+							<div class="field">
+		    				<%= f.label :Contrasena %>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+										<div class="form-control" placeholder="Ingrese su nombre">
+											<%= f.password_field :password, autocomplete: "off" %>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+	
+					<div class="form-group">
+							<div class="field">
+		    				<%= f.label :Confirmacion_contrasena %><br />
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+										<div class="form-control" placeholder="Ingrese su nombre">
+											<%= f.password_field :password_confirmation, autocomplete: "off" %>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+	
+					<div class="form-group ">
+						<div id="button" class="btn btn-primary btn-lg btn-block login-button">
+							<%= f.submit "Sign up" %>
+						</div>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+		<% end %>
+<%= render "customers/shared/links" %>
 </div>
-  
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
