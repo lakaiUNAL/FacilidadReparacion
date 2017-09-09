@@ -7,12 +7,8 @@ end
 
 ########################### GEMAS QUE USAMOS
 
-# Gema para la libreria de javascript Jquery3
-gem 'jquery-rails'
 # Gema para el manejo de usuarios, registro y sesiones
 gem 'devise'
-# Bootstrao con soporte para sass
-gem 'bootstrap-sass', '~> 3.3.7'
 
 ########################### GEMAS POR DEFECTO DE RAILS
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
