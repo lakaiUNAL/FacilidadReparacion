@@ -1,8 +1,9 @@
+<!--
 <div id="wrap">
   <div class="container text-center"><h1>Cliente</h1>
 <h2>Registro</h2>
 
-<%= form_for(resource, as: resource_name, url: customer_registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: customer_registration_path) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
@@ -19,27 +20,7 @@
     <%= f.label :correo %><br />
     <%= f.email_field :email %>
   </div>
-
-  <div class="field">
-    <%= f.label :Fecha_de_nacimiento%><br />
-    <%= f.date_field :birth_date %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Tarjeta_de_credito %><br />
-    <%= f.text_field :number_card %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Direccion %><br />
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Numero_de_telefono %><br />
-    <%= f.text_field :phone_number %>
-  </div>
-
+  
   <div class="field">
     <%= f.label :Contrasena %>
     <% if @minimum_password_length %>
@@ -60,4 +41,96 @@
 
 <%= render "customers/shared/links" %>
   </div>
+</div>
+-->
+
+<div class="container">
+	<%= form_for(resource, as: resource_name, url: customer_registration_path) do |f| %>
+  <%= devise_error_messages! %>
+		<div class="row main">
+			<div class="main-login main-center">
+			<h5>Ingresa tus datos como cliente</h5>
+				<form class="" method="post" action="#">
+					
+					<div class="form-group">
+							<div class="field">
+		    				<%= f.label :Nombre %><br />
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+										<div class="form-control" placeholder="Ingrese su nombre">
+											<%= f.text_field :name, autofocus: true %>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+	
+				<div class="form-group">
+							<div class="field">
+		    				<%= f.label :Nombre_de_usuario %><br />
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+										<div class="form-control" placeholder="Ingrese su nombre">
+											<%= f.text_field :user_name %>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+	
+				<div class="form-group">
+							<div class="field">
+		    				<%= f.label :Correo %><br />
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+										<div class="form-control" placeholder="Ingrese su nombre">
+											<%= f.email_field :email, autofocus: true %>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+	
+					<div class="form-group">
+							<div class="field">
+		    				<%= f.label :Contrasena %>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+										<div class="form-control" placeholder="Ingrese su nombre">
+											<%= f.password_field :password, autocomplete: "off" %>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+	
+					<div class="form-group">
+							<div class="field">
+		    				<%= f.label :Confirmacion_contrasena %><br />
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+										<div class="form-control" placeholder="Ingrese su nombre">
+											<%= f.password_field :password_confirmation, autocomplete: "off" %>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+	
+					<div class="form-group ">
+						<div id="button" class="btn btn-primary btn-lg btn-block login-button">
+							<%= f.submit "Sign up" %>
+						</div>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+		<% end %>
+<%= render "customers/shared/links" %>
 </div>

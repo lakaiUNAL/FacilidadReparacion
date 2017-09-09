@@ -2,13 +2,13 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.1]
   def change
     create_table :customers do |t|
       ## Database authenticatable
-      t.string :name
+      t.string :name,               null: false, default: ""
       t.string :email,              null: false, default: ""
       t.date   :birth_date
       t.string :number_card
       t.string :address
       t.string :phone_number
-      t.string :user_name
+      t.string :user_name,          null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
