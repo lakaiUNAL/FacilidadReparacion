@@ -5,9 +5,9 @@ Released under the MIT license
  */
 
 
-;
-
 (function() {
+  var context = this;
+
   (function() {
     (function() {
       this.Rails = {
@@ -27,9 +27,9 @@ Released under the MIT license
       };
 
     }).call(this);
-  }).call(this);
+  }).call(context);
 
-  var Rails = this.Rails;
+  var Rails = context.Rails;
 
   (function() {
     (function() {
@@ -2441,6 +2441,8 @@ d.trigger("activate.bs.scrollspy")},b.prototype.clear=function(){a(this.selector
 
 }));
 (function() {
+  var context = this;
+
   (function() {
     (function() {
       var slice = [].slice;
@@ -2499,9 +2501,9 @@ d.trigger("activate.bs.scrollspy")},b.prototype.clear=function(){a(this.selector
       };
 
     }).call(this);
-  }).call(this);
+  }).call(context);
 
-  var ActionCable = this.ActionCable;
+  var ActionCable = context.ActionCable;
 
   (function() {
     (function() {

@@ -12,15 +12,18 @@
 	opacity: 1;
 	text-align: center;
 }
+
 .hom-slie {
 	position: absolute !important;
 }
+
 #preloader6 {
 	position: relative;
 	width: 42px;
 	height: 42px;
 	animation: preloader_6 5s infinite linear;
 }
+
 #preloader6 span {
 	width: 20px;
 	height: 20px;
@@ -29,9 +32,11 @@
 	display: block;
 	animation: preloader_6_span 1s infinite linear;
 }
+
 #preloader6 span:nth-child(1) {
 	background: #5a65d1;
 }
+
 #preloader6 span:nth-child(2) {
 	left: 22px;
 	background: #5a65d1;
@@ -48,6 +53,7 @@
 	background: #5a65d1;
 	animation-delay: .6s;
 }
+
 @keyframes preloader_6_span {
  0% {
 transform:scale(1);
@@ -1734,13 +1740,14 @@ select.bs-select-hidden, select.selectpicker {
 }
 .cbp-misc-video iframe {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 0px;
+	left: 0px;
 	width: 100%;
 	height: 100%
 }
+
 @-webkit-keyframes cbp-rotation {
-0 {
+0% {
 -webkit-transform:rotate(0deg)
 }
 100% {
@@ -1748,7 +1755,7 @@ select.bs-select-hidden, select.selectpicker {
 }
 }
 @keyframes cbp-rotation {
-0 {
+0% {
 transform:rotate(0deg)
 }
 100% {
@@ -1779,7 +1786,7 @@ transform:rotate(360deg)
 	z-index: 1
 }
 .cbp-caption-active .cbp-caption-defaultWrap {
-	top: 0
+	top: 0;
 }
 .cbp-caption-active .cbp-caption-activeWrap {
 	width: 100%;

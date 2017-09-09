@@ -5,9 +5,9 @@ Released under the MIT license
  */
 
 
-;
-
 (function() {
+  var context = this;
+
   (function() {
     (function() {
       this.Rails = {
@@ -27,9 +27,9 @@ Released under the MIT license
       };
 
     }).call(this);
-  }).call(this);
+  }).call(context);
 
-  var Rails = this.Rails;
+  var Rails = context.Rails;
 
   (function() {
     (function() {

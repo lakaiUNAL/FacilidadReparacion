@@ -1,4 +1,6 @@
 (function() {
+  var context = this;
+
   (function() {
     (function() {
       var slice = [].slice;
@@ -57,9 +59,9 @@
       };
 
     }).call(this);
-  }).call(this);
+  }).call(context);
 
-  var ActionCable = this.ActionCable;
+  var ActionCable = context.ActionCable;
 
   (function() {
     (function() {
