@@ -13,13 +13,13 @@
 ActiveRecord::Schema.define(version: 20170907030920) do
 
   create_table "customers", force: :cascade do |t|
-    t.string "name"
+    t.string "name", default: "", null: false
     t.string "email", default: "", null: false
     t.date "birth_date"
     t.string "number_card"
     t.string "address"
     t.string "phone_number"
-    t.string "user_name"
+    t.string "user_name", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -36,13 +36,13 @@ ActiveRecord::Schema.define(version: 20170907030920) do
   end
 
   create_table "workers", force: :cascade do |t|
-    t.string "name"
+    t.string "name", default: "", null: false
     t.string "email", default: "", null: false
     t.date "birth_date"
     t.string "number_card"
     t.string "address"
     t.string "phone_number"
-    t.string "user_name"
+    t.string "user_name", default: "", null: false
     t.string "card_number"
     t.string "score"
     t.string "encrypted_password", default: "", null: false
