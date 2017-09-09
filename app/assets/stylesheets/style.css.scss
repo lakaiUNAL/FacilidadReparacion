@@ -520,12 +520,12 @@ section {
 	background: none;
 }
 .bg-slide-1 {
-	background: url( <%= image_path('sub-bnr-img.jpg') %> ) no-repeat;
+	background: asset_url('sub-bnr-img.jpg') no-repeat;
 	background-size: cover;
 	min-height: 675px;
 }
 .bg-slide-2 {
-	background: url(<%= image_path('sub-bnr-img-1.jpg') %>) no-repeat;
+	background: asset_url('sub-bnr-img-1.jpg') no-repeat;
 	background-size: cover;
 	min-height: 675px;
 }
@@ -812,7 +812,7 @@ header .is-sticky .sticky li.active a:before {
 	bottom: -10px;
 }
 .sub-baner {
-	background: url( <%= image_path('img-small-brn.jpg') %>) center center fixed no-repeat;
+	background: asset_url('img-small-brn.jpg') center center fixed no-repeat;
 	background-size: cover;
 	padding: 50px 0;
 }
@@ -841,7 +841,7 @@ header .is-sticky .sticky li.active a:before {
       SLIDER
 ========================================================*/
 .bg-parrall {
-	background: url( <%= image_path('bgtestimonial.jpg') %> ) center center no-repeat;
+	background: asset_url('bgtestimonial.jpg') center center no-repeat;
 	background-size: cover;
 }
 .bg-parrall h2 {
@@ -867,7 +867,7 @@ header .is-sticky .sticky li.active a:before {
       Testimonial
 ========================================================*/
 .testimonial {
-	background: url(<%= image_path('testi-bg.jpg') %> ) center center no-repeat;
+	background: asset_url('testi-bg.jpg') center center no-repeat;
 	background-size: cover;
 }
 .testimonial .heading h2 {
@@ -1774,7 +1774,7 @@ article.blog-post {
       SUB BANNER
 ========================================================*/
 .sub-bnr {
-	background: url( <%= image_path('slider3.jpg') %> ) no-repeat;
+	background: asset_url('slider3.jpg') no-repeat;
 	background-size: cover !important;
 	min-height: 610px;
 	text-align: center;
@@ -2043,7 +2043,7 @@ footer p {
 }
 .map-block.tri-white-top:before {
 	top: 0px;
-	background: url( <%= image_path('tri-promo-bottom-white.png') %> ) repeat-x;
+	background: image_url('tri-promo-bottom-white.png') repeat-x;
 }
 footer h6 {
 	color: #fff;
@@ -2169,7 +2169,7 @@ footer .service-link li a:hover {
 }
 .rights.tri-white-top:before {
 	top: -7px;
-	background: url( <%= image_path('tri-promo-bottom-rights.png') %> ) repeat-x;
+	background: asset_url('tri-promo-bottom-rights.png') repeat-x;
 }
 
 .registro {
