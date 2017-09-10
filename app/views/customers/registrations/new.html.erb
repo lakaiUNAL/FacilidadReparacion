@@ -129,11 +129,17 @@
 					
 				</form>
 			</div>
-		</div>
-		
-		<% end %>
+		</div>	
+	<% end %>
 <%= render "customers/shared/links" %>
-<div class="alert alert-warning bg-warning">
-    <strong><%= devise_error_messages! %></strong>
-</div>
+<div class="alert alert-warning">
+    <div class="bg-warning" >
+      <strong>
+      <%= devise_error_messages! %>
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+      </strong>
+    </div>
+</div> 
 </div>

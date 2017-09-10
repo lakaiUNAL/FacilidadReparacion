@@ -1,13 +1,12 @@
 <div id="wrap">
   <div class="container text-center">
     <h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: new_customer_session_path(resource_name).sub(/\.[\w]*\z/, '')) do |f| %>
+      <%= form_for(resource, as: resource_name, url: new_customer_session_path(resource_name).sub(/\.[\w]*\z/, '')) do |f| %>
   
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
 
   <div class="field">
     <%= f.label :password %><br />
@@ -28,7 +27,13 @@
 
 <%= render "customers/shared/links" %>
 <div class="alert alert-warning">
-    <%= devise_error_messages! %>
-  </div>
-  </div>
+    <div class="bg-warning" >
+      <strong>
+      <%= devise_error_messages! %>
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+      </strong>
+    </div>
+</div> 
 </div>
