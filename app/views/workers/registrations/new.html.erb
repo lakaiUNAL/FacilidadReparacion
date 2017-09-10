@@ -45,7 +45,6 @@
 <div id="wrap" class="fondo-login">
 <div class="container ">
 	<%= form_for(resource, as: resource_name, url: worker_registration_path) do |f| %>
-	<%= devise_error_messages! %>
 		<div class="row main">
 			<div class="main-login main-center">
 			<h5>Ingresa tus datos para laborar como técnico</h5>
@@ -132,5 +131,15 @@
 		</div>
 		<% end %>
 <%= render "workers/shared/links" %>
+<div class="alert alert-warning">
+    <div class="bg-warning" >
+      <strong>
+      <%= devise_error_messages! %>
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+      </strong>
+    </div>
+</div> 
 </div>
 </div>

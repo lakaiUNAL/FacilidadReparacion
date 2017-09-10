@@ -1,10 +1,9 @@
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<!-- Arreglar estas fuentes, dependen de internet!-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Arreglar estas fuentes, dependen de internet!-->
+<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 
 
   <!-- Top Bar -->
@@ -17,10 +16,23 @@
       <!-- Pull Right -->
       <div class="pull-right">
         <ul class="login-info">
-
-          <li> <%= link_to 'Iniciar Sesión', start_session_path %></li>
-          <li> <%= link_to 'Registrarse', register_path %> </li>
-           
+          <li>
+            <select class="selectpicker">
+              <option>ENG</option>
+              <option>FR</option>
+              <option>AR</option>
+            </select>
+          </li>
+          <% if  not (worker_signed_in? or customer_signed_in?) %>
+            <li> <%= link_to 'Iniciar Session', start_session_path %></li>
+            <li> <%= link_to 'Registrarse', register_path %> </li>
+          <% elsif worker_signed_in? %>
+            <li><span class="glyphicon glyphicon-user"> <%= current_worker.user_name%></span></li>
+            <li><%= link_to "Salir", destroy_worker_session_path, method: :delete %></li>
+          <% elsif customer_signed_in? %>
+            <li><span class="glyphicon glyphicon-user"> <%= current_customer.user_name%></span></li>
+            <li><%= link_to "Salir", destroy_customer_session_path, method: :delete %></li>
+          <% end -%>
         </ul>
       </div>
     </div>
