@@ -1,10 +1,21 @@
 <div class="container text-center registro">
 	<div class="row">
-		<div class="col-lg-6">
-		<%= link_to 'Nesecito un técnico', new_customer_registration_path, class: 'button btn-default btn-primary btn-lg' %></div>
-		
-		<div class="col-lg-6">
-		<%= link_to 'Soy un técnico', new_worker_registration_path, class: 'button btn-default btn-primary btn-lg' %>
+		<div class="col-lg-6 necesito-tecnico">
+			<div class="col-lg-12">
+				<%= image_tag 'necesito tecnico.png', alt: 'imagen tecnico' %>
+			</div>
+			<div class="col-lg-12">
+				<%= link_to 'Necesito un técnico', new_customer_registration_path, class: 'button btn-default btn-primary btn-lg' %>
+			</div>
+		</div>
+		<div class="col-lg-6 soy-tecnico">
+			<div class="col-lg-12">
+				<%= image_tag 'soy-tecnico.png', alt: 'imagen soy tecnico' %>
+			</div>
+			<div class="col-lg-12">
+				<%= link_to 'Soy un técnico', new_worker_registration_path, class: 'button btn-default btn-primary btn-lg' %>
+			</div>
+			
 		</div>
 	</div>
 </div>
