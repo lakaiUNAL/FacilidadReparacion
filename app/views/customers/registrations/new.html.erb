@@ -43,7 +43,7 @@
   </div>
 </div>
 -->
-
+<div class="fondo-login">
 <div class="container">
 	<%= form_for(resource, as: resource_name, url: customer_registration_path) do |f| %>
   <%= devise_error_messages! %>
@@ -124,7 +124,7 @@
 	
 					<div class="form-group ">
 						<div id="button" class="btn btn-primary btn-lg btn-block login-button">
-							<%= f.submit "Sign up" %>
+							<%= f.submit "Crear cuenta" %>
 						</div>
 					</div>
 					
@@ -133,4 +133,5 @@
 		</div>
 		<% end %>
 <%= render "customers/shared/links" %>
+</div>
 </div>

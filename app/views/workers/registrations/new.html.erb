@@ -42,8 +42,8 @@
 <%= render "workers/shared/links" %>
   </div>
 </div> -->
-
-<div class="container">
+<div id="wrap" class="fondo-login">
+<div class="container ">
 	<%= form_for(resource, as: resource_name, url: worker_registration_path) do |f| %>
 	<%= devise_error_messages! %>
 		<div class="row main">
@@ -123,7 +123,7 @@
 	
 					<div class="form-group ">
 						<div id="button" class="btn btn-primary btn-lg btn-block login-button">
-							<%= f.submit "Sign up" %>
+							<%= f.submit "Crear cuenta" %>
 						</div>
 					</div>
 					
@@ -132,4 +132,5 @@
 		</div>
 		<% end %>
 <%= render "workers/shared/links" %>
+</div>
 </div>

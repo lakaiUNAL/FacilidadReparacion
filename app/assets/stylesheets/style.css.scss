@@ -520,12 +520,12 @@ section {
 	background: none;
 }
 .bg-slide-1 {
-	background: asset_url('sub-bnr-img.jpg') no-repeat;
+	background: asset_url('slider1.jpg') no-repeat;
 	background-size: cover;
 	min-height: 675px;
 }
 .bg-slide-2 {
-	background: asset_url('sub-bnr-img-1.jpg') no-repeat;
+	background: asset_url('slider2.jpg') no-repeat;
 	background-size: cover;
 	min-height: 675px;
 }
@@ -867,7 +867,7 @@ header .is-sticky .sticky li.active a:before {
       Testimonial
 ========================================================*/
 .testimonial {
-	background: asset_url('testi-bg.jpg') center center no-repeat;
+	background: asset_url('bgtestimoniales.jpg') center center no-repeat;
 	background-size: cover;
 }
 .testimonial .heading h2 {
@@ -2179,4 +2179,10 @@ margin-bottom:32px;
 
 .necesito-tecnico{
 	
+}
+
+.fondo-login{
+	background: asset_url('fondo-login.jpg') center center no-repeat;
+		background-size: cover;
+	min-height: 675px;
 }
