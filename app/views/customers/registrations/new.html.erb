@@ -1,6 +1,5 @@
 <div class="container">
 	<%= form_for(resource, as: resource_name, url: customer_registration_path) do |f| %>
-	<%= devise_error_messages! %>
 	
 	<div class="row main">
 		<div class="main-login main-center">
@@ -81,10 +80,21 @@
 					<%= f.submit "Sign up" %>
 				</div>
 			</div>
+			
+			<%= render "customers/shared/links" %>
+
+			<div class="alert alert-warning">
+			    <div class="bg-warning" >
+			      <strong>
+			      <%= devise_error_messages! %>
+			        <% flash.each do |key, value| %>
+			          <div class="flash <%= key %>"><%= value %></div>
+			      <% end %>
+			      </strong>
+			    </div>
+			</div> 
+
 		</div>
 	</div>
 	<% end %>
-
-<%= render "customers/shared/links" %>
-
 </div>

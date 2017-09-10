@@ -1,8 +1,5 @@
-<!-- ############################################################################################## -->
 <div class="container">
   <%= form_for(resource, as: resource_name, url: new_customer_session_path ) do |f| %>
-  <%= flash[:notice]  %>
-  <%= flash[:alert]  %>
   
   <div class="row main">
     <div class="main-login main-center">
@@ -51,10 +48,21 @@
         </div>
       </div>
 
+      <%= render "customer/shared/links" %>
+      
+      <spam class="alert-error">
+        <spam class="bg-error" >
+          <strong>
+            <% flash.each do |key, value| %>
+              <div class="flash <%= key %>"><%= value %></div>
+            <% end %>
+          </strong>
+        </spam>
+      </spam>
+
     </div>
   </div>
   <% end %>
 
-<%= render "customers/shared/links" %>
 
 </div>
