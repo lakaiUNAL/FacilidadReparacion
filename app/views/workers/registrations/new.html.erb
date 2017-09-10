@@ -83,18 +83,7 @@
 					</div>
 					
 					<%= render "workers/shared/links" %>
-
-					<spam class="alert-error">
-					    <spam class="bg-error" >
-					      <strong>
-					      <%= devise_error_messages! %>
-					      <% flash.each do |key, value| %>
-					          <div class="flash <%= key %>"><%= value %></div>
-					      <% end %>
-					      </strong>
-					    </spam>
-					</spam> 
-
+					<%= devise_error_messages! %>
 				</form>
 			</div>
 		</div>

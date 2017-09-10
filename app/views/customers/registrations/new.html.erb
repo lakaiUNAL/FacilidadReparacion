@@ -5,7 +5,7 @@
 	<div class="row main">
 		<div class="main-login main-center">
 		<h5>Ingresa tus datos como cliente</h5>	
-
+			<form class="" method="post" action="#">
 			<div class="form-group">
 				<div class="field">
 				<%= f.label :Nombre %><br />
@@ -84,17 +84,8 @@
 			
 			<%= render "customers/shared/links" %>
 
-			<div class="alert alert-warning">
-			    <div class="bg-warning" >
-			      <strong>
-			      <%= devise_error_messages! %>
-			        <% flash.each do |key, value| %>
-			          <div class="flash <%= key %>"><%= value %></div>
-			      <% end %>
-			      </strong>
-			    </div>
-			</div> 
-
+			<%= devise_error_messages! %>
+		</form>
 		</div>
 	</div>
 	<% end %>
