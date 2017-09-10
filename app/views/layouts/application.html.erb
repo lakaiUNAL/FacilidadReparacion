@@ -11,9 +11,23 @@
     <meta name="description" content="">
     <meta name="author" content="M_Adnan">
     
+    <%# JAVASCRIPT %>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+
     <%# HOJAS DE ESTILOS %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Dosis|Libre+Baskerville|Open+Sans" rel="stylesheet">
+
+    <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+    <!-- Arreglar estas fuentes, dependen de internet!-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Arreglar estas fuentes, dependen de internet!-->
+    <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
     
     
 
@@ -23,13 +37,11 @@
     
     <!-- Wrap -->
     <div id="wrap"> 
-    	<%= render 'layouts/header' %>
+      <%= render 'layouts/header' %>
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>
 
-  <%# JAVASCRIPT %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   
   </body>
 
