@@ -5,7 +5,7 @@
   <div class="row main">
     <div class="main-login main-center">
     <h5>Ingresa tus datos como cliente</h5> 
-
+    <form class="" method="post" action="#">
       <div class="form-group">
         <%= f.label :email %><br />
         <div class="cols-sm-10">
@@ -50,16 +50,17 @@
       </div>
       
       <%= render "workers/shared/links" %>
-
-      <spam class="alert-error">
-        <spam class="bg-error" >
-          <strong>
-            <% flash.each do |key, value| %>
-              <div class="flash <%= key %>"><%= value %></div>
-            <% end %>
-          </strong>
-        </spam>
-      </spam>
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>">
+        <a href="#" data-dismiss="alert"></a>
+          <ul>
+            <li>
+              <%= value %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    </form>
     </div>
   </div>
   <% end %>

@@ -8616,3 +8616,32 @@ transform:translateY(0)
 .letter-space-10 {
 	letter-spacing: 10px !important;
 }
+
+/*flash*/
+.alert-error {
+    background-color: #f2dede;
+    border-color: #000000;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #000000;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+   	border-color: #000000;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #000000;
+    color: #468847;
+    text-align: left;
+ }
