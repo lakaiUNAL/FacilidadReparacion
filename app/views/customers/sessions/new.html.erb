@@ -2,7 +2,8 @@
   <div class="container text-center">
     <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: new_customer_session_path(resource_name).sub(/\.[\w]*\z/, '')) do |f| %>
+  
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -26,5 +27,8 @@
 <% end %>
 
 <%= render "customers/shared/links" %>
+<div class="alert alert-warning">
+    <%= devise_error_messages! %>
+  </div>
   </div>
 </div>

@@ -19,8 +19,10 @@
             <li> <%= link_to 'Iniciar Session', start_session_path %></li>
             <li> <%= link_to 'Registrarse', register_path %> </li>
           <% elsif worker_signed_in? %>
+            <li><%= current_worker.user_name%></li>
             <li><%= link_to "Salir", destroy_worker_session_path, method: :delete %></li>
           <% elsif customer_signed_in? %>
+            <li> <%=current_customer.user_name%></li>
             <li><%= link_to "Salir", destroy_customer_session_path, method: :delete %></li>
           <% end -%>
            
