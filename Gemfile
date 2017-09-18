@@ -9,6 +9,14 @@ end
 
 # Gema para el manejo de usuarios, registro y sesiones
 gem 'devise'
+# Gema para bootstrap
+gem 'bootstrap-sass'
+# Fonts Awesome
+gem 'font-awesome-rails'
+# Ioicons
+gem 'ionicons-rails'
+# Jquery
+gem 'jquery-rails'
 
 ########################### GEMAS POR DEFECTO DE RAILS
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -35,9 +43,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-# To Create a login
-gem 'devise'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
