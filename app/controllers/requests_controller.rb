@@ -26,12 +26,15 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.customer_id = current_customer.email
+    respond_to do |format|
       if @request.save
-        flash[:success] = "Request was successfully created"
-        redirect_to @request
+        format.html { redirect_to @request, notice: 'Request was successfully created.' }
+        format.json { render :show, status: :created, location: @request }
       else
-        render 'new'
+        format.html { render :new }
+        format.json { render json: @request.errors, status: :unprocessable_entity }
       end
+    end
   end
 
   # PATCH/PUT /requests/1
