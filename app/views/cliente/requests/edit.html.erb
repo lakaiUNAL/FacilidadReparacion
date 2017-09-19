@@ -1,15 +1,6 @@
-<%= form_with(model: request, local: true) do |form| %>
-  <% if request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(request.errors.count, "error") %> prohibited this request from being saved:</h2>
+<h1>Editing Request</h1>
 
-      <ul>
-      <% request.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for @request, url: {action: 'update'} do |form| %>
 
   <div class="field">
     <%= form.label :article %>
@@ -35,3 +26,7 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+<%= link_to 'Show', cliente_request_path(@request) %> |
+<%= link_to 'Back', cliente_requests_path %>
