@@ -17,6 +17,8 @@ gem 'font-awesome-rails'
 gem 'ionicons-rails'
 # Jquery
 gem 'jquery-rails'
+#Modernizr
+gem 'modernizr-rails'
 
 ########################### GEMAS POR DEFECTO DE RAILS
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
