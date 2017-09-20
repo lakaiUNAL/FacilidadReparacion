@@ -3,7 +3,7 @@ class Schedule < ApplicationRecord
 	belongs_to :customer
 	belongs_to :worker
 	#belongs_to :comentario
-	#validates :service
-	#validates :customer
-	#validates :worker
+	#validates :service, presence: true
+	#validates :customer, presence: true
+	#validates :worker, presence: true
 end
