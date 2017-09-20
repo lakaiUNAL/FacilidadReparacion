@@ -3,7 +3,6 @@ class CreateCompleteWorks < ActiveRecord::Migration[5.1]
     create_table :complete_works do |t|
       # Complete work belongs to worker (association)
       t.belongs_to :worker, index: true
-      t.int :id
       t.text :calificacion
       t.text :comentario
 
