@@ -10,12 +10,15 @@ Rails.application.routes.draw do
   get '/registro' => 'static_pages#register', as: 'register'
   get '/iniciar_sesion' => 'static_pages#start_session', as: 'start_session'
   
+  get '/cliente' => 'cliente/my_servises#index'
   namespace :cliente do
     resources :requests
+    resources :my_servises
+    resources :profile
   end
 
   get '/tecnico' => 'tecnico/my_services#index'
-  namespace :tecnico do 
+  namespace :tecnico do
     resources :free_services
     resources :my_services
     resources :profile
