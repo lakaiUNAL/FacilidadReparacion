@@ -1,6 +1,8 @@
 class CreateSupports < ActiveRecord::Migration[5.1]
   def change
+    
     create_table :supports do |t|
+      
       # supports belongs to worker (association)
       t.belongs_to :worker, index: true
       t.int :id
