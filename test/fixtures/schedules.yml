@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 
+  worker: 1
+  customer: 1
+  service: 1
+
+two:
+  date: 
+  worker: 1
+  customer: 1
+  service: 1
