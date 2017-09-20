@@ -5,5 +5,7 @@ class CreateSkills < ActiveRecord::Migration[5.1]
       t.belongs_to :service, index:true
       t.timestamps
     end
+    add_foreign_key :skills, :workers
+    add_foreign_key :skills, :services
   end
 end

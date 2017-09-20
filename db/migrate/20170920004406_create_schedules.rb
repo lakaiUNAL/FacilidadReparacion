@@ -8,5 +8,8 @@ class CreateSchedules < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_foreign_key :schedules, :workers
+    add_foreign_key :schedules, :customers
+    add_foreign_key :schedules, :services
   end
 end
