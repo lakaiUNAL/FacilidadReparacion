@@ -8,7 +8,7 @@
 
 #Datos para nuestro acceso
 Customer.create(name: "Cliente Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho")
-Customer.create(name: "Técnico Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho")
+Worker.create(name: "Técnico Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho")
 
 
 

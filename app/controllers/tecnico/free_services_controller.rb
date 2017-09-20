@@ -1,4 +1,6 @@
 class Tecnico::FreeServicesController < ApplicationController
+  before_action :authenticate_worker!
+
   def index
   end
 
