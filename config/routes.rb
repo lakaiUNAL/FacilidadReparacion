@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
 
@@ -11,6 +12,13 @@ Rails.application.routes.draw do
   
   namespace :cliente do
     resources :requests
+  end
+
+  get '/tecnico' => 'tecnico/my_services#index'
+  namespace :tecnico do 
+    resources :free_services
+    resources :my_services
+    resources :profile
   end
 
   devise_for :workers, controllers:{registrations: 'workers/registrations', sessions: 'workers/sessions'} 
