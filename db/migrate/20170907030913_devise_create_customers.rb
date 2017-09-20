@@ -9,7 +9,8 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.1]
       t.string :address
       t.string :phone_number
       t.string :user_name,          null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
+      #password = 1234567890
+      t.string :encrypted_password, null: false, default: "$2a$11$okJltYuXsOl/sQTD638ROuyFDN1r0Zq4HwJ3YM1svzze3O4cPbE7a"
 
       ## Recoverable
       t.string   :reset_password_token

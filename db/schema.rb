@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170920003631) do
     t.string "address"
     t.string "phone_number"
     t.string "user_name", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
+    t.string "encrypted_password", default: "$2a$11$okJltYuXsOl/sQTD638ROuyFDN1r0Zq4HwJ3YM1svzze3O4cPbE7a", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
