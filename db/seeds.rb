@@ -9,7 +9,9 @@
 #Datos para nuestro acceso
 Customer.create(name: "Cliente Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho")
 Worker.create(name: "Técnico Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho")
-
+Service.create(id: 1, description:"Mantenimiento")
+Skill.create(id: 1, worker_id: 1, service_id: 1)
+Request.create(id: 1, customer_id: 1,service_id: 1 ,article: "Celular", description: "No funciona pantalla")
 
 
 #Datos de prueba aleatorios

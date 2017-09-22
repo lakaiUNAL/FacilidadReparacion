@@ -1,0 +1,41 @@
+<!--<% @mess.each do |req| %>
+<%= req.id %><br>
+<%= req.customer_id%><br>
+<%= req.article %><br>
+<%= req.description %><br>
+<% end %> -->
+
+<div class="mob">
+    <div class="container">
+    	<div class="row">
+    	        <% @mess.each do |req| %>
+	            <div class="history_wrap">
+                    <div class="history_list">
+                        <div class="history_item_name">
+                           <span class="item">identificacion del cliente:</span>
+                             <span class="item">Articulo:</span>
+                               <span class="item">Descripción</span>
+                                 
+                        </div>
+                        <div class="history_rate">
+                            <span class="rate">
+                                <%= req.customer_id%><br>
+                            </span>
+                             <span class="rate">
+                                <%= req.article %><br>
+                            </span>
+                             <span class="rate">
+                                <%= req.description %><br>
+                            </span>
+                        </div>
+                        <div class="history_status">
+                            <a class="label label-success">Aceptar</a>
+                            <a class="label label-success">Cancelar</a>
+                        </div>
+                    </div>
+                    
+	        	</div>
+	        	<% end %>
+        </div>
+    </div>
+</div>
