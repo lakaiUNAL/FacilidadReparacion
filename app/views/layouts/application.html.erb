@@ -12,21 +12,31 @@
     <%# JAVASCRIPT %>
     <%= javascript_include_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+
     <%# HOJAS DE ESTILOS %>
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+    
+    <%= render 'layouts/shim' %>
   </head>
 
   <body>
     
+    <%= params[:controller] %>
+    
     <!-- Wrap -->
     <div id="wrap"> 
       <%= render 'layouts/header' %>
+      
+      <% if customer_signed_in? %>
+        <%= render 'layouts/navcustomer' %>
+      <% elsif worker_signed_in? %>
+        <%= render 'layouts/navworker' %>
+      <% end %>  
+
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>
 
-  
   </body>
 
 </html>

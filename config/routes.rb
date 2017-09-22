@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/contacto' => 'static_pages#contact', as: 'contact'
   get '/registro' => 'static_pages#register', as: 'register'
   get '/iniciar_sesion' => 'static_pages#start_session', as: 'start_session'
+  get '/solicitar_servicio' => 'cliente/requests#index', as: 'request_service'
+  get '/editar_perfil' => 'cliente/requests#profile', as: 'edit_profile'
   
   namespace :cliente do
     resources :requests

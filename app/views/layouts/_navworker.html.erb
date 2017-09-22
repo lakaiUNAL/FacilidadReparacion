@@ -1,0 +1,10 @@
+ <!-- menu lateral -->
+  <div class="col-lg-3 menu-cliente power-hosting padding-top-100 padding-bottom-100">
+    <ul>
+      <li><span class="glyphicon glyphicon-user"> <%= current_worker.user_name %></span></li>
+      <li><%= link_to 'Solicitudes', '#' %></li>
+      <li><%= link_to 'Mis servicios', '#' %></li>
+      <li><%= link_to 'Mi perfil', '#' %></li>
+      <li><%= link_to 'Salir', destroy_worker_session_path, method: :delete %></li>
+    </ul>
+  </div>
