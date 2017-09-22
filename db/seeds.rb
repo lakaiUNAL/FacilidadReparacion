@@ -38,3 +38,9 @@ end
     user.password = "1234567890"
     user.save
 end
+
+10.times do |i|
+    service = Service.new
+    service.description = "Servicio #{i}"
+    service.save
+end
