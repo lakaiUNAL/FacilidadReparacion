@@ -28,7 +28,19 @@
       <%= render 'layouts/header' %>
       
       <% if customer_signed_in? %>
-        <%= render 'layouts/navcustomer' %>
+            <!-- Services -->
+        <section class="">
+        <div class="container-fluid"> 
+          
+          <!-- contenido en columnas -->
+          <div class="row">
+              <%= render 'layouts/navcustomer' %>
+            <div class="col-lg-8">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+        </section>
       <% elsif worker_signed_in? %>
         <%= render 'layouts/navworker' %>
       <% end %>  
