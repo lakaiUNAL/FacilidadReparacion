@@ -6,31 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts 'Datos Propios'
 #Datos para nuestro acceso
 Customer.create(name: "Cliente Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho")
 Worker.create(name: "Técnico Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho")
-Service.create(id: 1, description:"Mantenimiento")
-Skill.create(id: 1, worker_id: 1, service_id: 1)
-Request.create(id: 1, customer_id: 1,service_id: 1 ,article: "Celular", description: "No funciona pantalla")
 
+puts 'Datos de Servicios'
+# SERVICIOS PRESTADOS
+Service.create(description:"Mantenimiento de Celulares")
+Service.create(description:"Mantenimiento de Computadores")
+Service.create(description:"Mantenimiento de Neveras")
+Service.create(description:"Mantenimiento de lavadoras")
+Service.create(description:"Cerrajeria")
+Service.create(description:"Mampostería")
 
-#Datos de prueba aleatorios
+n_services = Service.count
+puts "Cantidad de servicios #{n_services}"
+
+#TÉCNICOS ALEATORIOS
 40.times do |i|
-	user = Customer.new
-	user.name = "User Customer #{i}"             
-    user.email = "customer_#{i}@prueba.co"
-    user.birth_date = (1-i).year.ago
-    user.number_card = nil
-    user.address = nil
-    user.phone_number = nil
-    user.user_name = "customer_#{i}"
-    user.password = "1234567890"
-    user.save
-end
-
-40.times do |i|
-	user = Worker.new
-	user.name = "User Worker #{i} "             
+    user = Worker.new
+    user.name = "User Worker #{i} "             
     user.email = "worker_#{i}@prueba.co"
     user.birth_date = (1-i).year.ago
     user.number_card = nil
@@ -40,9 +36,45 @@ end
     user.password = "1234567890"
     user.save
 end
+n_workers = Worker.count
+puts "Cantidad de técnicos #{n_workers}"
 
-10.times do |i|
-    service = Service.new
-    service.description = "Servicio #{i}"
-    service.save
+# CLIENTES ALEATORIOS
+40.times do |i|
+    user = Customer.new
+    user.name = "User Customer #{i}"             
+    user.email = "customer_#{i}@prueba.co"
+    user.birth_date = (1-i).year.ago
+    user.number_card = nil
+    user.address = nil
+    user.phone_number = nil
+    user.user_name = "customer_#{i}"
+    user.password = "1234567890"
+    user.save
 end
+n_customers = Customer.count
+puts "Cantidad de clientes #{n_customers}"
+
+# HABILIDADES DE LOS TÉCNICOS
+# Al rededor de 3 por técnico
+n_workers.times do |tecnico|
+    n_services.times do |service|
+        if rand < 3/Float(n_services)
+            Skill.create(worker_id: tecnico, service_id: service)
+        end
+    end
+end
+n_skills = Skill.count
+puts "Total de habilidades #{n_skills}"
+
+# PETICIONES DE USUARIO
+# Al rededor de 1 por usuario
+n_customers.times do |user|
+    n_services.times do |service|
+        if rand < 1/Float(n_services)
+            Request.create(customer_id: user, service_id: service, article: "Articulo que necesita reparación", description: "Descripcion del daño")
+        end
+    end
+end
+n_request = Request.count
+puts "Total de peticiones de usuario #{n_request}"

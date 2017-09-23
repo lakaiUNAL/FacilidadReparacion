@@ -18,7 +18,6 @@
               <th>Electrodoméstico</th>
               <th>Categoría del servicio</th>
               <th>Descripción de la solicitud</th>
-              <th>Dirección</th>
               <th colspan="1">Estado</th>
             </tr>
           </thead>
@@ -29,9 +28,8 @@
             <% @requests.each do |request| %>
               <tr>
                 <td><%= request.article %></td>
-                <td><%= request.service_tipe %></td>
+                <td><%= request.service.description %></td>
                 <td><%= request.description %></td>
-                <td><%= request.address %></td>
                 
                 <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
                 <td><%= link_to 'Show', cliente_request_path(request) %></td>
