@@ -5,18 +5,24 @@
     <div class="col-lg-9 text-center">
      <p id="notice"><%= notice %></p>
      
-      <div class="col-lg-6">     <div class="text-center"><h2>Datos Personales</h2></div>
+      <div class="foto-perfil">
+       
+      </div>
+      
+      <div class="">
+      <div class="text-center"><h2>Datos Personales</h2></div>
      
-      <p>Nombre: <span class=""><%= current_customer.name%></span></p>
-      <p>Usuario: <%= current_customer.user_name%></p>
-      <p>Direccion: <%= current_customer.address%></p>
-      
-</div>
-      <div class="col-lg-6"><div class="text-center"><h2>Datos de Contacto</h2></div>
-      <p>Correo: <%= current_customer.email%></p>
-      <p>Tarjeta de Credito: <%= current_customer.number_card%></p>
-      <p>Telefono: <%= current_customer.phone_number%></p>
-      
+       <p>Nombre: <span class=""><%= current_customer.name%></span></p>
+       <p>Usuario: <%= current_customer.user_name%></p>
+       <p>Direccion: <%= current_customer.address%></p>
+       
+      </div>
+      <div class="">
+       <div class="text-center"><h2>Datos de Contacto</h2></div>
+       <p>Correo: <%= current_customer.email%></p>
+       <p>Tarjeta de Credito: <%= current_customer.number_card%></p>
+       <p>Telefono: <%= current_customer.phone_number%></p>
+       
       </div>
      
       

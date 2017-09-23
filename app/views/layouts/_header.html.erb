@@ -43,7 +43,15 @@
           <!-- NAV -->
           <ul class="nav ownmenu">
             <li><%= link_to "Inicio", root_path  %></li>
-            <li><%= link_to 'Servicios', '#' %></li>
+            <li>
+            <% if customer_signed_in? %> 
+            <%= link_to 'Servicios', request_service_path %></li>
+            <% elsif worker_signed_in? %>
+            <%= link_to 'Servicios', '#' %></li>
+            <% else %>
+            <%= link_to 'Servicios', '#' %></li>
+            <% end %>
+            </li>
             <li><%= link_to 'Nosotros', about_path %></li>
             <li><%= link_to 'Contacto', contact_path %></li>
             <li><%= link_to 'Blog', blog_path %></li>
@@ -52,3 +60,4 @@
       </div>
     </div>
   </header>
+  

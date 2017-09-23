@@ -3,7 +3,7 @@
 	<%= form_for(resource, as: resource_name, url: customer_registration_path) do |f| %>
 	
 	<div class="row main">
-		<div class="main-login main-center">
+		<div class=" col-lg-6 col-lg-offset-3">
 		<h5>Ingresa tus datos como cliente</h5>	
 			<form class="" method="post" action="#">
 			<div class="form-group">
@@ -12,8 +12,8 @@
 					<div class="cols-sm-10">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-							<div class="form-control" placeholder="Ingrese su nombre">
-								<%= f.text_field :name, autofocus: true %>
+							<div placeholder="Ingrese su nombre">
+								<%= f.text_field :name, autofocus: true, class:"form-control" %>
 							</div>
 						</div>
 					</div>
@@ -26,8 +26,8 @@
 					<div class="cols-sm-10">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-							<div class="form-control" placeholder="Ingrese su nombre">
-								<%= f.text_field :user_name %>
+							<div placeholder="Ingrese su nombre">
+								<%= f.text_field :user_name, class:"form-control" %>
 							</div>
 						</div>
 					</div>
@@ -40,8 +40,8 @@
 					<div class="cols-sm-10">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-							<div class="form-control" placeholder="Ingrese su nombre">
-								<%= f.email_field :email, autofocus: true %>
+							<div placeholder="Ingrese su nombre">
+								<%= f.email_field :email, autofocus: true, class:"form-control" %>
 							</div>
 						</div>
 					</div>
@@ -50,12 +50,12 @@
 	
 			<div class="form-group">
 				<div class="field">
-				<%= f.label :Contrasena %>
+				<%= f.label :Contrasena, class:"cols-sm-2 control-label"  %>
 					<div class="cols-sm-10">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-							<div class="form-control" placeholder="Ingrese su nombre">
-								<%= f.password_field :password, autocomplete: "off" %>
+							<div placeholder="Ingrese su nombre">
+								<%= f.password_field :password, autocomplete: "off", class:"form-control" %>
 							</div>
 						</div>
 					</div>
@@ -64,21 +64,21 @@
 	
 			<div class="form-group">
 				<div class="field">
-				<%= f.label :Confirmacion_contrasena %><br />
+				<%= f.label :Confirmacion_contrasena, class:"cols-sm-2 control-label" %>
 					<div class="cols-sm-10">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-							<div class="form-control" placeholder="Ingrese su nombre">
-								<%= f.password_field :password_confirmation, autocomplete: "off" %>
+							<div placeholder="Ingrese su nombre">
+								<%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 	
-			<div class="form-group ">
-				<div id="button" class="btn btn-primary btn-lg btn-block login-button">
-					<%= f.submit "Sign up" %>
+			<div class="form-group text-center">
+				<div id="button" >
+					<%= f.submit "Crear cuenta",class:" btn btn-primary" %>
 				</div>
 			</div>
 			
