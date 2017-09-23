@@ -8,17 +8,12 @@
 
 <p>
   <strong>Service tipe:</strong>
-  <%= @request.service_tipe %>
+  <%= @request.service.description %>
 </p>
 
 <p>
   <strong>Description:</strong>
   <%= @request.description %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @request.address %>
 </p>
 
 <%= link_to 'Edit', edit_cliente_request_path(@request) %> |

@@ -4,7 +4,7 @@ class Cliente::RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
   def index
-    @requests = Request.all
+    @requests = current_customer.request
   end
 
   # GET /requests/1
@@ -20,6 +20,7 @@ class Cliente::RequestsController < ApplicationController
   # GET /requests/new
   def new
     @request = Request.new
+    @Servicios = Service.all
   end
 
   # GET /requests/1/edit
