@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/contacto' => 'static_pages#contact', as: 'contact'
   get '/registro' => 'static_pages#register', as: 'register'
   get '/iniciar_sesion' => 'static_pages#start_session', as: 'start_session'
+  get '/solicitar_servicio' => 'cliente/requests#index', as: 'request_service'
+  get '/editar_perfil' => 'cliente/requests#profile', as: 'edit_profile'
   
   # Aquí deberían ir tadas las peticiones y actividades que realiza un cliente
   get '/cliente' => 'cliente/my_servises#index'

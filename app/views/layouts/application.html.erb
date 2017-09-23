@@ -14,19 +14,23 @@
 
     <%# HOJAS DE ESTILOS %>
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <%# SOPORTE PARA NAVEGADORES ANTIGUOS %>
+    <%= render 'layouts/shim' %>
 
   </head>
 
   <body>
     
+    <!--Controlador: <%= params[:controller] %>-->
+    
     <!-- Wrap -->
-    <div id="wrap"> 
-      <%= render 'layouts/header' %>
-      <%= yield %>
-      <%= render 'layouts/footer' %>
-    </div>
+    <%= render 'layouts/header' %>
+    <!-- Services -->
+    <%= yield %>
+    
+    <%= render 'layouts/footer' %>
 
-  
   </body>
 
 </html>

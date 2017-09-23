@@ -8,7 +8,7 @@ class Cliente::MyServisesController < ApplicationController
   end
 
   def show
-  	@content_request = Request.find
+  	@content_request = set_request
     @mess =  @content_request.content
   end
 

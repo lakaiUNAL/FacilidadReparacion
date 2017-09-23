@@ -1,41 +1,51 @@
-<%= render 'cliente/menu' %>
-<p id="notice"><%= notice %></p>
+  <!-- Content -->
+  <div id="content"> 
 
-<h1>Requests</h1>
 
-<table>
-  <%# HEADER DE LA TABLA DE PETICIONES %>
-  <thead>
-    <tr>
-      <th>Article</th>
-      <th>Service category</th>
-      <th>Description</th>
-      <th>Address</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  
-  <%# CUERPO DE LA TABLA DE PETICIONES %>
-  <tbody>
-    
-    <% @requests.each do |request| %>
-      <tr>
-        <td><%= request.article %></td>
-        <td><%= request.service_tipe %></td>
-        <td><%= request.description %></td>
-        <td><%= request.address %></td>
-        
-        <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
-        <td><%= link_to 'Show', cliente_request_path(request) %></td>
-        <td><%= link_to 'Edit', edit_cliente_request_path(request) %></td>
-        <td><%= link_to 'Destroy', cliente_request_path(request), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
 
-  </tbody>
-</table>
+          
+          <div class="">
+            <p id="notice"><%= notice %></p>
+            <div>
+              <%# LINK PARA CREAR UN NUEVO REQUERIMIENTO %>
+              <button class="btn"><%= link_to 'New Request', new_cliente_request_path %></button>
+            </div>
+            <div class="text-center"><h1>Requests</h1></div>
+            
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <%# HEADER DE LA TABLA DE PETICIONES %>
+                <thead>
+                  <tr>
+                    <th>Article</th>
+                    <th>Service category</th>
+                    <th>Description</th>
+                    <th>Address</th>
+                    <th colspan="4"></th>
+                  </tr>
+                </thead>
+                
+                <%# CUERPO DE LA TABLA DE PETICIONES %>
+                <tbody>
+                  
+                  <% @requests.each do |request| %>
+                    <tr>
+                      <td><%= request.article %></td>
+                      <td><%= request.service_tipe %></td>
+                      <td><%= request.description %></td>
+                      <td><%= request.address %></td>
+                      
+                      <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
+                      <td><%= link_to 'Show', cliente_request_path(request) %></td>
+                      <td><%= link_to 'Edit', edit_cliente_request_path(request) %></td>
+                      <td><%= link_to 'Destroy', cliente_request_path(request), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                  <% end %>
 
-<br>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-<%# LINK PARA CREAR UN NUEVO REQUERIMIENTO %>
-<%= link_to 'New Request', new_cliente_request_path %>
+
+  </div>
