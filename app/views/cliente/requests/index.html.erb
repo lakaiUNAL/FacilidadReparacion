@@ -1,51 +1,48 @@
-  <!-- Content -->
-  <div id="content"> 
-
-
-
+<!-- Content -->
+<div id="content" class="container-fluid"> 
+  <div class="row">
+    <%= render 'cliente/menu' %>
+    <div class="col-lg-9">
+      <p id="notice"><%= notice %></p>
+      <div>
+        <%# LINK PARA CREAR UN NUEVO REQUERIMIENTO %>
+        <%= link_to 'SOLICITAR SERVICIO', new_cliente_request_path, class: "btn btn-primary" %>
+      </div>
+      <div class="text-center"><h2>MIS SERVICIOS</h2></div>
+      
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <%# HEADER DE LA TABLA DE PETICIONES %>
+          <thead>
+            <tr>
+              <th>Electrodoméstico</th>
+              <th>Categoría del servicio</th>
+              <th>Descripción de la solicitud</th>
+              <th>Dirección</th>
+              <th colspan="1">Estado</th>
+            </tr>
+          </thead>
           
-          <div class="">
-            <p id="notice"><%= notice %></p>
-            <div>
-              <%# LINK PARA CREAR UN NUEVO REQUERIMIENTO %>
-              <button class="btn"><%= link_to 'New Request', new_cliente_request_path %></button>
-            </div>
-            <div class="text-center"><h1>Requests</h1></div>
+          <%# CUERPO DE LA TABLA DE PETICIONES %>
+          <tbody>
             
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <%# HEADER DE LA TABLA DE PETICIONES %>
-                <thead>
-                  <tr>
-                    <th>Article</th>
-                    <th>Service category</th>
-                    <th>Description</th>
-                    <th>Address</th>
-                    <th colspan="4"></th>
-                  </tr>
-                </thead>
+            <% @requests.each do |request| %>
+              <tr>
+                <td><%= request.article %></td>
+                <td><%= request.service_tipe %></td>
+                <td><%= request.description %></td>
+                <td><%= request.address %></td>
                 
-                <%# CUERPO DE LA TABLA DE PETICIONES %>
-                <tbody>
-                  
-                  <% @requests.each do |request| %>
-                    <tr>
-                      <td><%= request.article %></td>
-                      <td><%= request.service_tipe %></td>
-                      <td><%= request.description %></td>
-                      <td><%= request.address %></td>
-                      
-                      <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
-                      <td><%= link_to 'Show', cliente_request_path(request) %></td>
-                      <td><%= link_to 'Edit', edit_cliente_request_path(request) %></td>
-                      <td><%= link_to 'Destroy', cliente_request_path(request), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                    </tr>
-                  <% end %>
+                <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
+                <td><%= link_to 'Show', cliente_request_path(request) %></td>
+                <td><%= link_to 'Edit', edit_cliente_request_path(request) %></td>
+                <td><%= link_to 'Destroy', cliente_request_path(request), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
 
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
+</div>

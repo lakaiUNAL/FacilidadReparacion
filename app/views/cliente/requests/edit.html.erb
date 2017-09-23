@@ -1,33 +1,44 @@
-<%= render 'cliente/menu' %>
-<h1>Editing Request</h1>
 
-<%= form_for @request, url: {action: 'update'} do |form| %>
 
-  <div class="field">
-    <%= form.label :article %>
-    <%= form.text_field :article, id: :request_article %>
+
+
+
+<div class="row">
+  <%= render 'cliente/menu' %>
+
+  <div class="col-lg-9">
+    <h1>Editing Request</h1>
+
+    <%= form_for @request, url: {action: 'update'} do |form| %>
+    
+      <div class="field">
+        <%= form.label :article %>
+        <%= form.text_field :article, id: :request_article %>
+      </div>
+    
+      <div class="field">
+        <%= form.label :service_tipe %>
+        <%= form.text_field :service_tipe, id: :request_service_tipe %>
+      </div>
+    
+      <div class="field">
+        <%= form.label :description %>
+        <%= form.text_area :description, id: :request_description %>
+      </div>
+    
+      <div class="field">
+        <%= form.label :address %>
+        <%= form.text_area :address, id: :request_address %>
+      </div>
+    
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+    
+    
+    <%= link_to 'Show', cliente_request_path(@request) %> |
+    <%= link_to 'Back', cliente_requests_path %>
+    
   </div>
-
-  <div class="field">
-    <%= form.label :service_tipe %>
-    <%= form.text_field :service_tipe, id: :request_service_tipe %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :request_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_area :address, id: :request_address %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
-
-<%= link_to 'Show', cliente_request_path(@request) %> |
-<%= link_to 'Back', cliente_requests_path %>
+</div>

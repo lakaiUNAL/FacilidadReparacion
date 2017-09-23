@@ -1,28 +1,42 @@
-<%= render 'cliente/menu' %>
-<h1>New Request</h1>
-
-<%= form_for @request, url: {action: 'create'}  do |form| %>
-  
-  <div class="field">
-    <%= form.label :article %>
-    <%= form.text_field :article, id: :request_article %>
+<!-- Content -->
+<div id="content" class="container-fluid"> 
+  <div class="row">
+    <%= render 'cliente/menu' %>
+    <div class="col-lg-9">
+      <div class="text-center"><h2>NUEVO SERVICIO</h2></div>
+        <div class="">
+        <div class="">
+          <div class="form">
+            <%= form_for @request, url: {action: 'create'}  do |form| %>
+        
+            <div class="field form-group">
+              <%= form.label :article, "Electrodoméstico" %>
+              <%= form.text_field :article, id: :request_article, class: "form-control" %>
+            </div>
+            
+            <%# Esto deberia ser una seleccion de opciones %>
+            <div class="field form-group">
+              <%= form.label :service_id, "Servicio" %>
+              <%= form.text_field :service_id , id: :request_service_tipe, class: "form-control" %>
+            </div>
+          
+            <div class="field form-group">
+              <%= form.label :description, "Descripción" %>
+              <%= form.text_area :description, id: :request_description, class: "form-control", rows: "5" %>
+            </div>
+          
+            <div class="actions form-group text-center">
+              <%= form.submit "Solicitar servicio", class: "btn btn-primary" %>
+            </div>
+            <% end %>
+      
+            <div class="form-group">
+              <%= link_to 'Volver atrás', cliente_requests_path %>      
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
   </div>
-  
-  <%# Esto deberia ser una seleccion de opciones %>
-  <div class="field">
-    <%= form.label :service_id  %>
-    <%= form.text_field :service_id , id: :request_service_tipe %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :request_description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
-
-<%= link_to 'Back', cliente_requests_path %>
+</div>
