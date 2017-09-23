@@ -3,14 +3,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
 
-  #Paginas estaticas
+  # Paginas estaticas
   get '/blog' => 'static_pages#blog', as: 'blog'
   get '/nosotros' => 'static_pages#about', as: 'about'
   get '/contacto' => 'static_pages#contact', as: 'contact'
   get '/registro' => 'static_pages#register', as: 'register'
   get '/iniciar_sesion' => 'static_pages#start_session', as: 'start_session'
-  get '/solicitudes' => 'static_pages#request_do', as: 'request_do'
   
+  # Aquí deberían ir tadas las peticiones y actividades que realiza un cliente
   get '/cliente' => 'cliente/my_servises#index'
   namespace :cliente do
     resources :requests
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :profile
   end
 
+  # Aquí deberían ir tadas las peticiones y actividades que realiza un técnico
   get '/tecnico' => 'tecnico/my_services#index'
   namespace :tecnico do
     resources :free_services
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
     resources :profile
   end
 
+  # Aquí todas la peticiones de inicio de sesión
   devise_for :workers, controllers:{registrations: 'workers/registrations', sessions: 'workers/sessions'} 
   devise_for :customers, controllers:{registrations: 'customers/registrations', sessions: 'customers/sessions'}
   

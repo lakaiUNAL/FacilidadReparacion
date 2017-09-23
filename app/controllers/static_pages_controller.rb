@@ -14,13 +14,4 @@ class StaticPagesController < ApplicationController
   def register
   end
   
-  def request_initializate
-   
-  end
-  
-  def request_do
-    @content_request = Request.new
-    @mess =  @content_request.content
-  end
-  
 end
