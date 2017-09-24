@@ -25,7 +25,7 @@ class Cliente::RequestsController < ApplicationController
 
   # GET /requests/1/edit
   def edit
-    @request = Request.find(params[:id])
+    set_request
   end
 
   # POST /requests
@@ -35,8 +35,11 @@ class Cliente::RequestsController < ApplicationController
     @request.customer_id = current_customer.id
     respond_to do |format|
       if @request.save #Si fue existosa la creación
+        puts "Guardo !!!!"
         format.html { redirect_to cliente_requests_url, notice: 'Request was successfully created.' }
       else
+        puts "No guardo !!!!!!"
+        puts @requests
         format.html { render :new }
       end
     end
@@ -45,9 +48,9 @@ class Cliente::RequestsController < ApplicationController
   # PATCH/PUT /requests/1
   # PATCH/PUT /requests/1.json
   def update
-    respond_to do |format|
-      if @request.update(request_params)
-        format.html { redirect_to @request, notice: 'Request was successfully updated.' }
+      respond_to do |format|
+      if set_request.update(request_params)
+        format.html { redirect_to cliente_requests_url, notice: 'Request was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -71,6 +74,6 @@ class Cliente::RequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
-      params.require(:request).permit( :article, :service_tipe, :description, :address)
+      params.require(:request).permit( :article, :service_id, :description)
     end
 end
