@@ -71,7 +71,7 @@ puts "Total de habilidades #{n_skills}"
 # Al rededor de 1 por usuario
 n_customers.times do |user|
     n_services.times do |service|
-        if rand < 1/Float(n_services)
+        if rand < 1.5/Float(n_services)
             Request.create(customer_id: user, service_id: service, article: "Articulo que necesita reparación", description: "Descripcion del daño")
         end
     end

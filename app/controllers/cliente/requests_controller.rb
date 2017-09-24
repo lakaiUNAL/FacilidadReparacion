@@ -38,9 +38,7 @@ class Cliente::RequestsController < ApplicationController
         puts "Guardo !!!!"
         format.html { redirect_to cliente_requests_url, notice: 'Request was successfully created.' }
       else
-        puts "No guardo !!!!!!"
-        puts @requests
-        format.html { render :new }
+        format.html { render :new}
       end
     end
   end
