@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get '/iniciar_sesion' => 'static_pages#start_session', as: 'start_session'
   get '/solicitar_servicio' => 'cliente/requests#index', as: 'request_service'
   get '/editar_perfil' => 'cliente/requests#profile', as: 'edit_profile'
+  get '/actualizar_perfil' => 'tecnico/profile#index', as: 'update_profile'
+  get '/servicios_disponibles' => 'tecnico/free_services#index', as: 'worker_services'
+  
+  
   
   # Aquí deberían ir tadas las peticiones y actividades que realiza un cliente
   get '/cliente' => 'cliente/my_servises#index'

@@ -11,18 +11,18 @@
         
             <div class="field form-group">
               <%= form.label :article, "Electrodoméstico" %>
-              <%= form.text_field :article, id: :request_article, class: "form-control" %>
+              <%= form.text_field :article, class: "form-control" %>
             </div>
             
             <%# Esto deberia ser una seleccion de opciones %>
             <div class="field form-group">
               <%= form.label :service_id, "Servicio" %>
-              <%= form.text_field :service_id , id: :request_service_tipe, class: "form-control" %>
+              <%= form.text_field :service_id, id: :request_service_id , class: "form-control" %>
             </div>
           
             <div class="field form-group">
               <%= form.label :description, "Descripción" %>
-              <%= form.text_area :description, id: :request_description, class: "form-control", rows: "5" %>
+              <%= form.text_area :description, class: "form-control", rows: "5" %>
             </div>
           
             <div class="actions form-group text-center">

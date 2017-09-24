@@ -1,84 +1,93 @@
-<h2><%=  current_customer.name %>, Edita tus Datos</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
- 
- 
-<h1>Datos Personales</h1>
-
-<%= f.label :Nombre %><br />
-<div class="input-group">
-	<%= f.text_field :name, autofocus: true %>
-	<p></p>
-</div>
-
-<%= f.label :Nombre_de_Usuario %><br />
-<div class="input-group">
-	<%= f.text_field :user_name%>
-	<p></p>
-</div>
-
-<%= f.label :Direccion %><br />
-<div class="input-group">
-	<%= f.text_field :address%>
-	<p></p>
-</div>
-
-
-<h1>Datos de Contacto</h1>
-
-
-<div class="field">
-  <%= f.label :Correo %><br />
-  <%= f.email_field :email, autofocus: true %>
-</div>
-
-<%= f.label :Telefono %><br />
-<div class="input-group">
-	<%= f.text_field :phone_number%>
-	<p></p>
-</div>
-
-<%= f.label :Tarjeta_de_Credito %><br />
-<div class="input-group">
-	<%= f.text_field :number_card%>
-	<p></p>
-</div>
-
-
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+<!-- Content -->
+<div id="content" class="container-fluid"> 
+  <div class="row">
+    <%= render 'cliente/menu' %>
+    <div class="col-lg-9">
+      <h5><%=  current_customer.name %>, Edita tus Datos</h5>
+      
+      <div class="col-lg-3"></div>
+      <div class="form text-center col-lg-6">
   
-  <p></p>
-
-  <div class="field">
-    <%= f.label :Contrasena %> <i>(Dejar en blanco si no la quieres cambiar)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> Caracteres minimo</em>
-    <% end %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= devise_error_messages! %>
+        
+        <h2>Datos Personales</h2>
+        
+        <%= f.label :Nombre %><br />
+        <div class="form-group">
+        	<%= f.text_field :name, autofocus: true, class: "form-control" %>
+        	
+        </div>
+        
+        <%= f.label :Nombre_de_Usuario %><br />
+        <div class="form-group">
+        	<%= f.text_field :user_name, class: "form-control" %>
+        	<p></p>
+        </div>
+        
+        <%= f.label :Direccion %><br />
+        <div class="form-group">
+        	<%= f.text_field :address, class: "form-control" %>
+        	<p></p>
+        </div>
+  
+        <h2>Datos de Contacto</h2>
+        
+        <div class="field form-group">
+          <%= f.label :Correo %><br />
+          <%= f.email_field :email, autofocus: true, class: "form-control"  %>
+        </div>
+        
+        <%= f.label :Telefono %>
+        <div class="form-group">
+        	<%= f.text_field :phone_number, class: "form-control" %>
+        	<p></p>
+        </div>
+        
+        <%= f.label :Tarjeta_de_Credito %><br />
+        <div class="form-group">
+        	<%= f.text_field :number_card, class: "form-control" %>
+        	
+        </div>
+        
+        
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+        
+          <div class="field form-group">
+            <%= f.label :Contrasena %> <i>(Dejar en blanco si no la quieres cambiar)</i><br />
+            <%= f.password_field :password, autocomplete: "off", class: "form-control"  %>
+            <% if @minimum_password_length %>
+              <br />
+              <em><%= @minimum_password_length %> Caracteres minimo</em>
+            <% end %>
+          </div>
+        
+          <div class="field form-group">
+            <%= f.label :Confirma_la_contrasena %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control"  %>
+          </div>
+        
+          <div class="field form-group">
+            <%= f.label :contrasena_actual %> <i>(Necesaria para guardar tus cambios)</i><br />
+            <%= f.password_field :current_password, autocomplete: "off", class: "form-control"  %>
+          </div>
+        
+          <div class="actions form-group">
+            <%= f.submit "Guardar cambios", class: "btn btn-primary"  %>
+          </div>
+        <% end %>
+        
+        
+        <h3>Eliminar Cuenta</h3>
+        
+        <p>¿Realmente deseas eliminar tu cuenta? :( <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Estas seguro(a)?" }, method: :delete, class: "btn btn-primary"  %></p>
+        <div class="form-group">
+          <%= link_to "Regresar", :back %>
+        </div>
+      </div>
+      <div class="col-lg-3"></div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :Confirma_la_contrasena %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :contrasena_actual %> <i>(Necesaria para cambiar tus cambios)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Guardar cambios" %>
-  </div>
-<% end %>
-
-<h3>Borrar mi Cuenta :(</h3>
-
-<p>Deseas eliminar tu cuenta?<%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Estas seguro(a)?" }, method: :delete %></p>
-
-<%= link_to "Regresar", :back %>
+</div>

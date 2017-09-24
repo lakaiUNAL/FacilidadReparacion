@@ -3,7 +3,7 @@
   <%= form_for(resource, as: resource_name, url: new_worker_session_path ) do |f| %>
   
   <div class="row main">
-    <div class="main-login main-center">
+    <div class="col-lg-6 col-lg-offset-3">
     <h5>Ingresa tus datos como cliente</h5> 
     <form class="" method="post" action="#">
       <div class="form-group">
@@ -11,8 +11,8 @@
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-            <div class="form-control" placeholder="Ingrese su nombre">
-              <%= f.email_field :email, autofocus: true %>
+            <div placeholder="Ingrese su nombre">
+              <%= f.email_field :email, autofocus: true, class:"form-control" %>
             </div>
           </div>
         </div>
@@ -23,8 +23,8 @@
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-              <div class="form-control" placeholder="Ingrese su nombre">
-                <%= f.password_field :password %>
+              <div placeholder="Ingrese su nombre">
+                <%= f.password_field :password, class:"form-control" %>
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@
         <div class="cols-sm-10">
           <div class="checkbox">
             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i>
-              <%= f.check_box :remember_me %>
+              <%= f.check_box :remember_me, class:"form-control"   %>
               <%= f.label :remember_me %>
             </span>
           </div>
@@ -44,8 +44,8 @@
       <% end -%>
   
       <div class="form-group ">
-        <div id="button" class="btn btn-primary btn-lg btn-block login-button">
-          <%= f.submit "Iniciar" %>
+        <div id="button" >
+          <%= f.submit "Iniciar", class:"btn btn-primary btn-lg btn-block login-button" %>
         </div>
       </div>
       

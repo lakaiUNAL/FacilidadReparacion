@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   
   def after_sign_in_path_for(resource)
     if worker_signed_in?
-      about_path
+      worker_services_path
     elsif customer_signed_in?
       request_service_path
     end
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     if worker_signed_in?
       about_path
     elsif customer_signed_in?
-      about_path
+      update_profile_path
     end
   end
 end
