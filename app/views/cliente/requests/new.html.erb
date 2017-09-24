@@ -16,9 +16,8 @@
             
             <%# Esto deberia ser una seleccion de opciones %>
             <div class="field form-group">
-              <%= form.label :request_service_id, "Servicio" %>
-              <%= form.text_field :request_service_id , class: "form-control" %>
-              <%= form.select(:request_service_id) %>
+              <%= form.label :service_id, "Servicio" %>
+              <%= form.text_field :service_id, id: :request_service_id , class: "form-control" %>
             </div>
           
             <div class="field form-group">
