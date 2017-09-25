@@ -4,7 +4,8 @@ class Worker < ApplicationRecord
   # worker has many complete works (association)
   has_many :complete_works
   # worker has many complete skills (association)
-  #has_many :services, through: :skills
+  has_many :skills
+  has_many :services, through: :skills
   # worker has many complete schedules (association)
   has_many :schedules
   # worker has many complete payments (association)

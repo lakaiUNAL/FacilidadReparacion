@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#drop_table(Customer)
+#drop_table(Worker)
+#drop_table(Service)
+#drop_table(Request)
+#drop_table(Skill)
 
 puts 'Datos Propios'
 #Datos para nuestro acceso
