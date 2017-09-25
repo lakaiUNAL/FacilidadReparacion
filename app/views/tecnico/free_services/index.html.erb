@@ -26,10 +26,10 @@
             <% @requests.reverse_each do |request| %>
             <% request.reverse_each do |req| %>
               <tr>
-                <td><%= req.customer.name.inspect %></td>
-                <td><%= req.service.description.inspect %></td>
-                <td><%= req.article.inspect %></td>
-                <td><%= req.description.inspect %> </td>
+                <td><%= req.customer.name %></td>
+                <td><%= req.service.description%></td>
+                <td><%= req.article %></td>
+                <td><%= req.description %> </td>
                 
                 <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
                 <td><a src"#">Aceptar</a></td>
