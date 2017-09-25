@@ -2,6 +2,7 @@ class Tecnico::FreeServicesController < ApplicationController
   before_action :authenticate_worker!
 
   def index
+    @requests = current_worker.skills.collect(&:service).collect(&:request)
   end
 
   def show
