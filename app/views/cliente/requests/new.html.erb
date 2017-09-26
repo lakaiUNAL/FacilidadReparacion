@@ -6,9 +6,9 @@
       <div class="text-center"><h2>NUEVO SERVICIO</h2></div>
         <div class="">
         <div class="">
-          <div class="form">
+          <div>
             
-            <%= form_for @request, url: {action: 'create'}  do |form| %>
+            <%= form_for @request, url: {action: 'create'}, html: {class: "form" }  do |form| %>
         
               <div class="field form-group">
                 <%= form.label :article, "Electrodoméstico" %>

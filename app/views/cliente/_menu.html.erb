@@ -24,7 +24,7 @@
           <ul class="nav navbar-nav">
             <li class="text-center"><span class="glyphicon glyphicon-user"> <%= current_customer.user_name %></span></li>
             <li class="active"><%= link_to 'Nuevo servicio', new_cliente_request_path %></li>
-            <li class=""><%= link_to 'Mis servicios', "#" %></li>
+            <li class=""><%= link_to 'Mis servicios', cliente_requests_path %></li>
             <li class=""><%= link_to 'Mi perfil', edit_profile_path %></li>
             <li class=""><%= link_to 'Salir', destroy_customer_session_path, method: :delete %></li>
           </ul>
