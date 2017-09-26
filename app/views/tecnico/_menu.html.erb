@@ -13,8 +13,8 @@
         <div class="navbar-collapse collapse sidebar-navbar-collapse">
           <ul class="nav navbar-nav">
               <li class="active"><span class="glyphicon glyphicon-user"> <%= current_worker.user_name %></span></li>
-              <li><%= link_to 'Nuevo servicio', '#' %></li>
-              <li><%= link_to 'Mis servicios', '#' %></li>
+              <li><%= link_to 'Solicitudes', '#' %></li>
+              <li><%= link_to 'Mis servicios', worker_services_path %></li>
               <li><%= link_to 'Mi perfil', update_profile_path %></li>
               <li><%= link_to 'Salir', destroy_worker_session_path, method: :delete %></li>
           </ul>

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/editar_perfil' => 'cliente/requests#profile', as: 'edit_profile'
   get '/actualizar_perfil' => 'tecnico/profile#index', as: 'update_profile'
   get '/servicios_disponibles' => 'tecnico/free_services#index', as: 'worker_services'
+  # get '/mis_servicios' => 'cliente/request#index', as: 'my_services' 
   
   
   
