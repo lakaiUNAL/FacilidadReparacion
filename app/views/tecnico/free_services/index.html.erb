@@ -8,6 +8,9 @@
       <div class="text-center"><h2>Solicitudes</h2></div>
       
       <div class="table-responsive">
+        
+        <%= will_paginate @requests %>
+
         <table class="table table-bordered">
           <%# HEADER DE LA TABLA DE PETICIONES %>
           <thead>
@@ -22,11 +25,10 @@
           <%# CUERPO DE LA TABLA DE PETICIONES %>
           <tbody>
             
-            <% @requests.reverse_each do |request| %>
-            <% request.reverse_each do |req| %>
+            <% @requests.reverse_each do |req| %>
               <tr>
                 <td><%= req.customer.name %></td>
-                <td><%= req.service.description%></td>
+                <td><%= req.service.description %></td>
                 <td><%= req.article %></td>
                 <td><%= req.description %> </td>
                 
@@ -34,11 +36,11 @@
                 <td><a src"#">Aceptar</a></td>
                 <td><a src="#">Cancelar</a></td>
               </tr>
-              <% end %>
             <% end %>
 
           </tbody>
         </table>
+        <%= will_paginate @requests %>
       </div>
     </div>
   </div>

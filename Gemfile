@@ -19,6 +19,8 @@ gem 'ionicons-rails'
 gem 'jquery-rails'
 #Modernizr
 gem 'modernizr-rails'
+# Gema para paginar resultados 
+gem 'will_paginate'
 
 ########################### GEMAS POR DEFECTO DE RAILS
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
