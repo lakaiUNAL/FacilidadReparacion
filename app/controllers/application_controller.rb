@@ -24,4 +24,5 @@ class ApplicationController < ActionController::Base
       update_profile_path
     end
   end
+  
 end

@@ -9,21 +9,14 @@
       <!-- Pull Right -->
       <div class="pull-right">
         <ul class="login-info">
-          <li>
-            <select class="selectpicker">
-              <option>ENG</option>
-              <option>FR</option>
-              <option>AR</option>
-            </select>
-          </li>
           <% if  not (worker_signed_in? or customer_signed_in?) %>
-            <li> <%= link_to 'Iniciar Session', start_session_path %></li>
+            <li> <%= link_to 'Iniciar sesión', start_session_path %></li>
             <li> <%= link_to 'Registrarse', register_path %> </li>
           <% elsif worker_signed_in? %>
-            <li><span class="glyphicon glyphicon-user"> <%= current_worker.user_name%></span></li>
+            <li><span class="glyphicon glyphicon-user"></span><%= current_worker.user_name%></li>
             <li><%= link_to "Salir", destroy_worker_session_path, method: :delete %></li>
           <% elsif customer_signed_in? %>
-            <li><span class="glyphicon glyphicon-user"> <%= current_customer.user_name%></span></li>
+            <li><span class="glyphicon glyphicon-user"></span><%= current_customer.user_name%></li>
             <li><%= link_to "Salir", destroy_customer_session_path, method: :delete %></li>
           <% end -%>
         </ul>
