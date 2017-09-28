@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     if worker_signed_in?
       about_path
     elsif customer_signed_in?
-      update_profile_path
+      edit_worker_registration 
     end
   end
   
