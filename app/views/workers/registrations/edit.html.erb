@@ -1,14 +1,16 @@
 <!-- Content -->
 <div id="content" class="container-fluid"> 
   <div class="row">
+    
     <%= render 'tecnico/menu' %>
+
     <div class="col-lg-9">
 
       <div class="col-lg-offset-2 col-lg-8">
       
         <h3> ¿Necesitas modificar tus datos? Hazlo aquí.</h3>
 
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form " }) do |f| %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form", multipart: true }) do |f| %>
           
           <%= devise_error_messages! %>
 
@@ -18,7 +20,7 @@
               <%# HEAD DE ACORDEON DATOS PERSONALES %>
               <div class="panel-heading" role="tab" id="datos_personales">
                 <a role="button" data-toggle="collapse" data-parent="#accordion_editar" href="#collapse_personales" aria-expanded="true" aria-controls="collapse_personales">
-                  <h3>Datos Personales  </h3>
+                  <h3>Datos Personales </h3>
                 </a>
               </div>
               

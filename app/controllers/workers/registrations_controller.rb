@@ -18,9 +18,9 @@ class Workers::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  #def update
+  #  super
+  #end
 
   # DELETE /resource
   # def destroy
@@ -36,7 +36,12 @@ class Workers::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :user_name, :email, :birth_date, 
+                                                           :number_card, :address, :phone_number, :picture])
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -44,9 +49,9 @@ class Workers::RegistrationsController < Devise::RegistrationsController
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
-  def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:picture])
-  end
+  #def configure_account_update_params
+  #  devise_parameter_sanitizer.permit(:account_update, keys: [:picture] )
+  #end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)

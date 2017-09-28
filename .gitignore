@@ -20,4 +20,7 @@
 /node_modules
 /yarn-error.log
 
+# Ignorar los archivos adjuntos de paperclip
+/public/system
+
 .byebug_history
