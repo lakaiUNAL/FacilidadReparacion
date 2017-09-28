@@ -11,18 +11,19 @@
           <span class="visible-xs navbar-brand">Menú Usuario</span>
         </div>
         <div class="navbar-collapse collapse sidebar-navbar-collapse">
-          
+
+
+          <ul class="list-group">
+            <li class="text-center">          
           <% if current_worker.picture.present? %>
             <%= image_tag current_worker.picture.url(:medium), class: "img-responsive img-thumbnail", alt: current_worker.name %>
           <% else %>
             <%= image_tag 'defauls_user_img.png', class: "img-thumbnail", alt: current_worker.name %>
-          <% end %>
-
-          <ul class="list-group">
-            <li> <h4> <%= link_to 'Nuevo servicio',  worker_services_path, class: 'list-group-item', type: "button" %> </h4> </li>
-            <li> <h4> <%= link_to 'Mis servicios', '#', class: 'list-group-item', type: "button" %> </h4> </li>
-            <li> <h4> <%= link_to 'Mi perfil', update_profile_path , class: 'list-group-item', type: "button" %> </h4> </li>
-            <li> <h4> <%= link_to 'Salir', destroy_worker_session_path, method: :delete, class: 'list-group-item', type: "button" %> </h4> </li>
+          <% end %></li>
+            <li><%= link_to 'Nuevo servicio', tecnico_free_services_path, class: 'list-group-item', type: "button" %></li>
+            <li><%= link_to 'Mis servicios', tecnico_free_services_path, class: 'list-group-item', type: "button" %></li>
+            <li><%= link_to 'Mi perfil', update_profile_path , class: 'list-group-item', type: "button" %></li>
+            <li><%= link_to 'Salir', destroy_worker_session_path, method: :delete, class: 'list-group-item', type: "button" %></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
