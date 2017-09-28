@@ -21,6 +21,8 @@ gem 'jquery-rails'
 gem 'modernizr-rails'
 # Gema para paginar resultados 
 gem 'will_paginate'
+# Para archivos adjuntos y imágenes de usuarios
+gem 'paperclip'
 
 ########################### GEMAS POR DEFECTO DE RAILS
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

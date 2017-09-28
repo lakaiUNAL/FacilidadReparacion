@@ -25,8 +25,14 @@
               <%# CONTENIDO DEL ACORDEON DATOS PERSONALES %>
               <div id="collapse_personales" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="datos_personales">
                 <div class="panel-body">
+                  
                   <div class="form-group">
-                    <%= f.label :Nombre %>
+                    <%= f.label :worker_name %>
+                    <%= f.file_field :picture, class: "form-control" %>
+                  </div>
+                  
+                  <div class="form-group">
+                    <%= f.label 'Nombre' %>
                     <%= f.text_field :name, autofocus: true, class: "form-control" %>
                   </div>
 
