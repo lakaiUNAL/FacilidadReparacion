@@ -1,0 +1,2 @@
+module Tecnico::SuportsHelper
+end

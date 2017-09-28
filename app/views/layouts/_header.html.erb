@@ -40,7 +40,7 @@
             <% if customer_signed_in? %> 
             <%= link_to 'Servicios', request_service_path %></li>
             <% elsif worker_signed_in? %>
-            <%= link_to 'Servicios', '#' %></li>
+            <%= link_to 'Servicios', worker_services_path %></li>
             <% else %>
             <%= link_to 'Servicios', '#' %></li>
             <% end %>

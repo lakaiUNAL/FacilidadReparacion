@@ -19,7 +19,7 @@
           <% end %>
 
           <ul class="list-group">
-            <li> <h4> <%= link_to 'Nuevo servicio', '#', class: 'list-group-item', type: "button" %> </h4> </li>
+            <li> <h4> <%= link_to 'Nuevo servicio',  worker_services_path, class: 'list-group-item', type: "button" %> </h4> </li>
             <li> <h4> <%= link_to 'Mis servicios', '#', class: 'list-group-item', type: "button" %> </h4> </li>
             <li> <h4> <%= link_to 'Mi perfil', update_profile_path , class: 'list-group-item', type: "button" %> </h4> </li>
             <li> <h4> <%= link_to 'Salir', destroy_worker_session_path, method: :delete, class: 'list-group-item', type: "button" %> </h4> </li>
