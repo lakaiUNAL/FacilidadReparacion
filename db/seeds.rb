@@ -11,6 +11,8 @@
 #drop_table(Request)
 #drop_table(Skill)
 
+require 'faker' 
+
 puts 'Datos Propios'
 #Datos para nuestro acceso
 Customer.create(name: "Cliente Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho")
@@ -28,34 +30,38 @@ Service.create(description:"Mampostería")
 n_services = Service.count
 puts "Cantidad de servicios #{n_services}"
 
-#TÉCNICOS ALEATORIOS
+#TÉCNICOS CREADOS CON GEMA FAKER
 40.times do |i|
-    user = Worker.new
-    user.name = "User Worker #{i} "             
-    user.email = "worker_#{i}@prueba.co"
-    user.birth_date = (1-i).year.ago
-    user.number_card = nil
-    user.address = nil
-    user.phone_number = nil
-    user.user_name = "worker_#{i}"
-    user.password = "1234567890"
-    user.save
+    Worker.create(
+        name: Faker::Name.name_with_middle,
+        email: Faker::Internet.email,
+        birth_date: Faker::Date.backward(23_75),
+        #el numero de tarjeta estaba como Faker::Bank.iban pero me generaba error :/
+        number_card: nil,
+        address: Faker::Address.street_address,
+        phone_number: Faker::PhoneNumber.cell_phone,
+        user_name: Faker::Internet.user_name,
+        #Comentado para poder probar el login de los usuarios
+        #password: Faker::Internet.password(8))
+        password: "david_testeando")
 end
 n_workers = Worker.count
 puts "Cantidad de técnicos #{n_workers}"
 
-# CLIENTES ALEATORIOS
+# CLIENTES CREADOS CON GEMA FAKER
 40.times do |i|
-    user = Customer.new
-    user.name = "User Customer #{i}"             
-    user.email = "customer_#{i}@prueba.co"
-    user.birth_date = (1-i).year.ago
-    user.number_card = nil
-    user.address = nil
-    user.phone_number = nil
-    user.user_name = "customer_#{i}"
-    user.password = "1234567890"
-    user.save
+    Customer.create(
+        name: Faker::Name.name_with_middle,
+        email: Faker::Internet.email,
+        birth_date: Faker::Date.backward(23_75),
+        #el numero de tarjeta estaba como Faker::Bank.iban pero me generaba error :/
+        number_card: nil,
+        address: Faker::Address.street_address,
+        phone_number: Faker::PhoneNumber.cell_phone,
+        user_name: Faker::Internet.user_name,
+        #Comentado para poder probar el login de los usuarios
+        #password: Faker::Internet.password(8))
+        password: "david_testeando")
 end
 n_customers = Customer.count
 puts "Cantidad de clientes #{n_customers}"
