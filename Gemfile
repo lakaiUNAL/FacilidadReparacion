@@ -26,6 +26,10 @@ gem 'paperclip'
 
 gem 'faker', require: false
 
+gem 'devise-i18n'
+
+gem 'faker', require:false
+
 ########################### GEMAS POR DEFECTO DE RAILS
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
