@@ -56,7 +56,7 @@ Rails.application.configure do
 
  config.action_mailer.delivery_method = :smtp
  # Usar para C9
- config.action_mailer.default_url_options = { :host => "https://to-do-app-diegocruz10.c9users.io" }
+ config.action_mailer.default_url_options = { :host => "http://facilidadenservicios.co:3000" }
  # Usar localmente
  # config.action_mailer.default_url_options = { :host => "localhost: 3000" }
  config.action_mailer.smtp_settings = {
