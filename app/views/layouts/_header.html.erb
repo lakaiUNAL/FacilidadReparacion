@@ -4,23 +4,30 @@
     <div class="container"> 
       
       <!-- Social Icons -->
-      <div class="social"> <a href="#."><i class="fa fa-facebook"></i></a> <a href="#."><i class="fa fa-twitter"></i></a> <a href="#."><i class="fa fa-instagram"></i></a> </div>
+      <div class="social"> 
+        <a href="#."><i class="fa fa-facebook"></i></a> <a href="#."><i class="fa fa-twitter"></i></a> <a href="#."><i class="fa fa-instagram"></i></a>
+      </div>
       
       <!-- Pull Right -->
       <div class="pull-right">
         <ul class="login-info">
+
+          <%# TODO: Verificar esto %>
           <% if  not (worker_signed_in? or customer_signed_in?) %>
             <li> <%= link_to 'Iniciar sesión', start_session_path %></li>
             <li> <%= link_to 'Registrarse', register_path %> </li>
           <% elsif worker_signed_in? %>
-            <li><span class="glyphicon glyphicon-user"></span><%= current_worker.user_name%></li>
+            <li><span class="glyphicon glyphicon-user"></span><%= current_worker.user_name %></li>
             <li><%= link_to "Salir", destroy_worker_session_path, method: :delete %></li>
           <% elsif customer_signed_in? %>
-            <li><span class="glyphicon glyphicon-user"></span><%= current_customer.user_name%></li>
+            <li><span class="glyphicon glyphicon-user"></span><%= current_customer.user_name %></li>
             <li><%= link_to "Salir", destroy_customer_session_path, method: :delete %></li>
           <% end -%>
+          <%# --------------------- %>
+
         </ul>
       </div>
+
     </div>
   </div>
   
@@ -36,15 +43,7 @@
           <!-- NAV -->
           <ul class="nav ownmenu">
             <li><%= link_to "Inicio", root_path  %></li>
-            <li>
-            <% if customer_signed_in? %> 
-            <%= link_to 'Servicios', request_service_path %></li>
-            <% elsif worker_signed_in? %>
-            <%= link_to 'Servicios', worker_services_path %></li>
-            <% else %>
-            <%= link_to 'Servicios', '#' %></li>
-            <% end %>
-            </li>
+            <li><%= link_to 'Servicios', get_services_page %></li><%# HELPER %>
             <li><%= link_to 'Nosotros', about_path %></li>
             <li><%= link_to 'Contacto', contact_path %></li>
             <li><%= link_to 'Blog', blog_path %></li>

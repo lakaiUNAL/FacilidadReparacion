@@ -15,8 +15,8 @@ require 'faker'
 
 puts 'Datos Propios'
 #Datos para nuestro acceso
-Customer.create(name: "Cliente Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho")
-Worker.create(name: "Técnico Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho")
+Customer.create(name: "Cliente Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho", confirmed_at: Time.now)
+Worker.create(name: "Técnico Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho", confirmed_at: Time.now)
 
 puts 'Datos de Servicios'
 # SERVICIOS PRESTADOS
@@ -43,7 +43,9 @@ puts "Cantidad de servicios #{n_services}"
         user_name: Faker::Internet.user_name,
         #Comentado para poder probar el login de los usuarios
         #password: Faker::Internet.password(8))
-        password: "david_testeando")
+        password: "david_testeando",
+        confirmed_at: Time.now
+    )
 end
 n_workers = Worker.count
 puts "Cantidad de técnicos #{n_workers}"
@@ -61,7 +63,9 @@ puts "Cantidad de técnicos #{n_workers}"
         user_name: Faker::Internet.user_name,
         #Comentado para poder probar el login de los usuarios
         #password: Faker::Internet.password(8))
-        password: "david_testeando")
+        password: "david_testeando",
+        confirmed_at: Time.now
+    )
 end
 n_customers = Customer.count
 puts "Cantidad de clientes #{n_customers}"

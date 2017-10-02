@@ -13,5 +13,8 @@ class StaticPagesController < ApplicationController
 
   def register
   end
+
+  def owr_services
+  end
   
 end

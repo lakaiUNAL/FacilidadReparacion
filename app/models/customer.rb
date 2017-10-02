@@ -16,7 +16,9 @@ class Customer < ApplicationRecord
   # Password no null
   validates :encrypted_password , presence: true
   # Validate associate
-  #validates_associated :requests
+
+  has_attached_file :picture,  styles: { medium: "400x400>", thumb: "100x100>" }, default_url: "/defauls_user_img.png"
+  validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, 

@@ -9,19 +9,19 @@ class ApplicationController < ActionController::Base
                                                            :number_card, :address, :phone_number, :picture])
   end
   
-  def after_sign_in_path_for(resource)
-    if worker_signed_in?
-      worker_services_path
-    elsif customer_signed_in?
-      request_service_path
-    end
-  end
+  #def after_sign_in_path_for(resource)
+  #  if worker_signed_in?
+  #    worker_services_path
+  #  elsif customer_signed_in?
+  #    request_service_path
+  #  end
+  #end
   
   def after_sign_up_path_for(resource)
     if worker_signed_in?
       about_path
     elsif customer_signed_in?
-      edit_worker_registration 
+      edit_worker_registration
     end
   end
   
