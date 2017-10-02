@@ -9,7 +9,7 @@ class Cliente::MyServisesController < ApplicationController
 
   def show
   	@content_request = set_request
-    @mess =  @content_request.content
+    @mess = @content_request.content
   end
 
   def edit

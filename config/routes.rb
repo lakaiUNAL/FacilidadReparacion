@@ -15,9 +15,7 @@ Rails.application.routes.draw do
   #get '/editar_perfil' => 'cliente/requests#profile', as: 'edit_profile'
   #get '/actualizar_perfil' => 'tecnico/profile#index', as: 'update_profile'
   #get '/servicios_disponibles' => 'tecnico/free_services#index', as: 'worker_services'
-  # get '/mis_servicios' => 'cliente/request#index', as: 'my_services' 
-  
-  
+  #get '/mis_servicios' => 'cliente/request#index', as: 'my_services' 
   
   # Aquí deberían ir tadas las peticiones y actividades que realiza un cliente
   get '/cliente' => 'cliente/my_servises#index'

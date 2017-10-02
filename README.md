@@ -22,7 +22,9 @@ Things you may want to cover:
 
 ## Configuration
 
-
+* Primero, ejecute los comandos correspondientes a las migraciones (migrate, seed)
+* Configure las variables de entorno
+	* __URL_LOCAL_PAGE :__ Configurar el prefijo de la página, ej. *www.ejemplo.co*
 
 ## Database creation
 

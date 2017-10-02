@@ -11,4 +11,16 @@ module DeviseHelper
 
     html.html_safe
   end
+
+  # Unificar las queries de Workers y Customers
+  def current_user
+    if customer_signed_in?
+      current_customer
+    elsif worker_signed_in?
+      current_worker
+    else
+      nil
+    end
+  end
+
 end
