@@ -1,4 +1,38 @@
+<!-- Content -->
+<div id="content" class="container-fluid"> 
+  <div class="row">
+    <%= render 'tecnico/menu' %>
+    <div class="col-lg-9">
 
-<%= render 'tecnico/menu' %>
-<h1>MyServices#index</h1>
-<p>Find me in app/views/my_services/index.html.erb</p>
+      <div class="text-center"><h2>Servicios que presto</h2></div>
+      
+      <div class="table-responsive">
+        
+        <%= will_paginate @services %>
+
+        <table class="table table-bordered">
+          <%# HEADER DE LA TABLA DE PETICIONES %>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Descripcion</th>
+            </tr>
+          </thead>
+          
+          <%# CUERPO DE LA TABLA DE PETICIONES %>
+          <tbody>
+            
+            <% @services.each do |servicio| %>
+              <tr>
+                <td><%= servicio.id %></td>
+                <td><%= servicio.description %></td>
+              </tr>
+            <% end %>
+
+          </tbody>
+        </table>
+        <%= will_paginate @services %>
+      </div>
+    </div>
+  </div>
+</div>
