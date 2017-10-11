@@ -118,6 +118,10 @@ ActiveRecord::Schema.define(version: 20170928145304) do
     t.text "documento_pdf"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "document_file_name"
+    t.string "document_content_type"
+    t.integer "document_file_size"
+    t.datetime "document_updated_at"
     t.index ["worker_id"], name: "index_supports_on_worker_id"
   end
 

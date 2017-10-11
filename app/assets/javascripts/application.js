@@ -20,3 +20,10 @@
 //
 //= require_self
 //= require_tree .
+
+// Modals para todas las paginas
+$(function (){
+	$('#notifications').modal({
+		show: true
+	});
+})

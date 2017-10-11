@@ -1,8 +1,8 @@
 class AddFilesToSupports < ActiveRecord::Migration[5.1]
   def up
-    add_attachment :supports, :file
+    add_attachment :supports, :document
   end
-  def up
-    remove_attachment :supports, :file
+  def down
+    remove_attachment :supports, :document
   end
 end

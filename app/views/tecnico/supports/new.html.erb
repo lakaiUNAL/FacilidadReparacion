@@ -1,0 +1,18 @@
+<div class="conteiner-fluid">
+
+<%= render 'tecnico/menu' %>
+
+<div class="col-lg-7 col-lgoffset-1">
+	<h3>Subir Soportes</h3>
+	<p>Sube tus soportes con un nombre adecuado. Recuerda que esto lo veran las personas que te contrtaran, así que causa una buena impresión</p>
+
+	<%= form_for @support, url: tecnico_supports_path , html: { multipart: true } do |f| %>
+		<div class="form-group">
+	  		<%= f.file_field :document %>
+		</div>
+	  	
+	  	<%= f.submit "Subir", class: 'btn btn-primary' %>
+
+	<% end %>
+</div>
+

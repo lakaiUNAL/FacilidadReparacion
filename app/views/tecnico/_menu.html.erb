@@ -11,16 +11,14 @@
           <span class="visible-xs navbar-brand">Menú Usuario</span>
         </div>
         <div class="navbar-collapse collapse sidebar-navbar-collapse">
-
-
           <ul class="list-group">
             <li class="text-center">
               <%= image_tag current_user.picture.url(:medium), class: "img-responsive img-thumbnail", alt: current_user.name%>
             </li>
-            <li><%= link_to 'Nuevo servicio', tecnico_free_services_path, class: 'list-group-item', type: "button" %></li>
-            <li><%= link_to 'Mis servicios', tecnico_free_services_path, class: 'list-group-item', type: "button" %></li>
-            <li><%= link_to 'Mi perfil',  tecnico_profile_index_path, class: 'list-group-item', type: "button" %></li>
-            <li><%= link_to 'Salir', destroy_worker_session_path, method: :delete, class: 'list-group-item', type: "button" %></li>
+            <li class= "list-group-item" ><%= link_to 'Nuevo servicio', tecnico_free_services_path %></li>
+            <li class= "list-group-item" ><%= link_to 'Mis servicios', tecnico_my_services_path %></li>
+            <li class= "list-group-item" ><%= link_to 'Mi perfil',  tecnico_profile_index_path %></li>
+            <li class= "list-group-item" ><%= link_to 'Salir', destroy_worker_session_path, method: :delete %></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

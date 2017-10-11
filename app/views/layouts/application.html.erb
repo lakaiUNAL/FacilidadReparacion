@@ -21,16 +21,13 @@
   </head>
 
   <body>
-    
-    <!--Controlador: <%= params[:controller] %>-->
-    
-    <!-- Wrap -->
+    <% if !get_notifications.nil? %>
+        <%= render 'layouts/notifications' %>
+    <% end %>
+
     <%= render 'layouts/header' %>
-    <!-- Services -->
-    
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
+        
+    <!-- Services -->    
     <%= yield %>
     
     <%= render 'layouts/footer' %>

@@ -28,9 +28,9 @@ Rails.application.routes.draw do
   # Aquí deberían ir tadas las peticiones y actividades que realiza un técnico
   get '/tecnico' => 'tecnico/my_services#index'
   namespace :tecnico do
-    resources :free_services
-    resources :my_services
-    resources :profile
+    resources :free_services, :profile
+    resources :my_services, except: [:show, :edit, :update]
+    resources :supports, except: :index
   end
 
   # Aquí todas la peticiones de inicio de sesión

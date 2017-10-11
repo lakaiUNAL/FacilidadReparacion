@@ -1,3 +1,22 @@
-<%= render 'tecnico/menu' %>
-<h1>MyServices#new</h1>
-<p>Find me in app/views/my_services/new.html.erb</p>
+<div class="conteiner-fluid">
+	<%= render 'tecnico/menu' %>
+
+	<div class="col-lg-7 col-lg-offset-1">
+		<%# Servicios existentes %>
+		<%= form_for :new_service, url: tecnico_my_services_path do |f| %>
+			<div class="form-group">
+				<p>Tus conocimientos nos mantienen funcionando y ayudar a los demás a resolver sus problemas. Despues de agregar tus nuevos conociemientos no olvides soportarlos.</p>
+            	<%= f.label :service_id, "Selecciona un servicio de la lista" %>
+            	<%= f.select :service_id, options_from_collection_for_select(Service.all, :id, :description), {}, {class: "form-control"} %>
+          	</div>
+
+          	<%= f.submit "Enviar", :disable_with => 'Enviando...', class: 'btn btn-primary' %>
+			<button id="crear-servicio" class="btn btn-default disabled" disabled>Mi servicio no esa en la lista</button>
+
+		<% end %>
+
+	</div>
+
+</div>
+
+
