@@ -1,3 +1,42 @@
-<%= render 'tecnico/menu' %>
-<h1>FreeServices#show</h1>
-<p>Find me in app/views/free_services/show.html.erb</p>
+<div id="content" class="container-fluid"> 
+  <div class="row">
+    <%= render 'tecnico/menu' %>
+    <div class="col-lg-9">
+      <p id="notice"><%= notice %></p>
+
+      <div class="text-center"><h2>Solicitudes</h2></div>
+      
+      <div class="table-responsive">
+        
+
+        <table class="table table-bordered">
+          <%# HEADER DE LA TABLA DE PETICIONES %>
+          <thead>
+            <tr>
+              <th>Nombre del cliente</th>
+              <th>Categoría del servicio</th>
+              <th>Artículo</th>
+              <th>Descripcion del articulo</th>
+              <th>Direccion del servicio</th>
+              <th>Teléfono de contacto</th>
+              <th>Correo de contacto</th>
+              <th>Fecha de creación</th>
+            </tr>
+          </thead>
+          
+          <%# CUERPO DE LA TABLA DE PETICIONES %>
+          <tbody>
+          <td><%=@peticion.customer.name %></td>
+          <td><%=@peticion.service.description %></td>
+          <td><%=@peticion.article %></td>
+          <td><%=@peticion.description %></td>
+          <td><%=@peticion.customer.address %></td>
+          <td><%=@peticion.customer.phone_number %></td>
+          <td><%=@peticion.customer.email %></td>
+          <td><%=@peticion.created_at %></td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

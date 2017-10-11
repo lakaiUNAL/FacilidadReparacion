@@ -8,6 +8,7 @@ class Tecnico::FreeServicesController < ApplicationController
   end
 
   def show
+    @peticion = Request.find(params[:id])
   end
 
   def new
