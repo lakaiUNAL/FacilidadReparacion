@@ -23,6 +23,8 @@ gem 'modernizr-rails'
 gem 'will_paginate'
 # Para archivos adjuntos y imágenes de usuarios
 gem 'paperclip'
+# Para fuentes de Google
+gem 'google-webfonts', '~> 0.2.0'
 
 gem 'faker', require: false
 
