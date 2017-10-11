@@ -38,7 +38,8 @@ puts "Cantidad de servicios #{n_services}"
         birth_date: Faker::Date.backward(23_75),
         #el numero de tarjeta estaba como Faker::Bank.iban pero me generaba error :/
         number_card: nil,
-        address: Faker::Address.street_address,
+        #address: Faker::Address.street_address,
+        address: "La Aldea De Los Gerreros, Cl. 25d #37-2, Bogotá",
         phone_number: Faker::PhoneNumber.cell_phone,
         user_name: Faker::Internet.user_name,
         #Comentado para poder probar el login de los usuarios
@@ -58,7 +59,8 @@ puts "Cantidad de técnicos #{n_workers}"
         birth_date: Faker::Date.backward(23_75),
         #el numero de tarjeta estaba como Faker::Bank.iban pero me generaba error :/
         number_card: nil,
-        address: Faker::Address.street_address,
+        #address: Faker::Address.street_address,
+        address: "La Aldea De Los Gerreros, Cl. 25d #37-2, Bogotá",
         phone_number: Faker::PhoneNumber.cell_phone,
         user_name: Faker::Internet.user_name,
         #Comentado para poder probar el login de los usuarios
