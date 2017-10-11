@@ -30,6 +30,8 @@ gem 'faker', require: false
 
 gem 'devise-i18n'
 
+gem 'geocoder'
+
 gem 'faker', require:false
 #gema para datatable
 gem 'jquery-datatables-rails', '~> 3.4.0'

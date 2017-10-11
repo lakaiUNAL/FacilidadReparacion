@@ -85,6 +85,7 @@ GEM
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
+    geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     google-webfonts (0.2.0)
@@ -234,6 +235,7 @@ DEPENDENCIES
   devise-i18n
   faker
   font-awesome-rails
+  geocoder
   google-webfonts (~> 0.2.0)
   ionicons-rails
   jbuilder (~> 2.5)
