@@ -8,8 +8,19 @@
 + La implementación de las vistas debe seguir buenas prácticas de desarrollo en rails.
 + Revisaremos más a fondo la organización del repositorio. 
 
+Login con Facebook
+Subir Archivos pdf
+Subir Imagen de perfil
+Estilos CSS
+Gema Google maps
+Mensajes emergentes para notificaciones
+Funcionalidades para técnicos
 
 +Una lista de los posibles features para desarrollar en el siguiente sprint.
+Gema jquery-ui
+
+
+
 
 +*URL de su aplicación SIN ERRORES en Heroku.* Equipo que no lo tenga sera como si no hubiese desplegado.
 
