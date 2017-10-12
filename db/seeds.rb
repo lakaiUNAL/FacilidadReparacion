@@ -18,6 +18,9 @@ puts 'Datos Propios'
 Customer.create(name: "Cliente Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho", confirmed_at: Time.now)
 Worker.create(name: "Técnico Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho", confirmed_at: Time.now)
 
+Customer.create(name: "David Felipe R", email: "dafrodriguezro@test.com", user_name: "dafrodriguezro", password: "popo056", confirmed_at: Time.now)
+Worker.create(name: "David Felipe R", email: "dafrodriguezro@test.com", user_name: "dafrodriguezro", password: "popo056", confirmed_at: Time.now)
+
 puts 'Datos de Servicios'
 # SERVICIOS PRESTADOS
 Service.create(description:"Mantenimiento de Celulares")
@@ -38,7 +41,8 @@ puts "Cantidad de servicios #{n_services}"
         birth_date: Faker::Date.backward(23_75),
         #el numero de tarjeta estaba como Faker::Bank.iban pero me generaba error :/
         number_card: nil,
-        address: Faker::Address.street_address,
+        #address: Faker::Address.street_address,
+        address: " Cl. 50 #20-26, Bogotá, Cundinamarca, Colombia",
         phone_number: Faker::PhoneNumber.cell_phone,
         user_name: Faker::Internet.user_name,
         #Comentado para poder probar el login de los usuarios
@@ -58,7 +62,8 @@ puts "Cantidad de técnicos #{n_workers}"
         birth_date: Faker::Date.backward(23_75),
         #el numero de tarjeta estaba como Faker::Bank.iban pero me generaba error :/
         number_card: nil,
-        address: Faker::Address.street_address,
+        #address: Faker::Address.street_address,
+        address: "La Aldea De Los Gerreros, Cl. 25d #37-2, Bogotá",
         phone_number: Faker::PhoneNumber.cell_phone,
         user_name: Faker::Internet.user_name,
         #Comentado para poder probar el login de los usuarios

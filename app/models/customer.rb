@@ -1,7 +1,6 @@
 class Customer < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  
   has_many :request
   has_many :payment
   has_many :comment
@@ -16,6 +15,10 @@ class Customer < ApplicationRecord
   # Password no null
   validates :encrypted_password , presence: true
   # Validate associate
+  
+  #Para la integracion de google maps 
+  geocoded_by :address      #Puede ser una direccion ip tambien (ojo con esto)
+  after_validation :geocode 
 
   has_attached_file :picture,  styles: { medium: "400x400>", thumb: "100x100>" }, default_url: "/defauls_user_img.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/

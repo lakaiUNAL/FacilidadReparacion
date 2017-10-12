@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928145304) do
+ActiveRecord::Schema.define(version: 20171011204038) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "customer_id"
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 20170928145304) do
     t.string "picture_content_type"
     t.integer "picture_file_size"
     t.datetime "picture_updated_at"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
@@ -159,6 +161,8 @@ ActiveRecord::Schema.define(version: 20170928145304) do
     t.string "picture_content_type"
     t.integer "picture_file_size"
     t.datetime "picture_updated_at"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_workers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_workers_on_reset_password_token", unique: true
   end

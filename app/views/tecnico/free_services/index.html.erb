@@ -33,8 +33,8 @@
                 <td><%= req.description %> </td>
                 
                 <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
-                <td><a src"#">Aceptar</a></td>
-                <td><a src="#">Cancelar</a></td>
+                <td><%= link_to "Detalles", tecnico_free_service_path(req) %></td>
+                
               </tr>
             <% end %>
 
