@@ -18,6 +18,9 @@ puts 'Datos Propios'
 Customer.create(name: "Cliente Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho", confirmed_at: Time.now)
 Worker.create(name: "Técnico Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho", confirmed_at: Time.now)
 
+Customer.create(name: "David Felipe R", email: "dafrodriguezro@test.com", user_name: "dafrodriguezro", password: "popo056", confirmed_at: Time.now)
+Worker.create(name: "David Felipe R", email: "dafrodriguezro@test.com", user_name: "dafrodriguezro", password: "popo056", confirmed_at: Time.now)
+
 puts 'Datos de Servicios'
 # SERVICIOS PRESTADOS
 Service.create(description:"Mantenimiento de Celulares")
