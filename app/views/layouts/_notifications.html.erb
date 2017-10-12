@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="notifications" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="notifications" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: block">
   <div class="modal-dialog" role="document">
     
     <div class="modal-content">
@@ -9,11 +9,11 @@
       </div>
       
       <div class="modal-body">
-        <ul>
-          <% get_notifications.each do |msg| %>
-            <li><%= msg  %></li>
-          <% end %>
-        </ul>
+        <% get_notifications.each do |key, msg| %>
+          <div class="alert alert-<%= key %>" role="alert">
+            <%= msg %>
+          </div>
+        <% end %>
       </div>
     </div>
 

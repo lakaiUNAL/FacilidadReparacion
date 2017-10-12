@@ -22,8 +22,10 @@
 //= require_tree .
 
 // Modals para todas las paginas
-$(function (){
+
+$(document).ready(function (){
 	$('#notifications').modal({
 		show: true
 	});
+	$('#notifications').fadeIn(400);
 })
