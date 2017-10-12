@@ -4,7 +4,7 @@
     <div class="col-lg-9">
       <p id="notice"><%= notice %></p>
 
-      <div class="text-center"><h2>Solicitudes</h2></div>
+      <div class="text-center"><h2>Detalles de la Solicitud</h2></div>
       
       <div class="table-responsive">
         
@@ -35,8 +35,12 @@
           <td><%=@peticion.customer.email %></td>
           <td><%=@peticion.created_at %></td>
           </tbody>
+      
         </table>
       </div>
     </div>
+  </div>
+  <div id="map">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDc5J3WwsVQUOgYTMvLcnQmL-0wvdgaHss" async defer></script>
   </div>
 </div>

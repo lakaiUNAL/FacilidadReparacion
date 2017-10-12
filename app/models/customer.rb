@@ -16,8 +16,9 @@ class Customer < ApplicationRecord
   validates :encrypted_password , presence: true
   # Validate associate
   
-  geocoded_by :address  # can also be an IP address
-  after_validation :geocode          # auto-fetch coordinates
+  #Para la integracion de google maps 
+  geocoded_by :address      #Puede ser una direccion ip tambien (ojo con esto)
+  after_validation :geocode 
 
   has_attached_file :picture,  styles: { medium: "400x400>", thumb: "100x100>" }, default_url: "/defauls_user_img.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/

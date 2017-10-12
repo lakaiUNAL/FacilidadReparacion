@@ -42,7 +42,7 @@ puts "Cantidad de servicios #{n_services}"
         #el numero de tarjeta estaba como Faker::Bank.iban pero me generaba error :/
         number_card: nil,
         #address: Faker::Address.street_address,
-        address: "La Aldea De Los Gerreros, Cl. 25d #37-2, Bogotá",
+        address: " Cl. 50 #20-26, Bogotá, Cundinamarca, Colombia",
         phone_number: Faker::PhoneNumber.cell_phone,
         user_name: Faker::Internet.user_name,
         #Comentado para poder probar el login de los usuarios
