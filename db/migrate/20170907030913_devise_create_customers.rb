@@ -38,6 +38,11 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.1]
       t.datetime :locked_at
 
 
+      #Omniauthable
+      t.string :provider
+      t.string :uid
+      #t.string :facebook_id
+
       t.timestamps null: false
     end
 

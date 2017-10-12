@@ -22,5 +22,28 @@ class Customer < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, 
-         :confirmable
-end
+         :confirmable 
+
+  devise :omniauthable, :omniauth_providers => [:facebook]       
+
+
+  #def self.new_with_session(params, session)
+  #  super.tap do |customer|
+  #    if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+  #      customer.email = data["email"] if customer.email.blank?
+  #    end
+  #  end
+  #end
+
+  ##def self.from_omniauth(auth)
+  def self.from_facebook(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |customer|
+    #where(facebook_id: auth.uid).first_or_create do |customer|
+      customer.email = auth.info.email
+      customer.user_name = auth.info.name
+      customer.password = Devise.friendly_token[0,20]
+      customer.skip_confirmation! 
+      # customer.name = auth.info.name   # assuming the user model has a name
+    end
+  end         
+end  

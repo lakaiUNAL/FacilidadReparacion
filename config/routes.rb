@@ -35,6 +35,5 @@ Rails.application.routes.draw do
 
   # Aquí todas la peticiones de inicio de sesión
   devise_for :workers, controllers:{registrations: 'workers/registrations', sessions: 'workers/sessions'} 
-  devise_for :customers, controllers:{registrations: 'customers/registrations', sessions: 'customers/sessions'}
-  
+  devise_for :customers, controllers:{registrations: 'customers/registrations', sessions: 'customers/sessions', :omniauth_callbacks => "customers/omniauth_callbacks" }  
 end
