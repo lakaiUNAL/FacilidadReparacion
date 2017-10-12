@@ -38,9 +38,37 @@
       
         </table>
       </div>
+      
+      <div class="text-center"><h2>Detalles de Ubicación</h2></div>
+      
+      <div style='width: 100%;'>
+        <div id="map" style='width: 100%; height: 300px;'>
+        <script>
+          var handler = Gmaps.build('Google');
+          handler.buildMap({ provider: {
+            zoomControl: true,
+            zoom: 15,}, internal: {id: 'map'}}, function(){
+            var markers = handler.addMarkers([
+            {
+              "lat": <%= @lat %>,
+              "lng": <%= @lng %>,
+              "picture": {
+                "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+                "width":  32,
+                "height": 32
+              },
+              "infowindow": "Ruta"
+            }
+          ]);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          });
+        </script>
+        </div>
+      </div>
+    
+    
     </div>
   </div>
-  <div id="map">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDc5J3WwsVQUOgYTMvLcnQmL-0wvdgaHss" async defer></script>
-  </div>
+
 </div>

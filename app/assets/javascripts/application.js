@@ -18,5 +18,9 @@
 //
 //= require owl.carousel
 //
+//= require underscore
+//= require gmaps/google
+//
 //= require_self
 //= require_tree .
+

@@ -9,6 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <%# CDNS %>
+    <%= render 'layouts/cdns' %>
+    
     <%# JAVASCRIPT %>
     <%= javascript_include_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -16,7 +19,8 @@
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
     <%# SOPORTE PARA NAVEGADORES ANTIGUOS %>
-    <%= render 'layouts/shim' %>
+    <%= render 'layouts/shim' %>    
+    
     
     <%# Online Fonts %>
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Dosis|Libre+Baskerville|Open+Sans' %>
