@@ -13,7 +13,7 @@
       <div class="navbar-collapse collapse sidebar-navbar-collapse">
         <ul class="nav navbar-nav">
           <li class="text-center">
-            <%= image_tag current_user.picture.url(:medium), class: "img-responsive img-thumbnail", alt: current_user.name%>
+            <%= image_tag current_user.picture.url(:medium), class: "img-responsive img-icon img-circle", alt: current_user.name%>
           </li>
           <li class="active"><%= link_to 'Nuevo servicio', new_cliente_request_path %></li>
           <li class=""><%= link_to 'Mis servicios', cliente_requests_path %></li>

@@ -15,7 +15,7 @@
 
           <ul class="list-group">
             <li class="text-center">
-              <%= image_tag current_user.picture.url(:medium), class: "img-responsive img-thumbnail", alt: current_user.name%>
+              <%= image_tag current_user.picture.url(:medium), class: "img-responsive img-icon img-circle", alt: current_user.name%>
             </li>
             <li><%= link_to 'Nuevo servicio', tecnico_free_services_path, class: 'list-group-item', type: "button" %></li>
             <li><%= link_to 'Mis servicios', tecnico_free_services_path, class: 'list-group-item', type: "button" %></li>

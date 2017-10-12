@@ -39,9 +39,10 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     
+    <div style="min-height:100%;">
     <%= yield %>
-    
-    <%# render 'layouts/footer' %>
+    </div>
+    <%= render 'layouts/footer' %>
 
   </body>
 
