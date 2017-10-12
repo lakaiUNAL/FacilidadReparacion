@@ -3,36 +3,82 @@
   <div class="row">
     <%= render 'tecnico/menu' %>
     <div class="col-lg-9">
-
-      <div class="text-center"><h2>Servicios que presto</h2></div>
-      
-      <div class="table-responsive">
         
-        <%= will_paginate @services %>
+      <%# SERVICIOS QUE PRESTA EL TECNICO %>
+      <div class="row"> 
 
-        <table class="table table-bordered">
-          <%# HEADER DE LA TABLA DE PETICIONES %>
-          <thead>
-            <tr>
-              <th>Código</th>
-              <th>Descripcion</th>
-            </tr>
-          </thead>
+        <div class="col-lg-10 col-lg-offset-1">
+
+          <h3>Mis habilidades</h3>
           
-          <%# CUERPO DE LA TABLA DE PETICIONES %>
-          <tbody>
-            
-            <% @services.each do |servicio| %>
-              <tr>
-                <td><%= servicio.id %></td>
-                <td><%= servicio.description %></td>
-              </tr>
-            <% end %>
+          Deseas agregar una <%= link_to "nueva habilidad", action: :new %> ?
+          
+          <%= will_paginate @services %>
+          
+          
 
-          </tbody>
-        </table>
-        <%= will_paginate @services %>
-      </div>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Cod</th>
+                <th>Descripción</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              
+              <% @services.each do |servicio| %>
+                <tr>
+                  <td><%= servicio.id %></td>
+                  <td><%= servicio.description %></td>
+                  <td>
+                    <%= link_to "Remover", tecnico_my_service_path(servicio), method: :delete, class: 'btn btn-danger btn-xs '%>
+                  </td>
+                </tr>
+              <% end %>
+
+            </tbody>
+          </table>
+
+          <%= will_paginate @services %>
+
+        </div>
+      </div> 
+      
+      <%# SOPPORTES DEL TÉCNICO %>
+      <div class="row"> 
+
+        <div class="col-lg-10 col-lg-offset-1">
+
+          <h3>Soportes</h3>
+          
+          Deseas agregar un soporte <%= link_to "más", action: :new, controller: :supports %> ?
+          
+          <%= will_paginate @soportes %>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Descripción</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              
+              <% @soportes.each do |soporte| %>
+                <tr>
+                  <td><%= link_to soporte.document_file_name, soporte.document.url %></td>
+                  <td><%= link_to "Remover", tecnico_support_path(soporte), popup: true, method: :delete, class: 'btn btn-danger btn-xs '%></td>
+                </tr>
+              <% end %>
+
+            </tbody>
+          </table>
+
+          <%= will_paginate @services %>
+
+        </div>
+      </div> 
     </div>
   </div>
 </div>

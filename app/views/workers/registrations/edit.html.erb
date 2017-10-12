@@ -11,8 +11,6 @@
         <h3> ¿Necesitas modificar tus datos? Hazlo aquí.</h3>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form", multipart: true }) do |f| %>
-          
-          <%= devise_error_messages! %>
 
           <div class="panel-group" id="accordion_editar" role="tablist" aria-multiselectable="true" >
             <%# ---------------DATOS PERSONALES ----------------%>
