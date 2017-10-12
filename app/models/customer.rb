@@ -40,9 +40,10 @@ class Customer < ApplicationRecord
     where(provider: auth.provider, uid: auth.uid).first_or_create do |customer|
     #where(facebook_id: auth.uid).first_or_create do |customer|
       customer.email = auth.info.email
-      customer.user_name = auth.info.name
+      customer.name = auth.info.name
+      customer.user_name = auth.info.email.split('@')[0]
       customer.password = Devise.friendly_token[0,20]
-      customer.skip_confirmation! 
+      customer.skip_confirmation!
       # customer.name = auth.info.name   # assuming the user model has a name
     end
   end         
