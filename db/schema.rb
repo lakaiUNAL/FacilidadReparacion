@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171011204038) do
+ActiveRecord::Schema.define(version: 20171018214206) do
+
+  create_table "aceptados", force: :cascade do |t|
+    t.integer "client"
+    t.integer "tecnic"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.integer "customer_id"
@@ -127,6 +134,16 @@ ActiveRecord::Schema.define(version: 20171011204038) do
     t.integer "document_file_size"
     t.datetime "document_updated_at"
     t.index ["worker_id"], name: "index_supports_on_worker_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.string "name"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "workers", force: :cascade do |t|

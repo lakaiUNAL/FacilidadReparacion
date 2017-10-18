@@ -18,8 +18,6 @@
               <th>Artículo</th>
               <th>Descripcion del articulo</th>
               <th>Direccion del servicio</th>
-              <th>Teléfono de contacto</th>
-              <th>Correo de contacto</th>
               <th>Fecha de creación</th>
             </tr>
           </thead>
@@ -31,45 +29,16 @@
           <td><%=@peticion.article %></td>
           <td><%=@peticion.description %></td>
           <td><%=@peticion.customer.address %></td>
-          <td><%=@peticion.customer.phone_number %></td>
-          <td><%=@peticion.customer.email %></td>
           <td><%=@peticion.created_at %></td>
           </tbody>
       
         </table>
       </div>
-      
-      <div class="text-center"><h2>Detalles de Ubicación</h2></div>
-      
-      <div style='width: 100%;'>
-        <div id="map" style='width: 100%; height: 300px;'>
-        <script>
-          var handler = Gmaps.build('Google');
-          handler.buildMap({ provider: {
-            zoomControl: true,
-            zoom: 15,}, internal: {id: 'map'}}, function(){
-            var markers = handler.addMarkers([
-            {
-              "lat": <%= @lat %>,
-              "lng": <%= @lng %>,
-              "picture": {
-                "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-                "width":  32,
-                "height": 32
-              },
-              "infowindow": "Ruta"
-            }
-          ]);
-          handler.getMap().setZoom(15)
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-          });
-        </script>
-        </div>
-      </div>
-    
-    
     </div>
+    <td><%= link_to "Aceptar", new_tecnico_free_service_path(:client => @peticion.customer.id)%></td>
   </div>
-
+  
+  <!-- Para quemar el mapa en la vista 
+    KEY de la API es : AIzaSyDc5J3WwsVQUOgYTMvLcnQmL-0wvdgaHss
+  -->
 </div>

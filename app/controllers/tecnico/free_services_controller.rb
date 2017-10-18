@@ -11,11 +11,15 @@ class Tecnico::FreeServicesController < ApplicationController
     @peticion = Request.find(params[:id])
     @lat = "4.6381938"
     @lng = "-74.0840464" 
+    
   end
-
   def new
+    client_id = params[:client]
+    worker = current_worker.id
+    @aceptado = Aceptado.create(client:client_id, tecnic:worker)
   end
 
   def edit
   end
+  
 end

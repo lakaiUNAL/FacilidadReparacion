@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: 1
+  tecnic: 1
+
+two:
+  client: 1
+  tecnic: 1
