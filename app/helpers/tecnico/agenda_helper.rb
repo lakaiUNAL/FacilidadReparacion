@@ -1,0 +1,2 @@
+module Tecnico::AgendaHelper
+end

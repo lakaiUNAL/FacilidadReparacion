@@ -1,4 +1,7 @@
 class Tecnico::AcceptController < ApplicationController
+  
+  before_action :authenticate_worker!
+  
   def success
   end
 

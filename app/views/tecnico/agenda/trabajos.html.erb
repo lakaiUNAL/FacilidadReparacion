@@ -1,0 +1,42 @@
+<!-- Content -->
+<div id="content" class="container-fluid"> 
+  <div class="row">
+    <%= render 'tecnico/menu' %>
+    <div class="col-lg-9">
+      <p id="notice"><%= notice %></p>
+
+      <div class="text-center"><h2>Tu agenda</h2></div>
+      
+      <div class="table-responsive">
+        
+        <%= will_paginate @camello %>
+
+        <table class="table table-bordered">
+          <%# HEADER DE LA TABLA DE PETICIONES %>
+          <thead>
+            <tr>
+              <th>Solicitante</th>
+              <th>Fecha de requerimiento</th>
+              <th>peticion</th>
+            </tr>
+          </thead>
+          
+          <%# CUERPO DE LA TABLA DE PETICIONES %>
+          <tbody>
+            
+            <% @camello.reverse_each do |job| %>
+              <tr>
+                <td><%= job.customer.name %></td>
+                <td><%= job.request.fecha_servicio %></td>
+                <td><%= link_to "peticion", tecnico_free_service_path(job.request.id) %></td>
+                
+              </tr>
+            <% end %>
+
+          </tbody>
+        </table>
+        <%= will_paginate @camello %>
+      </div>
+    </div>
+  </div>
+</div>

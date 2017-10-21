@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
   namespace :tecnico do
+    get 'agenda/trabajos'
+  end
+
+  namespace :tecnico do
+    get 'agenda/cancelar'
+  end
+
+  namespace :tecnico do
     get 'accept/success'
   end
 
