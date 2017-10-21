@@ -7,5 +7,7 @@ class Tecnico::AgendaController < ApplicationController
   end
 
   def cancelar
+    destruir = params[:destr]
+    Schedule.destroy( destruir )
   end
 end

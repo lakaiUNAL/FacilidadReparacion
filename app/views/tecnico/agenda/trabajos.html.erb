@@ -17,10 +17,10 @@
             <tr>
               <th>Solicitante</th>
               <th>Fecha de requerimiento</th>
-              <th>peticion</th>
+              <th>Peticion</th>
+              <th>¿Deseas cancelar?</th>
             </tr>
           </thead>
-          
           <%# CUERPO DE LA TABLA DE PETICIONES %>
           <tbody>
             
@@ -29,10 +29,9 @@
                 <td><%= job.customer.name %></td>
                 <td><%= job.request.fecha_servicio %></td>
                 <td><%= link_to "peticion", tecnico_free_service_path(job.request.id) %></td>
-                
+                <td><%= link_to "cancelar", tecnico_agenda_cancelar_path(:destr => job) %></td>
               </tr>
             <% end %>
-
           </tbody>
         </table>
         <%= will_paginate @camello %>
