@@ -68,6 +68,6 @@ class Cliente::RequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
-      params.require(:request).permit( :article, :service_id, :description)
+      params.require(:request).permit( :article, :service_id, :description, :fecha_servicio)
     end
 end
