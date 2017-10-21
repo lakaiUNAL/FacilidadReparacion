@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  namespace :tecnico do
+    get 'accept/success'
+  end
+
+  namespace :tecnico do
+    get 'accept/agree'
+  end
+
+  get 'accept/success'
+
+  get 'accept/agree'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
 

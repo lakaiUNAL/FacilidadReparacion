@@ -35,7 +35,7 @@
         </table>
       </div>
     </div>
-    <td><%= link_to "Aceptar", new_tecnico_free_service_path(:client => @peticion.customer.id)%></td>
+    <td><%= link_to "Aceptar", tecnico_accept_agree_path(:client => @peticion.customer.id, :request => @peticion.id)%></td>
   </div>
   
   <!-- Para quemar el mapa en la vista 

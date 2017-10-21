@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018214206) do
-
-  create_table "aceptados", force: :cascade do |t|
-    t.integer "client"
-    t.integer "tecnic"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20171011204038) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "customer_id"
@@ -101,11 +94,11 @@ ActiveRecord::Schema.define(version: 20171018214206) do
     t.datetime "date"
     t.integer "worker_id"
     t.integer "customer_id"
-    t.integer "service_id"
+    t.integer "request_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_schedules_on_customer_id"
-    t.index ["service_id"], name: "index_schedules_on_service_id"
+    t.index ["request_id"], name: "index_schedules_on_request_id"
     t.index ["worker_id"], name: "index_schedules_on_worker_id"
   end
 

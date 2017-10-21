@@ -14,9 +14,9 @@ class Tecnico::FreeServicesController < ApplicationController
     
   end
   def new
-    client_id = params[:client]
-    worker = current_worker.id
-    @aceptado = Aceptado.create(client:client_id, tecnic:worker)
+    #client_id = params[:client]
+    #worker = current_worker.id
+    #@aceptado = Aceptado.create(client:client_id, tecnic:worker)
   end
 
   def edit

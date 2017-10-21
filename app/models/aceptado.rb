@@ -1,2 +1,0 @@
-class Aceptado < ApplicationRecord
-end

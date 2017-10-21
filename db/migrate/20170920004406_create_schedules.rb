@@ -4,12 +4,12 @@ class CreateSchedules < ActiveRecord::Migration[5.1]
       t.datetime :date
       t.belongs_to :worker, index: true
       t.belongs_to :customer, index: true
-      t.belongs_to :service, index: true
+      t.belongs_to :request, index: true
 
       t.timestamps
     end
     add_foreign_key :schedules, :workers
     add_foreign_key :schedules, :customers
-    add_foreign_key :schedules, :services
+    add_foreign_key :schedules, :requests
   end
 end

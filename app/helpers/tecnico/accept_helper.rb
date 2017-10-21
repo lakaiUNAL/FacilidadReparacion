@@ -1,0 +1,2 @@
+module Tecnico::AcceptHelper
+end
