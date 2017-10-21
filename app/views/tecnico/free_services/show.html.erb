@@ -35,7 +35,7 @@
         </table>
       </div>
     </div>
-    <td><%= link_to "Aceptar", tecnico_accept_agree_path(:client => @peticion.customer.id, :request => @peticion.id)%></td>
+    <td><%= link_to "Aceptar", tecnico_accept_agree_path(:client => @peticion.customer.id, :request => @peticion.id, :date => @peticion.fecha_servicio)%></td>
   </div>
   
   <!-- Para quemar el mapa en la vista 

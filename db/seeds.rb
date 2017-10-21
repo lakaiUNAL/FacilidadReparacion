@@ -92,7 +92,7 @@ puts "Total de habilidades #{n_skills}"
 n_customers.times do |user|
     n_services.times do |service|
         if rand < 1.5/Float(n_services)
-            Request.create(customer_id: user, service_id: service, article: "Articulo que necesita reparación", description: "Descripcion del daño")
+            Request.create(customer_id: user, service_id: service, article: "Articulo que necesita reparación", description: "Descripcion del daño", fecha_servicio: Faker::Date.backward(23_75))
         end
     end
 end

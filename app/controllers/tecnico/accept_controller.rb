@@ -6,6 +6,7 @@ class Tecnico::AcceptController < ApplicationController
     client_id = params[:client]
     worker = current_worker.id
     req = params[:request]
-    @shd = Schedule.create(:worker_id => worker, :customer_id => client_id, :request_id => req)
+    fecha = params[:date]
+    @shd = Schedule.create(:worker_id => worker, :customer_id => client_id, :request_id => req, :date => fecha)
   end
 end
