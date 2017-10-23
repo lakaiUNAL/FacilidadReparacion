@@ -27,14 +27,16 @@
             
             <% @requests.reverse_each do |req| %>
               <tr>
-                <td><%= req.customer.name %></td>
-                <td><%= req.service.description %></td>
-                <td><%= req.article %></td>
-                <td><%= req.description %> </td>
+                <%if Schedule.exists?(request_id: req.id) == false%>
+                  <td><%= req.customer.name %></td>
+                  <td><%= req.service.description %></td>
+                  <td><%= req.article %></td>
+                  <td><%= req.description %> </td>
                 
-                <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
-                <td><%= link_to "Detalles", tecnico_free_service_path(req) %></td>
+                  <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
                 
+                  <td><%= link_to "Detalles", tecnico_free_service_path(req) %></td>
+                <%end%>
               </tr>
             <% end %>
 
