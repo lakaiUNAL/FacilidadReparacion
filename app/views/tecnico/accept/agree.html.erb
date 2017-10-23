@@ -1,8 +1,16 @@
 <div class="conteiner-fluid">
 	<%= render 'tecnico/menu' %>
-		<div>
-			<p>El servicio ha sido aceptado satisfactoriamente.</p>
-			<a href="/tecnico/free_services" class="btn btn-primary btn-lg active" role="button">Regresar a servicios</a>
-			<a href="/tecnico/agenda/trabajos" class="btn btn-primary btn-lg active" role="button">Regresar a agenda</a>
-        </div>
+		<% if @shd != 0 %>
+			<div>
+				<p>El servicio ha sido aceptado satisfactoriamente.</p>
+				<a href="/tecnico/free_services" class="btn btn-primary btn-lg active" role="button">Regresar a servicios</a>
+				<a href="/tecnico/agenda/trabajos" class="btn btn-primary btn-lg active" role="button">Regresar a agenda</a>
+        	</div>
+    	<%else%>
+    		<div>
+				<p>Lo sentimos, ese servicio ya lo has aceptado!</p>
+				<a href="/tecnico/free_services" class="btn btn-primary btn-lg active" role="button">Regresar a servicios</a>
+				<a href="/tecnico/agenda/trabajos" class="btn btn-primary btn-lg active" role="button">Regresar a agenda</a>
+        	</div>
+    	<%end%>
 </div>
