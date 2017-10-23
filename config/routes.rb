@@ -1,25 +1,4 @@
 Rails.application.routes.draw do
-
-  namespace :tecnico do
-    get 'agenda/trabajos'
-  end
-
-  namespace :tecnico do
-    get 'agenda/cancelar'
-  end
-
-  namespace :tecnico do
-    get 'accept/success'
-  end
-
-  namespace :tecnico do
-    get 'accept/agree'
-  end
-
-  get 'accept/success'
-
-  get 'accept/agree'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
 
@@ -51,6 +30,13 @@ Rails.application.routes.draw do
     resources :free_services, :profile
     resources :my_services, except: [:show, :edit, :update]
     resources :supports, except: :index
+  end
+  
+  namespace :tecnico do
+    get 'accept/success'
+    get 'accept/agree'
+    get 'agenda/cancelar'
+    get 'agenda/trabajos'
   end
 
   # Aquí todas la peticiones de inicio de sesión

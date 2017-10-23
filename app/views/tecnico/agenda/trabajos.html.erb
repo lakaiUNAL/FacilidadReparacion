@@ -4,38 +4,45 @@
     <%= render 'tecnico/menu' %>
     <div class="col-lg-9">
       <p id="notice"><%= notice %></p>
-
-      <div class="text-center"><h2>Tu agenda</h2></div>
       
-      <div class="table-responsive">
-        
-        <%= will_paginate @camello %>
+      <% if @tam > 0 %>
 
-        <table class="table table-bordered">
-          <%# HEADER DE LA TABLA DE PETICIONES %>
-          <thead>
-            <tr>
-              <th>Solicitante</th>
-              <th>Fecha de requerimiento</th>
-              <th>Peticion</th>
-              <th>¿Deseas cancelar?</th>
-            </tr>
-          </thead>
-          <%# CUERPO DE LA TABLA DE PETICIONES %>
-          <tbody>
-            
-            <% @camello.reverse_each do |job| %>
+        <div class="text-center"><h2>Tu agenda</h2></div>
+      
+        <div class="table-responsive">
+        
+          <%= will_paginate @camello %>
+
+          <table class="table table-bordered">
+            <%# HEADER DE LA TABLA DE PETICIONES %>
+            <thead>
               <tr>
-                <td><%= job.customer.name %></td>
-                <td><%= job.request.fecha_servicio %></td>
-                <td><%= link_to "peticion", tecnico_free_service_path(job.request.id) %></td>
-                <td><%= link_to "cancelar", tecnico_agenda_cancelar_path(:destr => job) %></td>
+                <th>Solicitante</th>
+                <th>Fecha de requerimiento</th>
+                <th>Peticion</th>
+                <th>¿Deseas cancelar?</th>
               </tr>
-            <% end %>
-          </tbody>
-        </table>
-        <%= will_paginate @camello %>
-      </div>
+           </thead>
+            <%# CUERPO DE LA TABLA DE PETICIONES %>
+            <tbody>
+            
+              <% @camello.reverse_each do |job| %>
+                <tr>
+                  <td><%= job.customer.name %></td>
+                  <td><%= job.request.fecha_servicio %></td>
+                  <td><%= link_to "peticion", tecnico_free_service_path(job.request.id) %></td>
+                  <td><%= link_to "cancelar", tecnico_agenda_cancelar_path(:destr => job) %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= will_paginate @camello %>
+        </div>
+      <%end%>
+      <% if @tam == 0 %>
+        <div class="text-center"><h2>No tienes ninguna solicitud agendada</h2></div>
+        <a href="/tecnico/free_services" class="btn btn-primary btn-lg active" role="button">Regresar a servicios</a>
+      <%end%>
     </div>
   </div>
 </div>

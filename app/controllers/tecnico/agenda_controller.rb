@@ -3,6 +3,7 @@ class Tecnico::AgendaController < ApplicationController
   
   def trabajos
     jobs = Schedule.where( worker_id: current_worker.id )
+    @tam = jobs.size()
     @camello = jobs.paginate(page: params[:page], per_page: 10)
   end
 
