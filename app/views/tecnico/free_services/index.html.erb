@@ -28,8 +28,8 @@
             <% @requests.reverse_each do |req| %>
               <tr>
                 <!-- QUITAR LA PARTE DE WORKER ID DEL IF SI SE QUIERE QUE UN SERVICIO SOLO SEA ACEPTADO POR UN Y SOLO UN TECNICO -->
-                <%#if Schedule.exists?(request_id: req.id, worker_id: current_worker.id) == false%>
-                <%if Schedule.exists?(request_id: req.id) == false%>
+                <%if Schedule.exists?(request_id: req.id, worker_id: current_worker.id) == false%>
+                <%#if Schedule.exists?(request_id: req.id) == false%>
                   <td><%= req.customer.name %></td>
                   <td><%= req.service.description %></td>
                   <td><%= req.article %></td>

@@ -1,0 +1,41 @@
+<!-- Content -->
+<div id="content" class="container-fluid"> 
+  <div class="row">
+    <%= render 'tecnico/menu' %>
+    <div class="col-lg-9">
+      <p id="notice"><%= notice %></p>
+
+      <div class="text-center"><h2>Tecnicos interesados en ayudarte</h2></div>
+      
+      <div class="table-responsive">
+        
+        <%= will_paginate @tecnicos %>
+
+        <table class="table table-bordered">
+          <%# HEADER DE LA TABLA DE PETICIONES %>
+          <thead>
+            <tr>
+              <th>Nombre del tecnico</th>
+              <th>Peticion</th>
+              <th>Descripcion</th>
+            </tr>
+          </thead>
+          
+          <%# CUERPO DE LA TABLA DE PETICIONES %>
+          <tbody>
+            
+            <% @tecnicos.reverse_each do |tec| %>
+              <tr>
+                  <td><%= tec.worker.name %></td>
+                  <td><%= tec.request.article %></td>
+                  <td><%= tec.request.description %></td>
+              </tr>
+            <% end %>
+
+          </tbody>
+        </table>
+        <%= will_paginate @tecnicos %>
+      </div>
+    </div>
+  </div>
+</div>
