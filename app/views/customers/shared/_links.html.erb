@@ -1,4 +1,4 @@
-<%- if controller_name != 'sessions' %>
+<div class="col-lg-12 text-center"><%- if controller_name != 'sessions' %>
   <%= link_to "Log in", new_customer_session_path(resource_name) %><br />
 <% end -%>
 
@@ -20,6 +20,6 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+    <%= link_to "Ingresar con  #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class:"btn btn-primary" %><br />
   <% end -%>
-<% end -%>
+<% end -%></div>

@@ -37,6 +37,7 @@ body {
 	position: relative;
 	font-size: 14px;
 	font-family: 'Open Sans', sans-serif;
+	
 }
 /*=======================================================
       WRAPPER
@@ -2183,8 +2184,16 @@ margin-bottom:32px;
 
 .fondo-login{
 	background: asset_url('fondo-login.jpg') center center no-repeat;
-		background-size: cover;
+	background-size: cover;
 	min-height: 675px;
+	padding-top:32px;
+	margin-bottom:-40px;
+}
+.fondo-caja-login{
+	background-color:#F2F2F2;
+	border-radius:5px 5px 5px 5px ;
+	padding-top:10px;
+	padding-bottom:10px;
 }
 
 /*=============================
@@ -2235,4 +2244,8 @@ margin-bottom:32px;
 
 	height:150px;
 	width:150px;
+}
+
+.footer{
+	margin-top:40px;
 }
