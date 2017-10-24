@@ -29,9 +29,9 @@
               <% @camello.reverse_each do |job| %>
                 <tr>
                   <td><%= job.customer.name %></td>
-                  <td><%= job.request.fecha_servicio %></td>
+                  <td><%= job.service.description %></td>
                   <td><%= link_to "peticion", tecnico_free_service_path(job.request.id) %></td>
-                  <td><%= link_to "cancelar", tecnico_agenda_cancelar_path(:destr => job) %></td>
+                  <td><%= link_to "cancelar", tecnico_agenda_cancelar_path(:destr => job), method: :delete %></td>
                 </tr>
               <% end %>
             </tbody>

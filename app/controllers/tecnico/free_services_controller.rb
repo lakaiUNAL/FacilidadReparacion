@@ -2,16 +2,13 @@ class Tecnico::FreeServicesController < ApplicationController
   before_action :authenticate_worker!
 
   def index
-    services = current_worker.services  # Verificar que servicios presta el tecnico
-    peticiones = Request.where( service_id: services.ids ) # Consultar a qué peticiones puede aplicar
-    @requests = peticiones.paginate(page: params[:page], per_page: 10) # Páginar los resultados
+    @requests = current_worker.myFreeServices_paginate( params[:page] )
   end
 
   def show
     @peticion = Request.find(params[:id])
     @lat = "4.6381938"
-    @lng = "-74.0840464" 
-    
+    @lng = "-74.0840464"
   end
   def new
   end

@@ -33,5 +33,12 @@ class Worker < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
+
+  # Servicios a los que el tecnico puede aplicar
+  def myFreeServices_paginate(curr_page)
+    services = self.services  # Verificar que servicios presta el tecnico
+    peticiones = Request.where( service_id: services.ids ) # Consultar a qué peticiones puede aplicar
+    peticiones.paginate(page: curr_page, per_page: 10) # Páginar los resultados
+  end
          
 end

@@ -42,13 +42,12 @@ Rails.application.routes.draw do
     resources :free_services, :profile
     resources :my_services, except: [:show, :edit, :update]
     resources :supports, except: :index
-  end
-  
-  namespace :tecnico do
+
     get 'accept/success'
-    get 'accept/agree'
-    get 'agenda/cancelar'
+    post 'accept/agree'  # Postularme para un servicio
+    delete 'agenda/cancelar' # Cancelar mi postulacion para un servicio
     get 'agenda/trabajos'
+
   end
 
   # Aquí todas la peticiones de inicio de sesión

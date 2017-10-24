@@ -1,15 +1,13 @@
 <!-- Content -->
 <div id="content" class="container-fluid"> 
   <div class="row">
-    <%= render 'tecnico/menu' %>
+    <%= render 'cliente/menu' %>
     <div class="col-lg-9">
       <p id="notice"><%= notice %></p>
 
       <div class="text-center"><h2>Tecnicos interesados en ayudarte</h2></div>
       
       <div class="table-responsive">
-        
-        <%= will_paginate @tecnicos %>
 
         <table class="table table-bordered">
           <%# HEADER DE LA TABLA DE PETICIONES %>
@@ -24,7 +22,7 @@
           <%# CUERPO DE LA TABLA DE PETICIONES %>
           <tbody>
             
-            <% @tecnicos.reverse_each do |tec| %>
+            <% @peticiones.each do |peticion| %>
               <tr>
                   <td><%= tec.worker.name %></td>
                   <td><%= tec.request.article %></td>
@@ -34,7 +32,6 @@
 
           </tbody>
         </table>
-        <%= will_paginate @tecnicos %>
       </div>
     </div>
   </div>

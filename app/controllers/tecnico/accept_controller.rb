@@ -5,15 +5,17 @@ class Tecnico::AcceptController < ApplicationController
   def success
   end
 
+  # Aceptar una peticion de usuario
   def agree
-    client_id = params[:client]
+    
     worker = current_worker.id
     req = params[:request]
-    fecha = params[:date]
-    if (Schedule.exists?(worker_id: worker,customer_id: client_id,request_id: req)) == false
-      @shd = Schedule.create(:worker_id => worker, :customer_id => client_id, :request_id => req, :date => fecha)
-    else
-      @shd = 0
+    if not (Proposal.exists?(worker_id: worker, request_id: req))
+      #@shd = Schedule.create(:worker_id => worker, :customer_id => client_id, :request_id => req, :date => fecha)
+      Proposal.create(worker_id: worker, request_id: req)
     end
+
+    redirect_to tecnico_agenda_trabajos_path
+
   end
 end

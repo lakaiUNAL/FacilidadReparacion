@@ -29,7 +29,22 @@ class Customer < ApplicationRecord
 
   devise :omniauthable, :omniauth_providers => [:facebook]       
 
+  #----------------------QUERIES
+  
+  #Deviuelve una colecion de las peticiones echas por el cliente actual y los detalles
+  def tecnicos_postulados
+    coleccion = []
+    self.request.each do |request|
+      info = {}
+      info[:article] = request.article
+      info[:servicio] = request.service.description
+      info[:tecnicos] = request.proposal
+      coleccion.append(info)
+    end
+    coleccion
+  end
 
+  #----------------------OMNIAUTH
   def self.new_with_session(params, session)
     super.tap do |customer|
       if data = session["devise.facebook"] && session["devise.facebook"]["extra"]["raw_info"]
