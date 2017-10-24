@@ -41,3 +41,157 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+
+
+
+<!-- Content -->
+<div id="content" class="container-fluid"> 
+  <div class="row">
+    
+    <%= render 'tecnico/menu' %>
+
+    <div class="col-lg-9">
+
+      <div class="col-lg-offset-2 col-lg-8">
+      
+        <h3> ¿Necesitas modificar tus datos? Hazlo aquí.</h3>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form", multipart: true }) do |f| %>
+
+          <div class="panel-group" id="accordion_editar" role="tablist" aria-multiselectable="true" >
+            <%# ---------------DATOS PERSONALES ----------------%>
+            <div class="panel panel-default">
+              <%# HEAD DE ACORDEON DATOS PERSONALES %>
+              <div class="panel-heading" role="tab" id="datos_personales">
+                <a role="button" data-toggle="collapse" data-parent="#accordion_editar" href="#collapse_personales" aria-expanded="true" aria-controls="collapse_personales">
+                  <h3>Datos Personales </h3>
+                </a>
+              </div>
+              
+              <%# CONTENIDO DEL ACORDEON DATOS PERSONALES %>
+              <div id="collapse_personales" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="datos_personales">
+                <div class="panel-body">
+                  
+                  <div class="form-group">
+                    <%= f.label :Cambia_tu_foto %>
+                    <%= f.file_field :picture, class: "form-control" %>
+                  </div>
+                  
+                  <div class="form-group">
+                    <%= f.label 'Nombre' %>
+                    <%= f.text_field :name, autofocus: true, class: "form-control" %>
+                  </div>
+
+                  <div class="form-group">
+                    <%= f.label :Nombre_de_Usuario %><br />
+                  	<%= f.text_field :user_name, class: "form-control" %>
+                  </div>
+            
+                  <div class="form-group">
+                    <%= f.label :Direccion %><br />
+                    <%= f.text_field :address, class: "form-control" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <%# ---------------DATOS DE CONTACTO ----------------%>
+            <div class="panel panel-default">
+              <%# HEAD DE ACORDEON DATOS CONTACTO %>
+              <div class="panel-heading" role="tab" id="datos_contacto">
+                <a role="button" data-toggle="collapse" data-parent="#accordion_editar" href="#collapse_contacto" aria-expanded="false" aria-controls="collapse_contacto">
+                  <h3>Datos de contacto</h3>
+                </a>
+              </div>
+              
+              <%# CONTENIDO DEL ACORDEON DATOS CONTACTO %>
+              <div id="collapse_contacto" class="panel-collapse collapse" role="tabpanel" aria-labelledby="datos_contacto">
+                <div class="panel-body">
+                  <div class="field form-group">
+                    <%= f.label :Correo %><br />
+                    <%= f.email_field :email, autofocus: true, class: "form-control"  %>
+                  </div>
+          
+                  <div class="form-group">
+                    <%= f.label :Telefono %>
+                  	<%= f.text_field :phone_number, class: "form-control" %>
+                  </div>
+          
+                  <div class="form-group">
+                    <%= f.label :Tarjeta_de_Credito %><br />
+                  	<%= f.text_field :number_card, class: "form-control" %>
+                  </div>
+          
+          
+                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+
+            <%# ---------------CAMBIO DE CONTRASEÑA----------------%>
+            <div class="panel panel-default">
+              <%# HEAD DE ACORDEON CAMBIO CONTRASEÑA %>
+              <div class="panel-heading" role="tab" id="datos_contraseña">
+                <a role="button" data-toggle="collapse" data-parent="#accordion_editar" href="#collapse_contraseña" aria-expanded="false" aria-controls="collapse_contraseña">
+                  <h3>Cambiar contraseña</h3>
+                </a>
+              </div>
+
+              <%# CONTENIDO DEL ACORDEON CAMBIO CONTRASEÑA %>
+              <div id="collapse_contraseña" class="panel-collapse collapse" role="tabpanel" aria-labelledby="datos_contraseña">
+                <div class="panel-body">
+                  <div class="field form-group">
+                    <%= f.label :Contrasena %> <em><%= @minimum_password_length %> Caracteres minimo</em><br />
+                    <%= f.password_field :password, placeholder: "Sin Cambios", autocomplete: "off", class: "form-control"  %>
+                    <% if @minimum_password_length %>
+                    <% end %>
+                  </div>
+                
+                  <div class="field form-group">
+                    <%= f.label :Confirma_la_contrasena %><br />
+                    <%= f.password_field :password_confirmation, placeholder: "Sin Cambios", autocomplete: "off", class: "form-control"  %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+          <%# --------------- GUARDAR LOS CAMBIOS ----------------%>
+
+          <div class="field form-group">
+            <%= f.label :contrasena_actual %> <i>(Necesaria para guardar tus cambios)</i><br />
+            <%= f.password_field :current_password, autocomplete: "off", class: "form-control"  %>
+          </div>
+        
+          <div class="actions form-group">
+            <%= f.submit "Guardar cambios", class: "btn btn-primary"  %>
+          </div>
+
+        <% end %>
+  
+        <%# ---------------ELIMINAR CUENTA ----------------%>
+        
+        
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3>Cancelar suscripción <i class="icon ion-sad"></i>  </h3>
+          </div>
+          <div class="panel-body">
+            <p>
+            <b>¿Realmente deseas eliminar tu cuenta?</b>
+              
+            </p>
+              <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Estas seguro(a)?" }, method: :delete, class: "btn btn-danger"  %>  
+          </div>
+        </div>
+        <%# ---------------BOTON REGRESAR ----------------%>        
+        <div class="form-group">
+          <%= link_to "Regresar", :back %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,8 +14,8 @@
 
           <%# TODO: Verificar esto %>
           <% if  not (worker_signed_in? or customer_signed_in?) %>
-            <li> <%= link_to 'Iniciar sesión', start_session_path %></li>
-            <li> <%= link_to 'Registrarse', register_path %> </li>
+            <li> <%= link_to 'Iniciar sesión', new_customer_session_path %></li>
+            <li> <%= link_to 'Registrarse', new_customer_registration_path %> </li>
           <% elsif worker_signed_in? %>
             <li><span class="glyphicon glyphicon-user"></span><%= current_worker.user_name %></li>
             <li><%= link_to "Salir", destroy_worker_session_path, method: :delete %></li>
