@@ -2189,6 +2189,14 @@ margin-bottom:32px;
 	padding-top:32px;
 	margin-bottom:-40px;
 }
+
+.fondo-register{
+	background: asset_url('registro-background.jpg') center center no-repeat;
+	background-size: cover;
+	min-height: 675px;
+	padding-top:32px;
+	margin-bottom:-40px;
+}
 .fondo-caja-login{
 	background-color:#F2F2F2;
 	border-radius:5px 5px 5px 5px ;
