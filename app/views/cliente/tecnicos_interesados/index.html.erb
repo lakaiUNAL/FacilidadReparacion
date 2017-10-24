@@ -23,11 +23,11 @@
           <tbody>
             
             <% @peticiones.each do |peticion| %>
+              <% peticion[:tecnicos].each do |t| %>
               <tr>
-                  <td><%= tec.worker.name %></td>
-                  <td><%= tec.request.article %></td>
-                  <td><%= tec.request.description %></td>
+                  <td><%= t.worker.name %></td>
               </tr>
+              <% end %>
             <% end %>
 
           </tbody>
