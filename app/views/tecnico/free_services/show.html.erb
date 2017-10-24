@@ -30,40 +30,52 @@
           <td><%=@peticion.service.description %></td>
           <td><%=@peticion.article %></td>
           <td><%=@peticion.description %></td>
-          <td><%=@peticion.customer.address %></td>
-          <td><%=@peticion.customer.phone_number %></td>
-          <td><%=@peticion.customer.email %></td>
+          <td><%@peticion.customer.address %></td>
+          <td><%@peticion.customer.phone_number %></td>
+          <td><%@peticion.customer.email %></td>
           <td><%=@peticion.created_at %></td>
           </tbody>
       
         </table>
       </div>
-      
+
+      <%@cor1 = @peticion.customer.latitude %>
+      <%@cor2 = @peticion.customer.longitude %>
+      <!--<p>Direccion Cliente:</p>-->
+      <%@peticion.customer.address %>
+      <%@cor1%>
+      <%@cor2%>
+      <!--<p>Direccion Tecnico:</p>-->   
+      <%current_worker.address%>
+
       <div class="text-center"><h2>Detalles de Ubicación</h2></div>
-      
+
       <div style='width: 100%;'>
-        <div id="map" style='width: 100%; height: 300px;'>
+        <div id="map" style='width: 100%; height: 500px;'>
         <script>
+
           var handler = Gmaps.build('Google');
           handler.buildMap({ provider: {
             zoomControl: true,
-            zoom: 15,}, internal: {id: 'map'}}, function(){
+            zoom: 2,}, internal: {id: 'map'}}, function(){
             var markers = handler.addMarkers([
             {
-              "lat": <%= @lat %>,
-              "lng": <%= @lng %>,
+              "lat": <%= @cor1 %>,
+              "lng": <%= @cor2 %>,
               "picture": {
-                "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-                "width":  32,
-                "height": 32
+                "url": "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                "width":  50,
+                "height": 50
               },
               "infowindow": "Ruta"
             }
           ]);
-          handler.getMap().setZoom(15)
           handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
+          handler.fitMapToBounds(10);
+          handler.getMap().setZoom(16);
+          
           });
+
         </script>
         </div>
       </div>

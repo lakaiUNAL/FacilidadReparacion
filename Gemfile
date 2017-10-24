@@ -69,6 +69,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
 
 group :development, :test do
   # Manejo de variables de entorno

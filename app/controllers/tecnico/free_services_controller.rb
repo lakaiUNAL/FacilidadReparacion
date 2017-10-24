@@ -9,8 +9,8 @@ class Tecnico::FreeServicesController < ApplicationController
 
   def show
     @peticion = Request.find(params[:id])
-    @lat = "4.6381938"
-    @lng = "-74.0840464" 
+    #@lat = @cor1
+    #@lng = @cor2
   end
 
   def new
@@ -19,3 +19,5 @@ class Tecnico::FreeServicesController < ApplicationController
   def edit
   end
 end
+
+#https://www.youtube.com/watch?v=W0juXNFLd6w
