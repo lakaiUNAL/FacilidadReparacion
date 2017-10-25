@@ -129,6 +129,16 @@ ActiveRecord::Schema.define(version: 20171011204038) do
     t.index ["worker_id"], name: "index_supports_on_worker_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.string "name"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "workers", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
