@@ -36,6 +36,10 @@ gem 'underscore-rails'
 
 gem 'gmaps4rails'
 
+gem 'chartkick'
+
+gem 'groupdate'
+
 gem 'faker', require:false
 #gema para datatable
 gem 'jquery-datatables-rails', '~> 3.4.0'
