@@ -36,6 +36,7 @@ class Customer < ApplicationRecord
     coleccion = []
     self.request.each do |request|
       info = {}
+      info[:id] = request.id
       info[:article] = request.article
       info[:servicio] = request.service.description
       info[:tecnicos] = request.proposal

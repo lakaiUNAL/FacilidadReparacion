@@ -6,33 +6,41 @@
       <p id="notice"><%= notice %></p>
 
       <div class="text-center"><h2>Tecnicos interesados en ayudarte</h2></div>
-      
-      <div class="table-responsive">
-
-        <table class="table table-bordered">
-          <%# HEADER DE LA TABLA DE PETICIONES %>
-          <thead>
-            <tr>
-              <th>Nombre del tecnico</th>
-              <th>Peticion</th>
-              <th>Descripcion</th>
-            </tr>
-          </thead>
+        
+        <%# COMIENZO DEL ACORDEON %>
+        <div class="panel-group" id="acordeon_postulaciones" role="tablist" aria-multiselectable="true" >        
+        <% @peticiones.each do |peticion| %>
+          <% str_id = "request_#{peticion[:id]}" %>
           
-          <%# CUERPO DE LA TABLA DE PETICIONES %>
-          <tbody>
+          <div class="panel panel-default"> <%# COMINEZO DEL DESPLEGABLE %>
+            <%# CABEZERA %>
+            <div class="panel-heading" role="tab" id="<%= str_id %>">
+              <a role="button" data-toggle="collapse" data-parent="#acordeon_postulaciones" href="#collapse_<%= str_id %>" aria-expanded="false" aria-controls="collapse_<%= str_id %>">
+                Servicio de <%= peticion[:servicio] %> para: <%= peticion[:article] %>
+              </a>
+            </div>
             
-            <% @peticiones.each do |peticion| %>
-              <% peticion[:tecnicos].each do |t| %>
-              <tr>
-                  <td><%= t.worker.name %></td>
-              </tr>
-              <% end %>
-            <% end %>
+            <%# ITERACION DEL CONTENIDO %>
+            <div id="collapse_<%= str_id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="datos_<%= str_id %>">
+              <table class="table">
+                <tbody>
+                <% peticion[:tecnicos].each do |t| %>
+                  <tr>
+                    <td><p> <%= t.worker.name %> </p></td>
+                    <td class="btn-group" role="group" aria-label="..." > <%# BOTONES %>
+                      <%= link_to "Perfil", "#", class: "btn btn-sm btn-default", type: "button" %>
+                      <%= link_to "Citar", "#", class: "btn btn-sm btn-primary", type: "button" %>
+                    </td>
+                  </tr>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
 
-          </tbody>
-        </table>
-      </div>
+          </div>
+
+        <% end %>
+        </div>
     </div>
   </div>
 </div>
