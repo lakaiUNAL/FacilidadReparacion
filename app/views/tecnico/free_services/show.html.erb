@@ -28,13 +28,88 @@
           <td><%=@peticion.service.description %></td>
           <td><%=@peticion.article %></td>
           <td><%=@peticion.description %></td>
-          <td><%=@peticion.customer.address %></td>
+
+          <td><%@peticion.customer.address %></td>
+          <td><%@peticion.customer.phone_number %></td>
+          <td><%@peticion.customer.email %></td>
           <td><%=@peticion.created_at %></td>
           </tbody>
       
         </table>
       </div>
+
+      <%@corc1 = @peticion.customer.latitude %>
+      <%@corc2 = @peticion.customer.longitude %>
+      <%@cort1 = current_worker.latitude %>
+      <%@cort2 = current_worker.longitude %>
+
+
+      <!--<p>Direccion Cliente:</p>-->
+      <%@peticion.customer.address %>
+      <%@corc1%>
+      <%@corc2%>
+      <%@cort1%>
+      <%@cort1%>
+
+      <!--<p>Direccion Tecnico:</p>-->   
+      <%=current_worker.address%>
+
+      <div class="text-center"><h2>Detalles de Ubicación</h2></div>
+
+      <div style='width: 100%;'>
+        <div id="map" style='width: 100%; height: 600px;'>
+        <script>
+
+
+
+          var handler = Gmaps.build('Google');
+          handler.buildMap({ provider: {
+            zoomControl: true,
+            zoom: 2,}, internal: {id: 'map'}}, function(){
+            var markers = handler.addMarkers([
+            {
+              "lat": <%= @cort1 %>,
+              "lng": <%= @cort2 %>,
+
+              "picture": {
+                "url": "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                "width":  50,
+                "height": 50,
+  
+              },
+              "infowindow": "Tú"
+            }
+          ]);
+
+        var markers2 = handler.addMarkers([
+        {
+          "lat": <%= @corc1 %>,
+          "lng": <%= @corc2 %>,
+
+          "picture": {
+            "url": "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+            "width":  50,
+            "height": 50,
+
+          },
+          "infowindow": "Cliente: <%=@peticion.customer.name %>, <%=@peticion.customer.address %>"
+        }
+
+
+      ]);
+
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds(6);
+      handler.getMap().setZoom(12);
       
+      });
+
+        </script>
+
+
+        </div>
+      </div>
+  
     </div>
     <td>
       <%= link_to "Aceptar", tecnico_accept_agree_path(:client => @peticion.customer.id, :request => @peticion.id), method: :post %>

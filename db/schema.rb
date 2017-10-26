@@ -199,6 +199,8 @@ ActiveRecord::Schema.define(version: 20171025221946) do
     t.datetime "picture_updated_at"
     t.float "latitude"
     t.float "longitude"
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_workers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_workers_on_reset_password_token", unique: true
   end

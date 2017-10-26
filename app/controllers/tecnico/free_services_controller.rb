@@ -6,10 +6,15 @@ class Tecnico::FreeServicesController < ApplicationController
   end
 
   def show
+
     @peticion = Request.find(params[:id])
-    @lat = "4.6381938"
-    @lng = "-74.0840464"
+
+    #@bounding_box = [{lat:  @cort1, lng: @cort1}, { lat: @cortc, lng: @corc1}]
+    #@lat = @cor1
+    #@lng = @cor2
+
   end
+  
   def new
   end
 
@@ -17,3 +22,5 @@ class Tecnico::FreeServicesController < ApplicationController
   end
   
 end
+
+#https://www.youtube.com/watch?v=W0juXNFLd6w
