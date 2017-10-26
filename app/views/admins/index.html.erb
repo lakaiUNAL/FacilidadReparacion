@@ -1,3 +1,11 @@
-<h1>Admins#index</h1>
-<p>Find me in app/views/admins/index.html.erb</p>
-<%= line_chart @clientes.group_by_day(:created_at).count %>
+<h1>Statistics</h1>
+
+<h2>Servicios mas requerido</h2>
+
+<%= line_chart @servicio_requerido.group(:description).count, download: "Servicios mas requeridos" %>
+
+<h2> Número de habilidades de los tecnicos </h2>
+
+<%= line_chart @habilidades.group(:worker_id).count, download: "Conteo de habilidades de cada tecnico" %>
+
+<%#= line_chart @clientes.group(:birth_date.month).count, download: "Servicios mas requeridos" %>
