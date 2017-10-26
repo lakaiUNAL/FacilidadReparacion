@@ -1,10 +1,12 @@
+
 <div class="fondo-login">
 <div class="container">
-  <%= form_for(resource, as: resource_name, url: new_customer_session_path ) do |f| %>
-
   <div class="row main">
-    <div class="col-lg-6 col-lg-offset-3">
-    <h5>Ingresa tus datos como cliente</h5> 
+
+    <div class="col-lg-6 fondo-caja-login col-lg-offset-3">
+      <p class="text-center">Bienvenido a Facilidad en Servicios</p>
+    <h2 class="text-center">Iniciar Sesión</h2> 
+ <%= form_for(resource, as: resource_name, url: session_path(resource_name) ) do |f| %>
     <form class="" method="post" action="#">
       <div class="form-group">
         <%= f.label :email %><br />
@@ -45,22 +47,16 @@
   
       <div class="form-group text-center">
         <div id="button" >
-          <%= f.submit "Iniciar sesión", class:"btn btn-primary" %>
+          <%= f.submit "Entrar ", class:"btn btn-primary" %>
+        </div><br></br>
+        <div id="button" >
+           <%= link_to "Soy Tecnico", new_worker_session_path, class:"btn btn-info" %>
         </div>
       </div>
 
+
       <%= render "customers/shared/links" %>
       
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>">
-          <a href="#" data-dismiss="alert"></a>
-          <ul>
-            <li>
-              <%= value %>
-            </li>
-          </ul>
-        </div>
-      <% end %>
     </form>
     </div>
   </div>

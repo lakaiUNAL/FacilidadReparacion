@@ -18,9 +18,9 @@ Rails.application.routes.draw do
   get '/blog' => 'static_pages#blog', as: 'blog'
   get '/nosotros' => 'static_pages#about', as: 'about'
   get '/contacto' => 'static_pages#contact', as: 'contact'
-  get '/registro' => 'static_pages#register', as: 'register'
+  #get '/registro' => 'static_pages#register', as: 'register'
   get '/nuestros_servicios' => 'static_pages#our_services', as: 'our_services'
-  get '/iniciar_sesion' => 'static_pages#start_session', as: 'start_session'
+  #get '/iniciar_sesion' => 'static_pages#start_session', as: 'start_session'
   
   #get '/solicitar_servicio' => 'cliente/requests#index', as: 'request_service'
   #get '/editar_perfil' => 'cliente/requests#profile', as: 'edit_profile'
@@ -60,6 +60,6 @@ Rails.application.routes.draw do
   end
 
   # Aquí todas la peticiones de inicio de sesión
-  devise_for :workers, controllers:{registrations: 'workers/registrations', sessions: 'workers/sessions'} 
-  devise_for :customers, controllers:{registrations: 'customers/registrations', sessions: 'customers/sessions', :omniauth_callbacks => "customers/omniauth_callbacks" }  
+  devise_for :workers , controllers:{registrations: 'workers/registrations', sessions: 'workers/sessions'} 
+  devise_for :customers, controllers:{registrations: 'customers/registrations', sessions: 'customers/sessions', omniauth_callbacks: "customers/omniauth_callbacks" }  
 end

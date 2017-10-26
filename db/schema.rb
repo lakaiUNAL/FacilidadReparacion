@@ -82,8 +82,10 @@ ActiveRecord::Schema.define(version: 20171025221946) do
     t.datetime "picture_updated_at"
     t.float "latitude"
     t.float "longitude"
+    t.index ["confirmation_token"], name: "index_customers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+    t.index ["unlock_token"], name: "index_customers_on_unlock_token", unique: true
   end
 
   create_table "payments", force: :cascade do |t|
@@ -155,16 +157,6 @@ ActiveRecord::Schema.define(version: 20171025221946) do
     t.index ["worker_id"], name: "index_supports_on_worker_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "provider"
-    t.string "uid"
-    t.string "name"
-    t.string "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "workers", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
@@ -201,8 +193,10 @@ ActiveRecord::Schema.define(version: 20171025221946) do
     t.float "longitude"
     t.string "provider"
     t.string "uid"
+    t.index ["confirmation_token"], name: "index_workers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_workers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_workers_on_reset_password_token", unique: true
+    t.index ["unlock_token"], name: "index_workers_on_unlock_token", unique: true
   end
 
 end
