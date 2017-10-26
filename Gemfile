@@ -26,7 +26,7 @@ gem 'paperclip'
 # Para fuentes de Google
 gem 'google-webfonts', '~> 0.2.0'
 
-gem 'faker', require: false
+gem 'faker'
 
 gem 'devise-i18n'
 
@@ -36,7 +36,6 @@ gem 'underscore-rails'
 
 gem 'gmaps4rails'
 
-gem 'faker', require:false
 #gema para datatable
 gem 'jquery-datatables-rails', '~> 3.4.0'
 
