@@ -9,5 +9,5 @@ Alenjandro
 David Quintero
  * Creación del modelo, controlador y vista del administrador, y crear estadisticas. 
 Diego
- * Convertir dirección del cliente en coordenadas de latitud y longitud
+ * Convertir dirección del cliente y el técnico en coordenadas de latitud y longitud
  
