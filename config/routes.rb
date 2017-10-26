@@ -43,6 +43,8 @@ Rails.application.routes.draw do
     resources :my_services, except: [:show, :edit, :update]
     resources :supports, except: :index
 
+    post "my_services/create_service" # Crear un nuevo servicio en la tabla servicios
+
     get 'accept/success'
     post 'accept/agree'  # Postularme para un servicio
     delete 'agenda/cancelar' # Cancelar mi postulacion para un servicio

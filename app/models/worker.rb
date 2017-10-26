@@ -7,6 +7,7 @@ class Worker < ApplicationRecord
   has_many :schedules
   has_many :payments
   has_many :comments
+  has_many :proposal
 
   validates :name , presence: true
   validates :email , presence: true
@@ -40,5 +41,15 @@ class Worker < ApplicationRecord
     peticiones = Request.where( service_id: services.ids ) # Consultar a qué peticiones puede aplicar
     peticiones.paginate(page: curr_page, per_page: 10) # Páginar los resultados
   end
-         
+  
+  # Peticiones pendidentes por aceptar por el cliente
+  def peticiones_pendientes(curr_page)
+    self.proposals.paginate(page: curr_page, per_page: 10)
+  end
+
+  # Citas que ya han sido aceptadas por ambas partes
+  def citas_agendadas
+    self.schedules.paginate(page: curr_page, per_page: 10) 
+  end
+
 end

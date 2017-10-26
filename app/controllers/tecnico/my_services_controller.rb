@@ -19,7 +19,7 @@ class Tecnico::MyServicesController < ApplicationController
     redirect_to tecnico_my_services_path
   end
 
-  # POST: Cra una nueva habilidad para el técnico
+  # POST: Crea una nueva habilidad para el técnico
   def create
     # Verificar que el tecnico no preste el servicio
     if current_worker.service_ids.include?(service_id)
@@ -28,7 +28,7 @@ class Tecnico::MyServicesController < ApplicationController
       return 
     end
 
-    # Guardar el servicio en la base de datos
+    # Guardar la nueva habilidad en la base de datos
     tran = Skill.create(worker_id: current_worker.id, service_id: service_id)
 
     if tran.valid?
@@ -39,6 +39,18 @@ class Tecnico::MyServicesController < ApplicationController
     end
   end
 
+  # POST: Crea un nuevo servicio 
+  def create_service
+    # Guardar el servicio en la base de datos
+    tran = Service.create(description: service_description)
+
+    if tran.valid?
+      flash[:success] = "Servicio creado"
+    else
+      flash[:danger] = "Ha ocurrido un error !!"
+    end
+      redirect_to new_tecnico_my_service_path
+  end
   
   private 
 
@@ -51,8 +63,11 @@ class Tecnico::MyServicesController < ApplicationController
   end
 
   def service_id
-    params.require(:new_service).permit(:service_id)[:service_id].to_i
+    params.require(:new_skill).permit(:service_id)[:service_id].to_i
   end
 
+  def service_description
+    params.require(:new_service).permit(:description)[:description]
+  end
 
 end
