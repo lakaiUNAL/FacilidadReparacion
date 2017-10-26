@@ -2,8 +2,8 @@ class Tecnico::AgendaController < ApplicationController
   before_action :authenticate_worker!
   
   def trabajos
-    @Pendientes = current_worker.peticiones_pendientes(params[:page])
-    @Agendadas = current_worker.peticiones_pendientes(params[:page])
+    @Pendientes = current_worker.peticiones_pendientes(params[:pendientes_page])
+    #@Agendadas = current_worker.peticiones_pendientes(params[:page])
   end
 
   def cancelar

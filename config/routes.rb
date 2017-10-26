@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
   namespace :cliente do
-    get 'tecnicos_interesados/index'
   end
 
   namespace :cliente do
-    get 'tecnicos_interesados/show'
   end
 
   namespace :cliente do
-    get 'tecnicos_interesados/destroy'
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -34,6 +31,13 @@ Rails.application.routes.draw do
     resources :requests
     resources :my_servises
     resources :profile
+
+    #TODO: Veri si sepueden usar scopes
+    get 'tecnicos_interesados/destroy'
+    get 'tecnicos_interesados/show'
+    get 'tecnicos_interesados/index'
+    get 'tecnicos_interesados/citar/:tecnico_id/:year/:week', to: 'tecnicos_interesados#citar', as: 'tecnicos_interesados_citar'
+
   end
 
   # Aquí deberían ir tadas las peticiones y actividades que realiza un técnico

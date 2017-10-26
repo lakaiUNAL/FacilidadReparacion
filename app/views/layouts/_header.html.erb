@@ -12,7 +12,6 @@
       <div class="pull-right">
         <ul class="login-info">
 
-          <%# TODO: Verificar esto %>
           <% if  not (worker_signed_in? or customer_signed_in?) %>
             <li> <%= link_to 'Iniciar sesión', start_session_path %></li>
             <li> <%= link_to 'Registrarse', register_path %> </li>

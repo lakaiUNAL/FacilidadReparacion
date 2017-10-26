@@ -44,12 +44,25 @@ class Worker < ApplicationRecord
   
   # Peticiones pendidentes por aceptar por el cliente
   def peticiones_pendientes(curr_page)
-    self.proposals.paginate(page: curr_page, per_page: 10)
+    self.proposal.paginate(page: curr_page, per_page: 10)
   end
 
-  # Citas que ya han sido aceptadas por ambas partes
-  def citas_agendadas
-    self.schedules.paginate(page: curr_page, per_page: 10) 
-  end
+  # Citas que ya han sido aceptadas por ambas partes 
+  # Es un hash con clave el numero de dia de la semana y contiene una lista con la hora ya ocupada
+  def citas_agendadas(año, semana)
+    init = Date.commercial(year = año, cweek = semana)
+    citas = self.schedules.where(date: (init)..(init + 5.days))
 
+    semanario = {}
+
+    citas.each do |c|
+      if semanario[c.date.strftime('%u').to_i].nil? 
+        semanario[c.date.strftime('%u').to_i] = []
+      end
+      semanario[c.date.strftime('%u').to_i].append( c.date.strftime('%H').to_i )
+    end
+
+    semanario
+  end
+  # Worker.first.citas_agendadas(2018,4).count
 end

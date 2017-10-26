@@ -29,7 +29,7 @@
                     <td><p> <%= t.worker.name %> </p></td>
                     <td class="btn-group" role="group" aria-label="..." > <%# BOTONES %>
                       <%= link_to "Perfil", "#", class: "btn btn-sm btn-default", type: "button" %>
-                      <%= link_to "Citar", "#", class: "btn btn-sm btn-primary", type: "button" %>
+                      <%= link_to "Citar", cliente_tecnicos_interesados_citar_path(t, Time.now.strftime("%Y"), Time.now.strftime("%U")), class: "btn btn-sm btn-primary", type: "button" %>
                     </td>
                   </tr>
                 <% end %>
