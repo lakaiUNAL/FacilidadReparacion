@@ -8,7 +8,9 @@ class Tecnico::FreeServicesController < ApplicationController
   end
 
   def show
+
     @peticion = Request.find(params[:id])
+    #@bounding_box = [{lat:  @cort1, lng: @cort1}, { lat: @cortc, lng: @corc1}]
     #@lat = @cor1
     #@lng = @cor2
   end
