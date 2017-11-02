@@ -10,24 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171102064119) do
+ActiveRecord::Schema.define(version: 20171011204038) do
 
   create_table "comments", force: :cascade do |t|
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "customer_id"
     t.integer "worker_id"
+    t.text "contents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_comments_on_customer_id"
     t.index ["worker_id"], name: "index_comments_on_worker_id"
   end
 
   create_table "complete_works", force: :cascade do |t|
+    t.integer "worker_id"
     t.text "calificacion"
     t.text "comentario"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "worker_id"
     t.index ["worker_id"], name: "index_complete_works_on_worker_id"
   end
 
@@ -65,49 +65,38 @@ ActiveRecord::Schema.define(version: 20171102064119) do
     t.datetime "picture_updated_at"
     t.float "latitude"
     t.float "longitude"
-    t.index ["confirmation_token"], name: "index_customers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
-    t.index ["unlock_token"], name: "index_customers_on_unlock_token", unique: true
   end
 
   create_table "payments", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "worker_id"
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "customer_id"
-    t.integer "worker_id"
     t.index ["customer_id"], name: "index_payments_on_customer_id"
     t.index ["worker_id"], name: "index_payments_on_worker_id"
   end
 
-  create_table "proposals", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "request_id"
-    t.integer "worker_id"
-    t.index ["request_id"], name: "index_proposals_on_request_id"
-    t.index ["worker_id"], name: "index_proposals_on_worker_id"
-  end
-
   create_table "requests", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "service_id"
     t.string "article"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "customer_id"
-    t.integer "service_id"
     t.index ["customer_id"], name: "index_requests_on_customer_id"
     t.index ["service_id"], name: "index_requests_on_service_id"
   end
 
   create_table "schedules", force: :cascade do |t|
     t.datetime "date"
+    t.integer "worker_id"
+    t.integer "customer_id"
+    t.integer "service_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "customer_id"
-    t.integer "worker_id"
-    t.integer "service_id"
     t.index ["customer_id"], name: "index_schedules_on_customer_id"
     t.index ["service_id"], name: "index_schedules_on_service_id"
     t.index ["worker_id"], name: "index_schedules_on_worker_id"
@@ -120,18 +109,19 @@ ActiveRecord::Schema.define(version: 20171102064119) do
   end
 
   create_table "skills", force: :cascade do |t|
+    t.integer "worker_id"
+    t.integer "service_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "service_id"
-    t.integer "worker_id"
     t.index ["service_id"], name: "index_skills_on_service_id"
     t.index ["worker_id"], name: "index_skills_on_worker_id"
   end
 
   create_table "supports", force: :cascade do |t|
+    t.integer "worker_id"
+    t.text "documento_pdf"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "worker_id"
     t.string "document_file_name"
     t.string "document_content_type"
     t.integer "document_file_size"
@@ -173,12 +163,8 @@ ActiveRecord::Schema.define(version: 20171102064119) do
     t.datetime "picture_updated_at"
     t.float "latitude"
     t.float "longitude"
-    t.string "provider"
-    t.string "uid"
-    t.index ["confirmation_token"], name: "index_workers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_workers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_workers_on_reset_password_token", unique: true
-    t.index ["unlock_token"], name: "index_workers_on_unlock_token", unique: true
   end
 
 end
