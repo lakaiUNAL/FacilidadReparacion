@@ -90,4 +90,15 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { :host => ENV['URL_LOCAL_PAGE'] }
+
+  config.action_mailer.smtp_settings = {
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => 'mail.google.com',
+      :user_name => ENV['MAIL'] ,
+      :password => ENV['MAIL_KEY'],
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
+
 end
