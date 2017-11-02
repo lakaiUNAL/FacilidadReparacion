@@ -1,0 +1,42 @@
+<!-- Content -->
+<div id="content" class="container-fluid"> 
+  <div class="row">
+    <%= render 'cliente/menu' %>
+    <div class="col-lg-9">
+
+    	<h2> Horarios de <%= @tecnico.name %></h2>
+        
+        <table class="table"> <%# TABLA DE HORARIOS %>
+			<thead>
+				<tr>
+					<td>Hora</td>
+					<td>Lunes</td>
+					<td>Martes</td>
+					<td>Miércoles</td>
+					<td>Jueves</td>
+					<td>Viernes</td>
+				</tr>
+			</thead>
+
+        	<tbody>
+        	<% 12.times do |hora| %>
+				<tr>
+					<td> <%= Time.at( (hora + 6)*3600  ).utc.strftime("%I:%M %p")  %></td>
+        		<% 5.times do |day| %>
+        			<td>
+        			<% if not @horarios_ocupados[day + 1].nil? and @horarios_ocupados[day + 1 ].include?(hora + 6) %>
+        				Ocupado
+        			<% else %>
+        				<%= link_to "Libre", "#" %>
+        			<% end %>
+					</td>
+				<% end %>
+        		</tr>
+
+        	<% end %>
+        	</tbody>
+        </table>
+
+    </div>
+  </div>
+</div>

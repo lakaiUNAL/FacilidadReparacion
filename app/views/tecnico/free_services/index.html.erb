@@ -3,7 +3,6 @@
   <div class="row">
     <%= render 'tecnico/menu' %>
     <div class="col-lg-9">
-      <p id="notice"><%= notice %></p>
 
       <div class="text-center"><h2>Solicitudes</h2></div>
       
@@ -27,14 +26,16 @@
             
             <% @requests.reverse_each do |req| %>
               <tr>
-                <td><%= req.customer.name %></td>
-                <td><%= req.service.description %></td>
-                <td><%= req.article %></td>
-                <td><%= req.description %> </td>
+                <!-- QUITAR LA PARTE DE WORKER ID DEL IF SI SE QUIERE QUE UN SERVICIO SOLO SEA ACEPTADO POR UN Y SOLO UN TECNICO -->
+
+                  <td><%= req.customer.name %></td>
+                  <td><%= req.service.description %></td>
+                  <td><%= req.article %></td>
+                  <td><%= req.description %> </td>
                 
-                <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
-                <td><%= link_to "Detalles", tecnico_free_service_path(req) %></td>
+                  <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
                 
+                  <td><%= link_to "Detalles", tecnico_free_service_path(req) %></td>
               </tr>
             <% end %>
 

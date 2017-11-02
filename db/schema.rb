@@ -65,8 +65,10 @@ ActiveRecord::Schema.define(version: 20171102064119) do
     t.datetime "picture_updated_at"
     t.float "latitude"
     t.float "longitude"
+    t.index ["confirmation_token"], name: "index_customers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+    t.index ["unlock_token"], name: "index_customers_on_unlock_token", unique: true
   end
 
   create_table "payments", force: :cascade do |t|
@@ -173,8 +175,10 @@ ActiveRecord::Schema.define(version: 20171102064119) do
     t.float "longitude"
     t.string "provider"
     t.string "uid"
+    t.index ["confirmation_token"], name: "index_workers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_workers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_workers_on_reset_password_token", unique: true
+    t.index ["unlock_token"], name: "index_workers_on_unlock_token", unique: true
   end
 
 end

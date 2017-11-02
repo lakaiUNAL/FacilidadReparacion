@@ -25,9 +25,9 @@ gem 'will_paginate'
 gem 'paperclip'
 # Para fuentes de Google
 gem 'google-webfonts', '~> 0.2.0'
-
-gem 'faker', require: false
-
+# Gema de generacion de datos de prueba
+gem 'faker'
+# Gema para traducir los mensajes de devise
 gem 'devise-i18n'
 
 gem 'geocoder'
@@ -35,8 +35,11 @@ gem 'geocoder'
 gem 'underscore-rails'
 
 gem 'gmaps4rails'
+# Gema para generar gráficas
+gem 'chartkick'
 
-gem 'faker', require:false
+gem 'groupdate'
+
 #gema para datatable
 gem 'jquery-datatables-rails', '~> 3.4.0'
 
@@ -69,6 +72,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
 
 group :development, :test do
   # Manejo de variables de entorno

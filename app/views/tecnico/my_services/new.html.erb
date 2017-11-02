@@ -2,8 +2,9 @@
 	<%= render 'tecnico/menu' %>
 
 	<div class="col-lg-7 col-lg-offset-1">
+
 		<%# Servicios existentes %>
-		<%= form_for :new_service, url: tecnico_my_services_path do |f| %>
+		<%= form_for :new_skill, url: tecnico_my_services_path, html: {class: "form", id: "form_new_skill"} do |f| %>
 			<div class="form-group">
 				<p>Tus conocimientos nos mantienen funcionando y ayudar a los demás a resolver sus problemas. Despues de agregar tus nuevos conociemientos no olvides soportarlos.</p>
             	<%= f.label :service_id, "Selecciona un servicio de la lista" %>
@@ -11,8 +12,18 @@
           	</div>
 
           	<%= f.submit "Enviar", :disable_with => 'Enviando...', class: 'btn btn-primary' %>
-			<button id="crear-servicio" class="btn btn-default disabled" disabled>Mi servicio no esa en la lista</button>
+			<button id="crear-servicio" class="btn btn-default">Mi servicio no esa en la lista</button>
+		<% end %>
+		
+		<%# FORMULARIO DE SERVICIO INEXISTENTE %>
+		<%= form_for :new_service, url: tecnico_my_services_create_service_path, html: { id: "new_service_form", class: "form"} do |f| %>
+			<div class="form-group">
+				<p>Dale al servicio un nombre sencillo pero claro a tu servicio.</p>
+            	<%= f.label :description, "Nombre del servicio" %>
+            	<%= f.text_field :description, class: "form-control" %>
+          	</div>
 
+          	<%= f.submit "Enviar", :disable_with => 'Enviando...', class: 'btn btn-primary' %>
 		<% end %>
 
 	</div>

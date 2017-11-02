@@ -1,0 +1,89 @@
+<!-- Content -->
+<div id="content" class="container-fluid"> 
+  <div class="row">
+    <%= render 'tecnico/menu' %>
+    <div class="col-lg-9">
+      
+      <%# TODO: SERVICIOS CON CITA | YA AGENDADAS %>
+      <% if @Pendientes.any?  %>
+
+        <h2>Servicios por confirmar</h2>
+      
+        <div class="table-responsive">
+        
+          <%= will_paginate @Pendientes, param_name: :pendientes_page %>
+
+          <table class="table table-bordered">
+            <%# HEADER DE LA TABLA DE PETICIONES %>
+            <thead>
+              <tr>
+                <th>Solicitante</th>
+                <th>Fecha de requerimiento</th>
+                <th>Peticion</th>
+                <th>¿Deseas cancelar?</th>
+              </tr>
+           </thead>
+            <%# CUERPO DE LA TABLA DE PETICIONES %>
+            <tbody>
+            
+              <% @Pendientes.reverse_each do |job| %>
+                <tr>
+                  <td><%= job.customer.name %></td>
+                  <td><%= job.service.description %></td>
+                  <td><%= link_to "peticion", tecnico_free_service_path(job.request.id) %></td>
+                  <td><%= link_to "cancelar", tecnico_agenda_cancelar_path(:destr => job), method: :delete %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= will_paginate @Pendientes, param_name: :pendientes_page%>
+        </div>
+      <%else%>
+        <h4>No te has postulado a ningun servicio.</h4>
+      <%end%>
+      
+      <%# SERVICIOS PENDIENTES POR CONFIRMAR | SOLO POSTULACIONES %>
+      <% if @Pendientes.any?  %>
+
+        <h2>Servicios por confirmar</h2>
+      
+        <div class="table-responsive">
+        
+          <%= will_paginate @Pendientes, param_name: :pendientes_page %>
+
+          <table class="table table-bordered">
+            <%# HEADER DE LA TABLA DE PETICIONES %>
+            <thead>
+              <tr>
+                <th>Solicitante</th>
+                <th>Fecha de requerimiento</th>
+                <th>Peticion</th>
+                <th>¿Deseas cancelar?</th>
+              </tr>
+           </thead>
+            <%# CUERPO DE LA TABLA DE PETICIONES %>
+            <tbody>
+            
+              <% @Pendientes.reverse_each do |job| %>
+                <tr>
+                  <td><%= job.customer.name %></td>
+                  <td><%= job.service.description %></td>
+                  <td><%= link_to "peticion", tecnico_free_service_path(job.request.id) %></td>
+                  <td><%= link_to "cancelar", tecnico_agenda_cancelar_path(:destr => job), method: :delete %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= will_paginate @Pendientes, param_name: :pendientes_page%>
+        </div>
+      <%else%>
+        <h4>No te has postulado a ningun servicio.</h4>
+      <%end%>
+
+      <a href="/tecnico/free_services" class="btn btn-primary" role="button">
+        Regresar a lista de peticiones de usuarios
+      </a>
+
+    </div>
+  </div>
+</div>

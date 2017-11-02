@@ -6,23 +6,17 @@
         <div class="container">
           <h6>¡Cuando lo necesitas,</h6>
           <h4>Donde lo necesitas!<span>FACIL</span></h4>
-          <a href="/registro" class="btn">Contratar servicio <i class="fa fa-long-arrow-right"></i></a> <a href="/registro" class="btn btn-fill">Soy Técnico<i class="fa fa-long-arrow-right"></i></a> </div>
-      </div>
-    </div>
-    
-    <%# 
-    <!-- Slide 2 -->
-    <div class="bg-slide-2">
-      <div class="position-center-center">
-        <div class="container">
-          <h6>Màs de 100 Tècnicos cerca de ti</h6>
-          <h4>Soporte <span>24 HORAS</span></h4>
-          <a href="/registro" class="btn">Registrarme <i class="fa fa-long-arrow-right"></i></a> <a href="/registro" class="btn btn-fill">Ver màs <i class="fa fa-long-arrow-right"></i></a> </div>
-      </div>
-    </div>
-     %>
+          <%= link_to new_customer_registration_path, class: "btn" do %>
+            Contratar servicio <i class="fa fa-long-arrow-right"></i>
+          <% end -%>
+          <%= link_to  new_worker_registration_path, class: "btn btn-fill" do%>
+            Soy Técnico<i class="fa fa-long-arrow-right"></i>
+          <% end %>
+        </div>
 
-  </section>
+      </div>
+    </div>
+</section>
 
 
   <!-- Content -->

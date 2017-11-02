@@ -1,0 +1,46 @@
+<!-- Content -->
+<div id="content" class="container-fluid"> 
+  <div class="row">
+    <%= render 'cliente/menu' %>
+    <div class="col-lg-9">
+      <p id="notice"><%= notice %></p>
+
+      <div class="text-center"><h2>Tecnicos interesados en ayudarte</h2></div>
+        
+        <%# COMIENZO DEL ACORDEON %>
+        <div class="panel-group" id="acordeon_postulaciones" role="tablist" aria-multiselectable="true" >        
+        <% @peticiones.each do |peticion| %>
+          <% str_id = "request_#{peticion[:id]}" %>
+          
+          <div class="panel panel-default"> <%# COMINEZO DEL DESPLEGABLE %>
+            <%# CABEZERA %>
+            <div class="panel-heading" role="tab" id="<%= str_id %>">
+              <a role="button" data-toggle="collapse" data-parent="#acordeon_postulaciones" href="#collapse_<%= str_id %>" aria-expanded="false" aria-controls="collapse_<%= str_id %>">
+                Servicio de <%= peticion[:servicio] %> para: <%= peticion[:article] %>
+              </a>
+            </div>
+            
+            <%# ITERACION DEL CONTENIDO %>
+            <div id="collapse_<%= str_id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="datos_<%= str_id %>">
+              <table class="table">
+                <tbody>
+                <% peticion[:tecnicos].each do |t| %>
+                  <tr>
+                    <td><p> <%= t.worker.name %> </p></td>
+                    <td class="btn-group" role="group" aria-label="..." > <%# BOTONES %>
+                      <%= link_to "Perfil", "#", class: "btn btn-sm btn-default", type: "button" %>
+                      <%= link_to "Citar", cliente_tecnicos_interesados_citar_path(t, Time.now.strftime("%Y"), Time.now.strftime("%U")), class: "btn btn-sm btn-primary", type: "button" %>
+                    </td>
+                  </tr>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+        <% end %>
+        </div>
+    </div>
+  </div>
+</div>

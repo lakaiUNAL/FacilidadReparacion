@@ -10,12 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <%= favicon_link_tag 'file.ico' %>
-    
+
     <%# CDNS %>
     <%= render 'layouts/cdns' %>
     
     <%# JAVASCRIPT %>
     <%= javascript_include_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+   
 
     <%# HOJAS DE ESTILOS %>
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -23,9 +24,6 @@
     <%# SOPORTE PARA NAVEGADORES ANTIGUOS %>
     <%= render 'layouts/shim' %>    
     
-    
-    <%# Online Fonts %>
-    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Dosis|Libre+Baskerville|Open+Sans' %>
         
         
   </head>
@@ -38,13 +36,11 @@
     <%= render 'layouts/header' %>
     <!-- Services -->
     
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
     <div style="min-height:100%;">
     <%= yield %>
     </div>
-    <%= render 'layouts/footer' %>
+    
+    <%# render 'layouts/footer' %>
 
   </body>
 

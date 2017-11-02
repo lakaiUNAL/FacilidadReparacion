@@ -13,6 +13,14 @@
 
 require 'faker' 
 
+###################################### FUNCIONES Y UTILERIA
+def rand_in_range(from, to)
+  rand * (to - from) + from
+end
+
+
+###################################### INICIO DE SEED
+
 puts 'Datos Propios'
 #Datos para nuestro acceso
 Customer.create(name: "Cliente Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho", confirmed_at: Time.now)
@@ -42,7 +50,7 @@ puts "Cantidad de servicios #{n_services}"
         #el numero de tarjeta estaba como Faker::Bank.iban pero me generaba error :/
         number_card: nil,
         #address: Faker::Address.street_address,
-        address: " Cl. 50 #20-26, Bogotá, Cundinamarca, Colombia",
+        address: "Cl. 50 #20-26, Bogotá, Cundinamarca, Colombia",
         phone_number: Faker::PhoneNumber.cell_phone,
         user_name: Faker::Internet.user_name,
         #Comentado para poder probar el login de los usuarios
@@ -92,9 +100,28 @@ puts "Total de habilidades #{n_skills}"
 n_customers.times do |user|
     n_services.times do |service|
         if rand < 1.5/Float(n_services)
+            #Request.create(customer_id: user, service_id: service, article: "Articulo que necesita reparación", description: "Descripcion del daño", fecha_servicio: Faker::Date.backward(23_75))
             Request.create(customer_id: user, service_id: service, article: "Articulo que necesita reparación", description: "Descripcion del daño")
         end
     end
 end
 n_request = Request.count
 puts "Total de peticiones de usuario #{n_request}"
+
+
+# CITAS AGENDADAS
+# Al rededor de 1 por usuario
+Worker.all.each do |w|
+    n_services.times do |s|
+        if rand < 7/Float(n_services)
+            hora = 7 + rand(10)
+            dia = rand(90)
+            fecha = Date.today + dia.days + hora.hours
+            customer = rand(n_customers)
+
+            Schedule.create(date: fecha, worker_id: w.id, customer_id: customer, service_id: w.service_ids.sample(1)[0] )
+        end
+    end
+end
+n_chedules = Schedule.count
+puts "Total de citas agendadas #{n_chedules}"
