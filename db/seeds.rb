@@ -23,10 +23,32 @@ end
 
 puts 'Datos Propios'
 #Datos para nuestro acceso
-Customer.create(name: "Cliente Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho", confirmed_at: Time.now)
-Worker.create(name: "Técnico Gama", email: "jcgamar@prueba.co", user_name: "jcgamar", password: "juancho", confirmed_at: Time.now)
+Customer.create(
+    name: "Cliente Gama", 
+    email: "jcgamar@prueba.co", 
+    user_name: "jcgamar", 
+    password: "juancho",
+    address: "Cl. 34 #90 c 33 sur Bogota, Colombia",
+    confirmed_at: Time.now
+)
+Worker.create(
+    name: "Worker Gama", 
+    email: "jcgamar@prueba.co", 
+    user_name: "jcgamar", 
+    password: "juancho",
+    address: "Cl. 3 #50 a 05 sur Bogota, Colombia",
+    confirmed_at: Time.now
+)
 
-Customer.create(name: "David Felipe R", email: "dafrodriguezro@test.com", user_name: "dafrodriguezro", password: "popo056", confirmed_at: Time.now)
+Customer.create(
+    name: "David Felipe R", 
+    email: "dafrodriguezro@test.com", 
+    user_name: "dafrodriguezro", 
+    password: "popo056",
+    address: "La picota, Bogota",
+    confirmed_at: Time.now
+)
+
 Worker.create(name: "David Felipe R", email: "dafrodriguezro@test.com", user_name: "dafrodriguezro", password: "popo056", confirmed_at: Time.now)
 
 puts 'Datos de Servicios'
@@ -115,7 +137,7 @@ Worker.all.each do |w|
     n_services.times do |s|
         if rand < 7/Float(n_services)
             hora = 7 + rand(10)
-            dia = rand(90)
+            dia = rand(60)
             fecha = Date.today + dia.days + hora.hours
             customer = rand(n_customers)
 

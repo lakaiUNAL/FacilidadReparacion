@@ -5,6 +5,7 @@ $(document).ready(function(){
 	 */
 	$("#crear-servicio").on( "click", function (e){
 		e.preventDefault();
+		console.log("CLick en crear servicio");
 		$("#crear-servicio").fadeOut();
 
 		$("#new_service_form").fadeIn()

@@ -4,43 +4,19 @@
     <%= render 'tecnico/menu' %>
     <div class="col-lg-9">
       
-      <%# TODO: SERVICIOS CON CITA | YA AGENDADAS %>
-      <% if @Pendientes.any?  %>
-
-        <h2>Servicios por confirmar</h2>
+      <%# SERVICIOS CON CITA | YA AGENDADAS %>
+      <h2>Servicios confirmados</h2>
       
-        <div class="table-responsive">
-        
-          <%= will_paginate @Pendientes, param_name: :pendientes_page %>
+      <%= month_calendar attribute: :date, events: @Agendadas do |f, agendadas| %>
+        <%= f %>
 
-          <table class="table table-bordered">
-            <%# HEADER DE LA TABLA DE PETICIONES %>
-            <thead>
-              <tr>
-                <th>Solicitante</th>
-                <th>Fecha de requerimiento</th>
-                <th>Peticion</th>
-                <th>¿Deseas cancelar?</th>
-              </tr>
-           </thead>
-            <%# CUERPO DE LA TABLA DE PETICIONES %>
-            <tbody>
-            
-              <% @Pendientes.reverse_each do |job| %>
-                <tr>
-                  <td><%= job.customer.name %></td>
-                  <td><%= job.service.description %></td>
-                  <td><%= link_to "peticion", tecnico_free_service_path(job.request.id) %></td>
-                  <td><%= link_to "cancelar", tecnico_agenda_cancelar_path(:destr => job), method: :delete %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-          <%= will_paginate @Pendientes, param_name: :pendientes_page%>
-        </div>
-      <%else%>
-        <h4>No te has postulado a ningun servicio.</h4>
-      <%end%>
+        <% agendadas.each do |cita| %>
+          <div>
+            <%= cita.service.description %>
+          </div>
+        <% end %>
+
+      <% end %>
       
       <%# SERVICIOS PENDIENTES POR CONFIRMAR | SOLO POSTULACIONES %>
       <% if @Pendientes.any?  %>
@@ -77,7 +53,7 @@
           <%= will_paginate @Pendientes, param_name: :pendientes_page%>
         </div>
       <%else%>
-        <h4>No te has postulado a ningun servicio.</h4>
+        <h4>No tienes postulaciones pendientes.</h4>
       <%end%>
 
       <a href="/tecnico/free_services" class="btn btn-primary" role="button">
