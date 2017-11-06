@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   get 'admins/index'
 
+  # root 'posts#index'
+  resources :posts
+
   devise_for :admins
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'

@@ -1,0 +1,22 @@
+<div id="sidebar">
+  <div id="logo">
+  	<%= link_to root_path do %>
+  	  <%= image_tag "logo.svg" %>
+  	<% end %>  
+  </div>
+
+  <ul>
+  	<li></li>
+  	<li></li>
+  	<li></li>
+  </ul>	
+</div>
+
+
+
+<% @posts.each do |post| %>
+  <div class="post_wrapper">
+    <h2 class="title"> <%= link_to post.title, post %> </h2>
+    <p class="date"> <%= post.created_at.strftime("%B, %d, %Y") %> </p>
+  </div>
+<% end %>

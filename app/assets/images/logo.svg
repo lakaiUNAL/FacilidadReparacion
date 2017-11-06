@@ -1,0 +1,27 @@
+<?xml version="1.0"?><svg width="128" height="128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient5421">
+   <stop stop-color="#b3b3b3" id="stop5423" offset="0"/>
+   <stop stop-color="#b3b3b3" stop-opacity="0" id="stop5425" offset="1"/>
+  </linearGradient>
+  <linearGradient gradientUnits="userSpaceOnUse" y2="652.62" x2="92.856552" y1="698.7558" x1="46.720779" id="linearGradient5427" xlink:href="#linearGradient5421"/>
+  <linearGradient gradientUnits="userSpaceOnUse" y2="652.40387" x2="92.87738" y1="698.59967" x1="46.681576" id="linearGradient4889" xlink:href="#linearGradient4883"/>
+  <linearGradient id="linearGradient4883">
+   <stop stop-color="#b3b3b3" id="stop4885" offset="0"/>
+   <stop stop-color="#b3b3b3" stop-opacity="0" id="stop4887" offset="1"/>
+  </linearGradient>
+  <linearGradient xlink:href="#linearGradient4883" id="linearGradient5444" x1="-0.003178" y1="0.994036" x2="1.440441" y2="-0.449583"/>
+ </defs>
+ <metadata id="metadata7">image/svg+xml</metadata>
+ <g>
+  <title>Layer 1</title>
+  <g id="layer1">
+   <g fill="#006680" transform="matrix(0.368667 0 0 0.368667 7.75515 456.719)" id="g2986">
+    <path fill="#4c4c4c" d="m248.039001,-1062.832642l0,0zm0,0l-95.448975,-84.530029l-95.503929,84.56665l0,120.841003c0,3.12085 2.52182,5.624329 5.64267,5.624329l59.687668,0l0,-52.982422c0,-3.12085 2.50351,-5.642639 5.624352,-5.642639l49.043549,0c3.120804,0 5.624344,2.52179 5.624344,5.642639l0,52.982422l59.705963,0c3.12085,0 5.624359,-2.503479 5.624359,-5.624329l0,-120.877625zm-190.952919,0.036621l0,0z" id="rect2391"/>
+    <path fill="#4c4c4c" d="m152.036133,-1193.622803l-135.4524,119.937378l14.268356,16.096802l121.738152,-107.802246l121.710449,107.802246l14.240662,-16.096802l-135.424713,-119.937378l-0.526398,0.609619l-0.554108,-0.609619z" id="path2399"/>
+    <path fill="#4c4c4c" d="m57.086082,-1176.358276l34.337555,0l-0.29921,20.337769l-34.038345,30.749878l0,-51.087646z" id="rect2404"/>
+   </g>
+   <rect id="svg_1" height="121.5" width="121.5" y="2.5" x="5.375" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="59" fill="none"/>
+  </g>
+ </g>
+</svg>
