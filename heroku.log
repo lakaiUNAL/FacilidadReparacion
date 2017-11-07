@@ -1,0 +1,31 @@
+D, [2017-11-02T07:27:13.525238 #4] DEBUG -- :   [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Datos Propios
+rails aborted!
+ActiveModel::UnknownAttributeError: unknown attribute 'confirmed_at' for Customer.
+/app/vendor/bundle/ruby/2.3.0/gems/activemodel-5.1.4/lib/active_model/attribute_assignment.rb:48:in `_assign_attribute'
+/app/vendor/bundle/ruby/2.3.0/gems/activemodel-5.1.4/lib/active_model/attribute_assignment.rb:40:in `block in _assign_attributes'
+/app/vendor/bundle/ruby/2.3.0/gems/activemodel-5.1.4/lib/active_model/attribute_assignment.rb:39:in `each'
+/app/vendor/bundle/ruby/2.3.0/gems/activemodel-5.1.4/lib/active_model/attribute_assignment.rb:39:in `_assign_attributes'
+/app/vendor/bundle/ruby/2.3.0/gems/activerecord-5.1.4/lib/active_record/attribute_assignment.rb:26:in `_assign_attributes'
+/app/vendor/bundle/ruby/2.3.0/gems/activemodel-5.1.4/lib/active_model/attribute_assignment.rb:33:in `assign_attributes'
+/app/vendor/bundle/ruby/2.3.0/gems/activerecord-5.1.4/lib/active_record/core.rb:337:in `initialize'
+/app/vendor/bundle/ruby/2.3.0/gems/devise-4.3.0/lib/devise/models/confirmable.rb:65:in `initialize'
+/app/vendor/bundle/ruby/2.3.0/gems/activerecord-5.1.4/lib/active_record/inheritance.rb:66:in `new'
+/app/vendor/bundle/ruby/2.3.0/gems/activerecord-5.1.4/lib/active_record/inheritance.rb:66:in `new'
+/app/vendor/bundle/ruby/2.3.0/gems/activerecord-5.1.4/lib/active_record/persistence.rb:33:in `create'
+/app/db/seeds.rb:26:in `<top (required)>'
+/app/vendor/bundle/ruby/2.3.0/gems/activesupport-5.1.4/lib/active_support/dependencies.rb:286:in `load'
+/app/vendor/bundle/ruby/2.3.0/gems/activesupport-5.1.4/lib/active_support/dependencies.rb:286:in `block in load'
+/app/vendor/bundle/ruby/2.3.0/gems/activesupport-5.1.4/lib/active_support/dependencies.rb:258:in `load_dependency'
+/app/vendor/bundle/ruby/2.3.0/gems/activesupport-5.1.4/lib/active_support/dependencies.rb:286:in `load'
+/app/vendor/bundle/ruby/2.3.0/gems/railties-5.1.4/lib/rails/engine.rb:549:in `load_seed'
+/app/vendor/bundle/ruby/2.3.0/gems/activerecord-5.1.4/lib/active_record/tasks/database_tasks.rb:270:in `load_seed'
+/app/vendor/bundle/ruby/2.3.0/gems/activerecord-5.1.4/lib/active_record/railties/databases.rake:184:in `block (2 levels) in <top (required)>'
+/app/vendor/bundle/ruby/2.3.0/gems/railties-5.1.4/lib/rails/commands/rake/rake_command.rb:21:in `block in perform'
+/app/vendor/bundle/ruby/2.3.0/gems/railties-5.1.4/lib/rails/commands/rake/rake_command.rb:18:in `perform'
+/app/vendor/bundle/ruby/2.3.0/gems/railties-5.1.4/lib/rails/command.rb:46:in `invoke'
+/app/vendor/bundle/ruby/2.3.0/gems/railties-5.1.4/lib/rails/commands.rb:16:in `<top (required)>'
+/app/bin/rails:9:in `require'
+/app/bin/rails:9:in `<main>'
+Tasks: TOP => db:seed
+(See full trace by running task with --trace)

@@ -1,29 +1,47 @@
-<!-- Content -->
+
 <div id="content" class="container-fluid"> 
     <div class="row">
-        <%= render 'cliente/menu' %>
+  
+      <%= render 'cliente/menu' %><!-- Content -->
+        <div class="col-lg-9 text-center" style="margin-top:32px;margin-bottom:32px;">
 
-        <div class="col-lg-9 text-center">
+            <!-- Choose Plan -->
+            <div class="choose-plan">
+              <ul class="row">
+                
+                <!-- columna1 -->
+                <li class="col-md-6">
+                  <article>
+                    <h4>Datos Personales</h4>
+    
+                    <ul>
+                      <li><p>Nombre: <span class=""><%= current_customer.name%></span></p> </li>
+                      <li><p>Usuario: <%= current_customer.user_name%></p></li>
+                      <li><p>Direccion: <%= current_customer.address%></p></li>
+                      <li></li>
+                    </ul>
+                    <!-- Choose --> 
+                    <p><%= link_to "Editar tus datos", edit_customer_registration_path %></p> </article>
+                </li>
+                
+                <!-- column2 -->
+                <li class="col-md-6">
+                  <article>
+                    <h4>Datos de Contacto</h4>
+    
+                    <ul>
+                      <li><p>Correo: <%= current_customer.email%></p></li>
+                      <li><p>Tarjeta de Credito: <%= current_customer.number_card%></p></li>
+                      <li><p>Telefono: <%= current_customer.phone_number%></p></li>
+                      <li></li>
 
-            <div class="">
-                <div class="text-center"><h2>Datos Personales</h2></div>
-
-                <p>Nombre: <span class=""><%= current_customer.name%></span></p>
-                <p>Usuario: <%= current_customer.user_name%></p>
-                <p>Direccion: <%= current_customer.address%></p>
-
+                    </ul>
+                    <!-- Choose --> 
+                    <p><%= link_to "Editar tus datos", edit_customer_registration_path %></p> </article>
+                </li>
+                
+              </ul>
             </div>
-            
-            <div class="">
-                <div class="text-center"><h2>Datos de Contacto</h2></div>
-                <p>Correo: <%= current_customer.email%></p>
-                <p>Tarjeta de Credito: <%= current_customer.number_card%></p>
-                <p>Telefono: <%= current_customer.phone_number%></p>
-
-            </div>
-
-
-            <p><%= link_to "Editar tus datos", edit_customer_registration_path %></p>
 
         </div>
     </div>
