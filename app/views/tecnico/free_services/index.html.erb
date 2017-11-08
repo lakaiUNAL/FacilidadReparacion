@@ -27,7 +27,7 @@
             <% @requests.reverse_each do |req| %>
               <tr>
                 <!-- QUITAR LA PARTE DE WORKER ID DEL IF SI SE QUIERE QUE UN SERVICIO SOLO SEA ACEPTADO POR UN Y SOLO UN TECNICO -->
-
+                <%if not Proposal.exists?(request_id: req)%>
                   <td><%= req.customer.name %></td>
                   <td><%= req.service.description %></td>
                   <td><%= req.article %></td>
@@ -36,6 +36,7 @@
                   <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
                 
                   <td><%= link_to "Detalles", tecnico_free_service_path(req) %></td>
+                <%end%>
               </tr>
             <% end %>
 
