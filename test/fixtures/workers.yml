@@ -9,3 +9,11 @@
 #
 #two: {}
 # column: value
+
+fernando:
+    name: Fernando 
+    email: fernando@prueba.co 
+    user_name: jcgamar 
+    encrypted_password: juancho"
+    address: Cl. 3 50 a 05 sur Bogota, Colombia
+    confirmed_at: Time.now

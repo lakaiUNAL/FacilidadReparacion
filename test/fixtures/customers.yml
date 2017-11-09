@@ -11,7 +11,7 @@
 #password: Unal2017
 juan_carlos:
   name: Juan Carlos
-  email: juan@example.com
+  email: "juan@example.com"
   birth_date: 1993-11-26
   number_card: nil
   address: "La Aldea De Los Gerreros, Cl. 25d #37-2, Bogotá"

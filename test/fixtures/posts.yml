@@ -1,9 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
+  title: Bienvenidos a Lakai
+  body: Vengo a darles un saludo por entrar a nuestra página, espero tengan buenos servicios
 
-two:
-  title: MyString
-  body: MyText
