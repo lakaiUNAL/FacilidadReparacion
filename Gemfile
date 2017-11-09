@@ -42,6 +42,8 @@ gem 'groupdate'
 
 #gema para datatable
 gem 'jquery-datatables-rails', '~> 3.4.0'
+# Calendario para manejar los horarios (http://excid3.github.io/simple_calendar/) 
+gem 'simple_calendar'
 
 ########################### GEMAS POR DEFECTO DE RAILS
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

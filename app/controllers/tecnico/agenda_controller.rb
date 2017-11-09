@@ -3,7 +3,7 @@ class Tecnico::AgendaController < ApplicationController
   
   def trabajos
     @Pendientes = current_worker.peticiones_pendientes(params[:pendientes_page])
-    #@Agendadas = current_worker.peticiones_pendientes(params[:page])
+    @Agendadas = current_worker.schedules
   end
 
   def cancelar
