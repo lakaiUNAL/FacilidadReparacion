@@ -36,7 +36,7 @@ body {
 	font-weight: normal;
 	position: relative;
 	font-size: 14px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Helvetica', sans-serif;
 	
 }
 /*=======================================================
@@ -82,7 +82,7 @@ p {
 	font-size: 16px;
 	line-height: 26px;
 	text-rendering: optimizeLegibility;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Helvetica', sans-serif;
 }
 button {
 	-webkit-transition: all 0.4s ease-in-out;
@@ -95,7 +95,7 @@ button {
 	font-family: 'Dosis', sans-serif;
 }
 .font-open-sans {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Helvetica', sans-serif;
 }
 a {
 	-webkit-transition: all 0.4s ease-in-out;
@@ -2051,7 +2051,7 @@ footer h6 {
 	margin-bottom: 20px;
 	font-weight: normal;
 	margin-top: 0px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Helvetica', sans-serif;
 	position: relative;
 }
 .newsletter {
@@ -2256,4 +2256,8 @@ margin-bottom:32px;
 
 .footer{
 	margin-top:40px;
+}
+
+.texto-azul{
+	color:#2d90e3;
 }

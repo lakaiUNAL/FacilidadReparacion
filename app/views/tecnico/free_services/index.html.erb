@@ -1,10 +1,10 @@
 <!-- Content -->
-<div id="content" class="container-fluid"> 
+<div id="content" class="container-fluid fondo-caja-login"> 
   <div class="row">
     <%= render 'tecnico/menu' %>
     <div class="col-lg-9">
 
-      <div class="text-center"><h2>Solicitudes</h2></div>
+      <div class="text-center texto-azul"><h2>Solicitudes</h2></div>
       
       <div class="table-responsive">
         
@@ -34,8 +34,12 @@
                   <td><%= req.description %> </td>
                 
                   <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
-                
-                  <td><%= link_to "Detalles", tecnico_free_service_path(req) %></td>
+                  
+                  <td>
+                    <%= link_to tecnico_free_service_path(req), method: :get, class: 'btn btn-primary btn-sm ' do %>
+                      <span class="fa fa-eye"></span> Detalles
+                    <% end %>
+                  </td>
               </tr>
             <% end %>
 

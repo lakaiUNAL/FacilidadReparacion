@@ -1,18 +1,19 @@
 <!-- Content -->
-<div id="content" class="container-fluid"> 
+<div id="content" class="container-fluid fondo-caja-login"> 
   <div class="row">
     <%= render 'tecnico/menu' %>
-    <div class="col-lg-9">
+    <div class="col-lg-9 ">
       
       <%# SERVICIOS CON CITA | YA AGENDADAS %>
-      <h2>Servicios confirmados</h2>
+      <h2 class="texto-azul">Servicios confirmados</h2>
       
       <%= month_calendar attribute: :date, events: @Agendadas do |f, agendadas| %>
         <%= f %>
-
+        
         <% agendadas.each do |cita| %>
           <div>
             <%= cita.service.description %>
+            <%= cita.customer.name %>
           </div>
         <% end %>
 
@@ -21,7 +22,7 @@
       <%# SERVICIOS PENDIENTES POR CONFIRMAR | SOLO POSTULACIONES %>
       <% if @Pendientes.any?  %>
 
-        <h2>Servicios por confirmar</h2>
+        <h2 class=" texto-azul ">Servicios por confirmar</h2>
       
         <div class="table-responsive">
         
@@ -44,9 +45,9 @@
                 <tr>
                   <td><%= job.customer.name %></td>
                   <td><%= job.service.description %></td>
-                  <td><%= link_to "peticion", tecnico_free_service_path(job.request.id) %></td>
-                  <td><%= link_to "cancelar", tecnico_agenda_cancelar_path(:destr => job), method: :delete %></td>
-                </tr>
+                  <td><button class="btn btn-primary btn-md"><span class="fa fa-eye"><%= link_to "peticion", tecnico_free_service_path(job.request.id) , :style=> 'color:#FFFFFF; font-family:Open Sans;' %></span></button></td>
+                  <td><button class="btn btn-danger btn-md"><span class="glyphicon glyphicon-trash" ><%= link_to "Cancelar", tecnico_agenda_cancelar_path(:destr => job), method: :delete, :style=> 'color:#FFFFFF; font-family:Open Sans;' %></td>
+                </button></span></tr>
               <% end %>
             </tbody>
           </table>
