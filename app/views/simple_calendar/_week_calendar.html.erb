@@ -8,12 +8,12 @@
     <%end%>
         <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
   </div>
-
+  
   <table class="table table-striped">
     <thead>
-      <tr>
+      <tr> <%# NOMBRES DE LOS DIAS DE LA SEMANA %>
         <% date_range.slice(0, 7).each do |day| %>
-          <th><%= t('date.day_names')[day.wday] %></th>
+          <th><%= day.strftime("%A") %></th>
         <% end %>
       </tr>
     </thead>
@@ -21,13 +21,17 @@
     <tbody>
       <% date_range.each_slice(7) do |week| %>
         <tr>
-          <% week.each do |day| %>
-            <%= content_tag :td, class: calendar.td_classes_for(day) do %>
+          <% week.each do |day| %> <%# PARA CADA DIA DE LA SEMANA %>
+
+            <%= content_tag :td, class: calendar.td_classes_for(day + 7.hour) do %>
+              <%# debugger %>
+              <%# DEFINICION DE CONTENIDO %>
               <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
                 <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
               <% else %>
                 <% block.call day, sorted_events.fetch(day, []) %>
               <% end %>
+
             <% end %>
           <% end %>
         </tr>
