@@ -11,4 +11,6 @@ class Tecnico::AgendaController < ApplicationController
     redirect_to tecnico_agenda_trabajos_path
   end
 
+  
+
 end

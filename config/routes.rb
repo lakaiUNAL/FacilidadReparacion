@@ -24,15 +24,7 @@ Rails.application.routes.draw do
   get '/blog' => 'static_pages#blog', as: 'blog'
   get '/nosotros' => 'static_pages#about', as: 'about'
   get '/contacto' => 'static_pages#contact', as: 'contact'
-  #get '/registro' => 'static_pages#register', as: 'register'
   get '/nuestros_servicios' => 'static_pages#our_services', as: 'our_services'
-  #get '/iniciar_sesion' => 'static_pages#start_session', as: 'start_session'
-  
-  #get '/solicitar_servicio' => 'cliente/requests#index', as: 'request_service'
-  #get '/editar_perfil' => 'cliente/requests#profile', as: 'edit_profile'
-  #get '/actualizar_perfil' => 'tecnico/profile#index', as: 'update_profile'
-  #get '/servicios_disponibles' => 'tecnico/free_services#index', as: 'worker_services'
-  #get '/mis_servicios' => 'cliente/request#index', as: 'my_services' 
   
   # Aquí deberían ir tadas las peticiones y actividades que realiza un cliente
   get '/cliente' => 'cliente/my_servises#index'
@@ -45,7 +37,8 @@ Rails.application.routes.draw do
     get 'tecnicos_interesados/destroy'
     get 'tecnicos_interesados/show'
     get 'tecnicos_interesados/index'
-    get 'tecnicos_interesados/citar/:tecnico_id/:year/:week', to: 'tecnicos_interesados#citar', as: 'tecnicos_interesados_citar'
+    get 'tecnicos_interesados/citar/:worker_id/:request_id/:year/:week', to: 'tecnicos_interesados#citar', as: 'tecnicos_interesados_citar'
+    post 'tecnicos_interesados/apartar_cita/:worker_id/:request_id/:year/:week/:day/:hour', to: 'tecnicos_interesados#apartar_cita', as: 'tecnicos_interesados_apartar_cita'
 
   end
 
