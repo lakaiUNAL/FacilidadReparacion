@@ -10,11 +10,6 @@ class RequestsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get new" do
-    get new_request_url
-    assert_response :success
-  end
-
   test "should create request" do
     assert_difference('Request.count') do
       post requests_url, params: { request: { address: @request.address, article: @request.article, customer_id: @request.customer_id, description: @request.description, service_tipe: @request.service_tipe } }
