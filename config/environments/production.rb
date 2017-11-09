@@ -89,7 +89,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => ENV['URL_LOCAL_PAGE'] }
+  config.action_mailer.default_url_options = { host: 'https://facilidad-servicios.herokuapp.com/' }
 
   config.action_mailer.smtp_settings = {
       :address => "smtp.gmail.com",
