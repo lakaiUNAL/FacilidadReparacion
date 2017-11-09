@@ -1,18 +1,28 @@
-<%= render 'cliente/menu' %>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'cliente/menu' %>
+
+    <div class="col-md-9"  style="margin-top:32px;">
 <p>
-  <strong>Article:</strong>
+  <strong>Articulo que necesita reparación:</strong>
   <%= @request.article %>
 </p>
 
 <p>
-  <strong>Service tipe:</strong>
+  <strong>Tipo de Servicio :</strong>
   <%= @request.service.description %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descripción:</strong>
   <%= @request.description %>
 </p>
 
-<%= link_to 'Edit', edit_cliente_request_path(@request) %> |
-<%= link_to 'Back', cliente_requests_path %>
+<%= link_to 'Editar', edit_cliente_request_path(@request) %> |
+<%= link_to 'Volver', cliente_requests_path %>
+      
+    </div>
+  </div>
+</div>

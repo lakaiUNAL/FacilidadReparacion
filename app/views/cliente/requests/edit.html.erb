@@ -4,26 +4,26 @@
   <%= render 'cliente/menu' %>
 
   <div class="col-lg-9">
-    <h1>Editing Request</h1>
+    <h1 class="text-center texto-azul">Editando tu solicitud</h1>
 
     <%= form_for @request, url: {action: :update}, html: {method:'patch'} do |form| %>
     
-      <div class="field">
-        <%= form.label :article %>
+      <div class="field field form-group">
+        <%= form.label :Articulo %>
         <%= form.text_field :article, id: :request_article %>
       </div>
 
-      <div class="field">
+      <div class="field field form-group">
         <%= form.label :service_id %>
         <%= form.select :service_id, options_from_collection_for_select(Service.all, :id, :description), {}, {class: "some-class"} %>
       </div>
     
-      <div class="field">
+      <div class="field field form-group">
         <%= form.label :description %>
         <%= form.text_area :description, id: :request_description %>
       </div>
     
-      <div class="actions">
+      <div class="actions field form-group">
         <%= form.submit %>
       </div>
     <% end %>

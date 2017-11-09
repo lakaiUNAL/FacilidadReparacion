@@ -18,7 +18,7 @@
               <th>Electrodoméstico</th>
               <th>Categoría del servicio</th>
               <th>Descripción de la solicitud</th>
-              <th colspan="1">Estado</th>
+              <th colspan="3">Estado</th>
             </tr>
           </thead>
           
@@ -34,7 +34,7 @@
                 <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
                 <td><button class="btn btn-primary btn-xs"><span class="fa fa-eye"><%= link_to 'Ver', cliente_request_path(request) , :style=> 'color:#FFFFFF; font-family:Open Sans;' %></span></button></td>
                 <td><button class="btn btn-warning btn-xs"><span class="fa fa-edit"><%= link_to ' Editar', edit_cliente_request_path(request), :style=> 'color:#FFFFFF; font-family:Open Sans;' %></span></button></td>
-                <td><button class="btn btn-danger  btn-xs"><span class="fa fa-destroy"><%= link_to ' Eliminar', cliente_request_path(request), method: :delete, data: { confirm: 'Are you sure?' } , :style=> 'color:#FFFFFF; font-family:Open Sans;' %></span></button></td>
+                <td><button class="btn btn-danger  btn-xs"><span class="glyphicon glyphicon-trash"><%= link_to ' Eliminar', cliente_request_path(request), method: :delete, data: { confirm: '¿Estas seguro?' } , :style=> 'color:#FFFFFF; font-family:Open Sans;' %></span></button></td>
               </tr>
             <% end %>
 
