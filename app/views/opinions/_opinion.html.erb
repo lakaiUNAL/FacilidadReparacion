@@ -1,0 +1,13 @@
+<div class="opinion clearfix">
+  <div class="opinion_content">
+  	<p class="opinion_name"><strong><%= opinion.name %></strong></p>
+  	<p class="opinion_body"><%= opinion.body %></p>
+  </div>  	
+  <% if administrator_signed_in? %> 
+  <p><%= link_to 'Borrar Comentario ', [opinion.post, opinion],
+                                       method: :delete,
+                                       class: 'button',
+                                       data: {confirm: '¿Estas seguro?'} %>	
+  </p>
+  <% end %>
+</div>

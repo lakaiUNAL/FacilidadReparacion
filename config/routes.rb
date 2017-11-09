@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :administrators
   namespace :cliente do
   end
 
@@ -11,7 +12,9 @@ Rails.application.routes.draw do
   get 'admins/index'
 
   # root 'posts#index'
-  resources :posts
+  resources :posts do
+    resources :opinions
+  end   
 
   devise_for :admins
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

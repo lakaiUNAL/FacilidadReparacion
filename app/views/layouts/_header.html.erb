@@ -12,7 +12,7 @@
       <div class="pull-right">
         <ul class="login-info">
 
-          <% if  not (worker_signed_in? or customer_signed_in?) %>
+          <% if  not (worker_signed_in? or customer_signed_in? or administrator_signed_in?) %>
             <li> <%= link_to 'Iniciar sesión', new_customer_session_path %></li>
             <li> <%= link_to 'Registrarse', new_customer_registration_path %> </li>
           <% elsif worker_signed_in? %>
@@ -21,6 +21,9 @@
           <% elsif customer_signed_in? %>
             <li><span class="glyphicon glyphicon-user"></span><%= current_customer.user_name %></li>
             <li><%= link_to "Salir", destroy_customer_session_path, method: :delete %></li>
+          <% elsif administrator_signed_in? %>
+            <li><span class="glyphicon glyphicon-user"></span><%= current_administrator.email %></li>
+            <li><%= link_to "Salir", destroy_administrator_session_path, method: :delete %></li>     
           <% end -%>
           <%# --------------------- %>
 
@@ -45,10 +48,12 @@
             <li><%= link_to 'Servicios', get_services_page %></li><%# HELPER %>
             <li><%= link_to 'Nosotros', about_path %></li>
             <li><%= link_to 'Contacto', contact_path %></li>
-            <li><%= link_to 'Blog', blog_path %></li>
+            <li><%= link_to 'Blog', posts_path %></li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
   
+
+   

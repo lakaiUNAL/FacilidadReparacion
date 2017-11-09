@@ -1,13 +1,29 @@
+<div id="post_content">
+	<h1 class="title">
+	  <%= @post.title %>
+	</h1>
 
 
-<h1 class="title">
-  <%= @post.title %>
-</h1>
 
-<p class="date">
-  Creado hace <%= time_ago_in_words(@post.created_at) %>
-</p>
+	<p class="date">
 
-<p class="body">
-  <%= @post.body %>
-</p>
+	<% if administrator_signed_in? %>
+	  Creado hace <%= time_ago_in_words(@post.created_at) %> 
+	  | <%= link_to 'Editar Post', edit_post_path(@post) %> 
+	  | <%= link_to 'Borrar Post', post_path(@post), method: :delete, data: {confirm: '¿Estas seguro?'} %>
+	<% end %>	
+	</p>
+
+
+	<p class="body">
+	  <%= @post.body %>
+	</p>
+
+	<div id="opinions">
+	  <h2><%= @post.opinions.count %> Comentarios</h2>
+	  <h2><%= render @post.opinions %>
+
+	  <h3>Agrega un Comentario</h3>
+	  <%= render "opinions/form" %>	
+	</div>
+</div> 
