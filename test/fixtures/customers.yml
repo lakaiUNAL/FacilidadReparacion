@@ -4,12 +4,11 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
 # column: value
 #
-two: {}
 # column: value
 
+#password: Unal2017
 juan_carlos:
   name: Juan Carlos
   email: juan@example.com
@@ -18,10 +17,10 @@ juan_carlos:
   address: "La Aldea De Los Gerreros, Cl. 25d #37-2, Bogotá"
   phone_number: 3115684965
   user_name: Damian
-  password: "Unal2017"
   latitude: 4.646666
   longitude: -74.125555
   
+#password: IngenieriaSoftware
 Arturo:
   name: Daniel Arturo
   email: arturo@example.com
@@ -30,6 +29,5 @@ Arturo:
   address: "La Aldea De Los Gerreros, Cl. 25d #37-2, Bogotá"
   phone_number: 3115684965
   user_name: andersen
-  password: IngenieriaSoftware
   latitude: 4.646666
   longitude: -74.125555
