@@ -22,6 +22,7 @@ end
 ###################################### INICIO DE SEED
 
 puts 'Datos Propios'
+Admin.create(email: "god@power.com", encrypted_password: "Hola")
 #Datos para nuestro acceso
 Customer.create(
     name: "Cliente Gama", 
