@@ -3,14 +3,16 @@
     <div class="row">
         <%= render 'tecnico/menu' %>
 
-        <div class="col-lg-9 text-center">
+
+
+        <div class="col-lg-9 text-center" style="margin-top:32px;margin-bottom:32px;">
             <p id="notice"><%= notice %></p>
 
             <div class="foto-perfil"></div>
     
                 <div class="">     
 
-                    <div class="text-center"><h2>Datos Personales</h2></div>
+                    <div class="text-center texto-azul"><h2>Datos Personales</h2></div>
 
                     <p>Nombre: <span class=""><%= current_worker.name%></span></p>
                     <p>Usuario: <%= current_worker.user_name%></p>
@@ -18,7 +20,7 @@
                 </div>
                 
                 <div class="">
-                    <div class="text-center"><h2>Datos de Contacto</h2></div>
+                    <div class="text-center texto-azul"><h2>Datos de Contacto</h2></div>
                     <p>Correo: <%= current_worker.email%></p>
                     <p>Tarjeta de Credito: <%= current_worker.number_card%></p>
                     <p>Telefono: <%= current_worker.phone_number%></p>

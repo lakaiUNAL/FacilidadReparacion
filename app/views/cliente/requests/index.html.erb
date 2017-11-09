@@ -8,7 +8,7 @@
         <%# LINK PARA CREAR UN NUEVO REQUERIMIENTO %>
         <%= link_to 'SOLICITAR SERVICIO', new_cliente_request_path, class: "btn btn-primary" %>
       </div>
-      <div class="text-center"><h2><span>MIS SERVICIOS</span></h2></div>
+      <div class="text-center texto-azul"><h2><span>MIS SERVICIOS</span></h2></div>
       
       <div class="table-responsive">
         <table class="table table-bordered table-light">
@@ -32,9 +32,9 @@
                 <td><%= request.description %></td>
                 
                 <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
-                <td><%= link_to 'Show', cliente_request_path(request) %></td>
-                <td><%= link_to 'Edit', edit_cliente_request_path(request) %></td>
-                <td><%= link_to 'Destroy', cliente_request_path(request), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><button class="btn btn-primary btn-xs"><span class="fa fa-eye"><%= link_to 'Ver', cliente_request_path(request) , :style=> 'color:#FFFFFF; font-family:Open Sans;' %></span></button></td>
+                <td><button class="btn btn-warning btn-xs"><span class="fa fa-edit"><%= link_to ' Editar', edit_cliente_request_path(request), :style=> 'color:#FFFFFF; font-family:Open Sans;' %></span></button></td>
+                <td><button class="btn btn-danger  btn-xs"><span class="fa fa-destroy"><%= link_to ' Eliminar', cliente_request_path(request), method: :delete, data: { confirm: 'Are you sure?' } , :style=> 'color:#FFFFFF; font-family:Open Sans;' %></span></button></td>
               </tr>
             <% end %>
 
