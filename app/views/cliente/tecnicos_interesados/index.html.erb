@@ -3,8 +3,28 @@
   <div class="row">
     <%= render 'cliente/menu' %>
     <div class="col-lg-9">
-      <p id="notice"><%= notice %></p>
 
+      <div class="text-center"><h2>Agenda de servicios</h2></div>
+
+      <%= month_calendar attribute: :date, events: @Agendadas do |f, agendadas| %>
+        <%= f %>
+        
+        <% agendadas.each do |cita| %>
+          <div data-no-turbolink>
+            <button type="button" class="btn btn-xs btn-success informaction-calendar-cliente" data-toggle="popover"
+              title="<%= cita.service.description %>">
+              <%= cita.service.description %>
+            </button>
+            <%# CONTENIDO DE EL POPOVER %>
+            <div id="contenido" style="display: none">
+              Tienes una cita con: <%= cita.worker.name %>
+              <%= link_to "Detalles", '#', class:"btn btn-xs" %>
+            </div>
+          </div>
+        <% end %>
+
+      <% end %>
+      
       <div class="text-center"><h2>Tecnicos interesados en ayudarte</h2></div>
         
         <%# COMIENZO DEL ACORDEON %>

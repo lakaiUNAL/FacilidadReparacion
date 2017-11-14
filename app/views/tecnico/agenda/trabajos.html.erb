@@ -43,6 +43,7 @@
             
               <% @Pendientes.reverse_each do |job| %>
                 <tr>
+                  <% debugger %>
                   <td><%= job.customer.name %></td>
                   <td><%= job.service.description %></td>
                   <td><button class="btn btn-primary btn-md"><span class="fa fa-eye"><%= link_to "peticion", tecnico_free_service_path(job.request.id) , :style=> 'color:#FFFFFF; font-family:Open Sans;' %></span></button></td>
