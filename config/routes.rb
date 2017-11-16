@@ -32,7 +32,8 @@ Rails.application.routes.draw do
     resources :requests
     resources :my_servises
     resources :profile
-
+  
+    get 'requests/servicios/:consulta', to: 'requests#servicios'
     #TODO: Veri si sepueden usar scopes
     get 'tecnicos_interesados/destroy'
     get 'tecnicos_interesados/show'
