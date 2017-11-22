@@ -65,5 +65,7 @@ class Customer < ApplicationRecord
       customer.skip_confirmation!
       # customer.name = auth.info.name   # assuming the user model has a name
     end
-  end         
+  end   
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode
 end  

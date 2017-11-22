@@ -64,5 +64,9 @@ class Worker < ApplicationRecord
 
     semanario
   end
+  ####################################
+  def clientes
+    return Customer.all
+  end
   # Worker.first.citas_agendadas(2018,4).count
 end

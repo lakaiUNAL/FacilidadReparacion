@@ -88,6 +88,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rails-controller-testing'
   gem 'minitest-reporters'
+  gem 'figaro'
 end
 
 group :development do

@@ -43,7 +43,7 @@ Worker.create(
 
 Customer.create(
     name: "David Felipe R", 
-    email: "dafrodriguezro@test.com", 
+    email: "juda9323@gmail.com", 
     user_name: "dafrodriguezro", 
     password: "popo056",
     address: "La picota, Bogota",
@@ -93,15 +93,15 @@ puts "Cantidad de técnicos #{n_workers}"
         birth_date: Faker::Date.backward(23_75),
         #el numero de tarjeta estaba como Faker::Bank.iban pero me generaba error :/
         number_card: nil,
-        address: Faker::Address.street_address,
+        #address: Faker::Address.street_address,
         #address: "La Aldea De Los Gerreros, Cl. 25d #37-2, Bogotá",
         phone_number: Faker::PhoneNumber.cell_phone,
         user_name: Faker::Internet.user_name,
         #Comentado para poder probar el login de los usuarios
         #password: Faker::Internet.password(8))
         password: "david_testeando",
-        latitude: Faker::Number.between(4.5091, 4.8091),
-        longitude: Faker::Number.between(-74.077, -74.377),
+        latitude: Faker::Number.between(4.5091, 4.70),
+        longitude: Faker::Number.between(-74.077, -74.160),
         confirmed_at: Time.now
     )
 end
