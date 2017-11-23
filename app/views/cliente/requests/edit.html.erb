@@ -1,6 +1,6 @@
 
-
-<div class="row">
+<div class="container-fluid">
+  <div class="row">
   <%= render 'cliente/menu' %>
 
   <div class="col-lg-9">
@@ -10,21 +10,21 @@
     
       <div class="field field form-group">
         <%= form.label :Articulo %>
-        <%= form.text_field :article, id: :request_article %>
+        <%= form.text_field :article, id: :request_article, class:"form-control" %>
       </div>
 
       <div class="field field form-group">
         <%= form.label :service_id %>
-        <%= form.select :service_id, options_from_collection_for_select(Service.all, :id, :description), {}, {class: "some-class"} %>
+        <%= form.select :service_id, options_from_collection_for_select(Service.all, :id, :description), {}, {class: "some-class form-control"} %>
       </div>
     
       <div class="field field form-group">
         <%= form.label :description %>
-        <%= form.text_area :description, id: :request_description %>
+        <%= form.text_area :description, id: :request_description, class:"form-control" %>
       </div>
     
       <div class="actions field form-group">
-        <%= form.submit %>
+        <%= form.submit "Actualizar" , class:"btn btn-primary"%>
       </div>
     <% end %>
     
@@ -33,4 +33,5 @@
     <%= link_to 'Back', cliente_requests_path %>
     
   </div>
+</div>
 </div>

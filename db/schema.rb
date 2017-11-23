@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109042323) do
+ActiveRecord::Schema.define(version: 20171114025714) do
 
   create_table "administrators", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -147,6 +147,9 @@ ActiveRecord::Schema.define(version: 20171109042323) do
     t.datetime "updated_at", null: false
     t.integer "customer_id"
     t.integer "service_id"
+    t.string "direccion"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["customer_id"], name: "index_requests_on_customer_id"
     t.index ["service_id"], name: "index_requests_on_service_id"
   end
@@ -158,6 +161,9 @@ ActiveRecord::Schema.define(version: 20171109042323) do
     t.integer "customer_id"
     t.integer "worker_id"
     t.integer "service_id"
+    t.string "uid"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["customer_id"], name: "index_schedules_on_customer_id"
     t.index ["service_id"], name: "index_schedules_on_service_id"
     t.index ["worker_id"], name: "index_schedules_on_worker_id"

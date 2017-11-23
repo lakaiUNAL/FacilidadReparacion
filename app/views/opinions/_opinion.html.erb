@@ -1,7 +1,7 @@
 <div class="opinion clearfix">
   <div class="opinion_content">
-  	<p class="opinion_name"><strong><%= opinion.name %></strong></p>
-  	<p class="opinion_body"><%= opinion.body %></p>
+  	<div style="font-style: italic;"class="opinion_name"><strong><%= opinion.name %></strong></div>
+  	<div class="opinion_body"><%= opinion.body %></div>
   </div>  	
   <% if administrator_signed_in? %> 
   <p><%= link_to 'Borrar Comentario ', [opinion.post, opinion],

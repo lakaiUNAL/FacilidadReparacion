@@ -32,9 +32,9 @@
                 <td><%= request.description %></td>
                 
                 <%# LINKS PARA EDITAR O ELIMINAR LOS REQUERIMIENTOS DE SERVICIOS PUEDEN SER OPCIONALES %>
-                <td><button class="btn btn-primary btn-xs"><span class="fa fa-eye"><%= link_to 'Ver', cliente_request_path(request) , :style=> 'color:#FFFFFF; font-family:Open Sans;' %></span></button></td>
-                <td><button class="btn btn-warning btn-xs"><span class="fa fa-edit"><%= link_to ' Editar', edit_cliente_request_path(request), :style=> 'color:#FFFFFF; font-family:Open Sans;' %></span></button></td>
-                <td><button class="btn btn-danger  btn-xs"><span class="glyphicon glyphicon-trash"><%= link_to ' Eliminar', cliente_request_path(request), method: :delete, data: { confirm: '¿Estas seguro?' } , :style=> 'color:#FFFFFF; font-family:Open Sans;' %></span></button></td>
+                <td><%= link_to cliente_request_path(request) , :style=> 'color:#FFFFFF; font-family:Open Sans;',class:"btn btn-primary btn-xs" do %><span class="fa fa-eye"></span> Ver<% end %></td>
+                <td><%= link_to edit_cliente_request_path(request), :style=> 'color:#FFFFFF; font-family:Open Sans;', class:"btn btn-warning btn-xs" do%><span class="fa fa-edit"></span> Editar<% end %></td>
+                <td><%= link_to cliente_request_path(request), method: :delete, data: { confirm: '¿Estas seguro?' } , :style=> 'color:#FFFFFF; font-family:Open Sans;', class:"btn btn-danger btn-xs" do %><span class="glyphicon glyphicon-trash"></span> Eliminar<% end %></td>
               </tr>
             <% end %>
 
