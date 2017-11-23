@@ -18,7 +18,6 @@
             <%# CONTENIDO DE EL POPOVER %>
             <div id="contenido" style="display: none">
               Tienes una cita con: <%= cita.worker.name %>
-              <%= link_to "Detalles", '#', class:"btn btn-xs" %>
               <%= link_to "Servicio completado", cliente_my_servises_qualify_path(cita.id), class:"btn btn-xs" %>
             </div>
           </div>
@@ -49,8 +48,8 @@
                   <tr>
                     <td><p> <%= t.worker.name %> </p></td>
                     <td class="btn-group" role="group" aria-label="..." > <%# BOTONES %>
-                      <%= link_to "Perfil", "#", class: "btn btn-sm btn-default", type: "button" %>
-                      <%= link_to "Citar", cliente_tecnicos_interesados_citar_path(t, peticion[:id], Time.now.strftime("%Y"), Time.now.strftime("%U")), class: "btn btn-sm btn-primary", type: "button" %>
+                      <%= link_to "Perfil", cliente_tecnicos_interesados_perfil_tecnico_path(t), class: "btn btn-sm btn-default", type: "button" %>
+                      <%= link_to "Citar", cliente_tecnicos_interesados_perfil_tecnico_path(t, peticion[:id], Time.now.strftime("%Y"), Time.now.strftime("%U")), class: "btn btn-sm btn-primary", type: "button" %>
                     </td>
                   </tr>
                 <% end %>
