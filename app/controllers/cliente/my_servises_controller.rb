@@ -24,7 +24,6 @@ class Cliente::MyServisesController < ApplicationController
   def completar
     cita_id = params[:cita_id]
     @complete = CompleteWork.create(completar_params)
-    debugger
     Schedule.destroy(cita_id)
   end
   
