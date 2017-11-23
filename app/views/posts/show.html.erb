@@ -1,29 +1,123 @@
-<div id="post_content">
-	<h1 class="title">
-	  <%= @post.title %>
-	</h1>
+<!-- Wrap -->
+<div id="wrap"> 
+  <!-- Progress  Bar -->
+  <section class="sub-baner">
+    <div class="container">
+      <h3>Blog</h3>
+      <ol class="breadcrumb">
+        <li><a href="#">Inicio</a></li>
+        <li class="active">Blog</li>
+      </ol>
+    </div>
+  </section>
+  
+  <!-- Content -->
+  <div id="content"> 
+    
+    <!-- Blog -->
+    <section class="padding-top-100 padding-bottom-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8"> 
+            
+            <!-- Blog -->
+            <div class="blog-list"> 
+              			<div id="post_content">
+				<h2 class="title">
+				  <%= @post.title %>
+				</h2>
 
 
 
-	<p class="date">
+				<p class="date">
 
-	<% if administrator_signed_in? %>
-	  Creado hace <%= time_ago_in_words(@post.created_at) %> 
-	  | <%= link_to 'Editar Post', edit_post_path(@post) %> 
-	  | <%= link_to 'Borrar Post', post_path(@post), method: :delete, data: {confirm: '¿Estas seguro?'} %>
-	<% end %>	
-	</p>
+				<% if administrator_signed_in? %>
+				  Creado hace <%= time_ago_in_words(@post.created_at) %> 
+				  | <%= link_to 'Editar Post', edit_post_path(@post) %> 
+				  | <%= link_to 'Borrar Post', post_path(@post), method: :delete, data: {confirm: '¿Estas seguro?'} %>
+				<% end %>	
+				</p>
 
 
-	<p class="body">
-	  <%= @post.body %>
-	</p>
+				<p class="body">
+				  <%= @post.body %>
+				</p>
+				<hr>
 
-	<div id="opinions">
-	  <h2><%= @post.opinions.count %> Comentarios</h2>
-	  <h2><%= render @post.opinions %>
+				<div id="opinions">
+				  <h5><%= @post.opinions.count %> Comentarios</h5>
+				  <%= render @post.opinions %>
+				  <hr>
 
-	  <h3>Agrega un Comentario</h3>
-	  <%= render "opinions/form" %>	
-	</div>
-</div> 
+				  <h5>Agrega un Comentario</h5>
+				   <%= render "opinions/form" %>	
+				</div>
+			</div> 
+                            
+            </div>
+          </div>
+          
+          <!-- Side Bar -->
+          <div class="col-md-4"> 
+            
+            <!-- Blog -->
+            <div class="sidebar"> 
+              
+              <!-- Categories -->
+              <h6 class="margin-top-50">Categorías</h6>
+              <ul class="cate archive">
+                <li><a href="#."> Tecnicos <span>4</span></a></li>
+                <li><a href="#."> Usuarios <span>28</span></a></li>
+                <li><a href="#."> Tips <span>12</span></a></li>
+                <li><a href="#."> Despues del servicio <span>4</span></a></li>
+                <li><a href="#."> Anecdotas<span>9</span></a></li>
+              </ul>
+              
+              <!-- Recent Posts -->
+              <h6 class="margin-top-50">Posts más recientes</h6>
+              <ul class="papu-post margin-top-30">
+                <li class="media">
+                  <div class="media-left"> <a href="#"> <img class="media-object" src="images/r-post-img.jpg" alt=""></a> </div>
+                  <div class="media-body"> <a class="media-heading" href="#.">Aquí viene el título de post y puede ir en 2 líneas de texto si es lo suficientemente largo </a> <span>Jul 28, 2016</span> </div>
+                </li>
+                <li class="media">
+                  <div class="media-left"> <a href="#"> <img class="media-object" src="images/r-post-img-1.jpg" alt=""></a> </div>
+                  <div class="media-body"> <a class="media-heading" href="#.">Título del post viene aquí</a> <span>Jul 18, 2015</span> </div>
+                </li>
+                <li class="media">
+                  <div class="media-left"> <a href="#"> <img class="media-object" src="images/r-post-img-2.jpg" alt=""></a> </div>
+                  <div class="media-body"> <a class="media-heading" href="#.">Aquí viene el título de post y puede ir en 2 líneas de texto si es lo suficientemente largo</a> <span>Jul 18, 2015</span> </div>
+                </li>
+              </ul>
+              
+              <!-- Recent Posts -->
+              <h6 class="margin-top-50">Archivo</h6>
+              <ul class="cate archive">
+                <li><a href="#."> Septiembre 2017 <span>4</span></a></li>
+                <li><a href="#."> Agosto 2017 <span>28</span></a></li>
+                <li><a href="#."> Agosto 2016 <span>12</span></a></li>
+                <li><a href="#."> Julio 2016 <span>4</span></a></li>
+                <li><a href="#."> Junio 2016 <span>9</span></a></li>
+              </ul>
+              
+              <!-- Tags -->
+              <h6 class="margin-top-50">Etiquetas</h6>
+              <ul class="tags">
+                <li><a href="#.">Servicios </a></li>
+                <li><a href="#.">Clientes </a></li>
+                <li><a href="#.">Pagos </a></li>
+                <li><a href="#.">Solicitar </a></li>
+                <li><a href="#.">Credito </a></li>
+                <li><a href="#.">Excelente </a></li>
+                <li><a href="#.">Seguro</a></li>
+                <li><a href="#.">tarjeta de credito </a></li>
+                <li><a href="#.">habilidades </a></li>
+                <li><a href="#.">mapa </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
