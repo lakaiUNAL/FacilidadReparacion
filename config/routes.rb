@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     #TODO: Veri si sepueden usar scopes
     get 'tecnicos_interesados/destroy'
     get 'tecnicos_interesados/show'
+    get 'tecnicos_interesados/perfil_tecnico/:worker_id', to: 'tecnicos_interesados#perfil_tecnico', as: 'tecnicos_interesados_perfil_tecnico'
     get 'tecnicos_interesados/index'
     get "my_servises/qualify/:id", to: "my_servises#qualify", as: "my_servises_qualify"
     post "my_servises/completar"

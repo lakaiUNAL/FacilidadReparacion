@@ -1,7 +1,7 @@
 <div id="content" class="container-fluid">
     <div class="row">
         <%= render 'cliente/menu' %>
-        <div class="col-lg-4 fondo-caja-login">
+        <div class="col-lg-offset-2 col-lg-5 fondo-caja-login">
             <%= form_for @complete, url: {action: 'completar'}, method: 'post', html: {class: "form" }  do |form| %>
                 <input type="hidden" value="<%= @cita %>" name="cita_id">
                 <%= form.hidden_field :worker_id %>

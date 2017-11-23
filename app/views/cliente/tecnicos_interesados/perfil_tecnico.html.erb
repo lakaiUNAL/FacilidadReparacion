@@ -1,0 +1,75 @@
+<div id="content" class="container-fluid"> 
+  <div class="row">
+    <%= render 'cliente/menu' %>
+    <div class="col-lg-offset-1 col-lg-7">
+        <%# DATOS PERSONALES Y CALIFICACIÓN %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h2>
+                  Datos personales
+              </h2>
+              <div class="progress">
+                <div class="progress-bar <%=color_barra_perfil_tecnico(@worker.calificacion) %>" role="progressbar" aria-valuenow="<%=@worker.calificacion%>" aria-valuemin="0" aria-valuemax="5" style="width: <%=@worker.calificacion * 100 / 5 %>%">
+                    Calificacion (<%= @worker.calificacion %>)
+                </div>
+              </div>
+          </div>
+          <div class="panel-body">
+            <%= image_tag @worker.picture.url(:medium), class: "img-responsive img-icon img-circle", alt: @worker.name%>
+            </br>
+            Nombre
+            <h4> <%= @worker.name %> </h4> 
+            Teléfono
+            <h4>  <%= @worker.phone_number %> </h4> 
+          </div>
+        </div>
+        
+        <%# SERVICIOS QUE OFRECE %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h2>
+                  Servicios
+              </h2>
+          </div>
+          
+          <div class="panel-body row">
+            <table>
+                <% @worker.services.each do |sv| %>
+                <tr>
+                    <%= sv.description %>
+                </tr>
+                <% end %>
+                
+            </table>
+            
+          </div>
+        </div>
+        
+        <%# SOPORTES LABORALES %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h2>
+                  Soportes y documentación
+              </h2>
+          </div>
+          
+          <div class="panel-body row">
+            
+            <% @worker.supports.each do |sp| %>
+              <div class="col-lg-3">
+                <%= link_to sp.document.url, class: "thumbnail" do %>    
+                    <%= image_tag "pdf-icon.png", class: "img-responsive img-icon", alt: sp.document_file_name%>
+                <%end%>
+                <div class="caption">
+                  <h5>
+                    <%= sp.document_file_name %>
+                  </h5>
+                </div>
+              </div>
+            <% end %>
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
