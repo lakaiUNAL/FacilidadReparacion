@@ -50,7 +50,10 @@ class Cliente::TecnicosInteresadosController < ApplicationController
 
     #Redireccion
     redirect_to cliente_tecnicos_interesados_index_path
+  end
 
+  def perfil_tecnico
+    @worker = Worker.find(params[:worker_id])
   end
 
   private 

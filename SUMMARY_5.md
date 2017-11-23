@@ -1,6 +1,5 @@
 +Una lista de los features que desarrollaron junto con el nombre-nombres de quienes la desarrollaron.
-
-* Usuario Administrador (Davi Q, Alejo)
+Diego)
 * Implementación del Blog (Diego)
 * **Se creo modelo opiniones (Diego)
 * **Se creo modelo post (Diego)
