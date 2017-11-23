@@ -27,11 +27,17 @@
             <div class="blog-list"> 
               
               <!-- Article -->
-              <article class="blog-post"> <img class="img-responsive" src="images/blog-img-1.jpg" alt="" >
+              <article class="blog-post"> 
+                <%= image_tag "blog-img-1.png", class: "img-responsive"%>
+                
                 <div class="post-info"> 
                   <!-- Date -->
-
-              <% @posts.each do |post| %>                  <div class="date" style="">  <%= post.created_at.strftime("%d") %></div>
+                  <% @posts.each do |post| %>
+                    <div class="date" style="">
+                      
+                      <%= post.created_at.strftime("%d") %>
+                        
+                    </div>
 
                 <div class="post_wrapper">
 
