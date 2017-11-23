@@ -1,0 +1,24 @@
+<div id="content" class="container-fluid">
+    <div class="row">
+        <%= render 'cliente/menu' %>
+        <div class="col-lg-4 fondo-caja-login">
+            <%= form_for @complete, url: {action: 'completar'}, method: 'post', html: {class: "form" }  do |form| %>
+                <input type="hidden" value="<%= @cita %>" name="cita_id">
+                <%= form.hidden_field :worker_id %>
+                <div class="field form-group">
+                    <%= form.label :calificacion, "Calificacion" %>
+                    <%= form.number_field :calificacion , min: 0, max: 5, class: "form-control" %>
+                </div>
+                <div class="field form-group">
+                    <%= form.label :comentario, "Comentario" %>
+                    <%= form.text_field :comentario, class: "form-control" %>
+                </div>
+                <div class="actions form-group text-center">
+                    <%= form.submit "Enviar Calificacion", class: "btn btn-primary" %>
+                </div>
+            <%end%>
+        
+        </div>
+    </div>
+</div>
+

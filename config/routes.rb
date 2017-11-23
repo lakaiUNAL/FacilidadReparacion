@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
   devise_for :administrators
-  namespace :cliente do
-  end
-
-  namespace :cliente do
-  end
-
-  namespace :cliente do
-  end
 
   get 'admins/index'
 
@@ -32,11 +24,14 @@ Rails.application.routes.draw do
     resources :requests
     resources :my_servises
     resources :profile
+    
 
     #TODO: Veri si sepueden usar scopes
     get 'tecnicos_interesados/destroy'
     get 'tecnicos_interesados/show'
     get 'tecnicos_interesados/index'
+    get "my_servises/qualify/:id", to: "my_servises#qualify", as: "my_servises_qualify"
+    post "my_servises/completar"
     get 'tecnicos_interesados/citar/:worker_id/:request_id/:year/:week', to: 'tecnicos_interesados#citar', as: 'tecnicos_interesados_citar'
     post 'tecnicos_interesados/apartar_cita/:worker_id/:request_id/:year/:week/:day/:hour', to: 'tecnicos_interesados#apartar_cita', as: 'tecnicos_interesados_apartar_cita'
 

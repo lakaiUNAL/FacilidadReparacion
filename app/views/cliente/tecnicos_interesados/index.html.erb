@@ -19,6 +19,7 @@
             <div id="contenido" style="display: none">
               Tienes una cita con: <%= cita.worker.name %>
               <%= link_to "Detalles", '#', class:"btn btn-xs" %>
+              <%= link_to "Servicio completado", cliente_my_servises_qualify_path(cita.id), class:"btn btn-xs" %>
             </div>
           </div>
         <% end %>
