@@ -59,6 +59,6 @@ Rails.application.routes.draw do
   end
 
   # Aquí todas la peticiones de inicio de sesión
-  devise_for :workers , controllers:{registrations: 'workers/registrations', sessions: 'workers/sessions'} 
-  devise_for :customers, controllers:{registrations: 'customers/registrations', sessions: 'customers/sessions', omniauth_callbacks: "customers/omniauth_callbacks" }  
+  devise_for :workers , controllers:{registrations: 'workers/registrations', sessions: 'workers/sessions'}#, passwords: 'workers/passwords' ,confirmations: 'workers/confirmations'} 
+  devise_for :customers, controllers:{registrations: 'customers/registrations', sessions: 'customers/sessions', omniauth_callbacks: "customers/omniauth_callbacks"}#,passwords: 'customers/passwords' ,confirmations: 'customers/confirmations' }  
 end

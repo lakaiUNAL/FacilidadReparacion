@@ -1,20 +1,59 @@
-<div id="wrap">
+<!--<div id="wrap">
   <div class="container text-center">
-    <h2>Resend confirmation instructions</h2>
+    <h2>Resend confirmation </h2>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+<#%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <#%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+    <#%= f.label :email %><br />
+    <#%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
+    <#%= f.submit "Resend confirmation instructions" %>
   </div>
-<% end %>
+<%# end %>
 
-<%= render "customers/shared/links" %>
+<#%= render "customers/shared/links" %>
   </div>
+</div>
+-->
+
+
+<div class="fondo-login">
+<div class="container">
+  <div class="row main">
+
+    <div class="col-lg-6 fondo-caja-login col-lg-offset-3">
+    <h2 class="text-center">Resend confirmation</h2> 
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
+    <form class="" method="post" action="#">
+      <div class="form-group">
+        <%= f.label :email %><br />
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+            <div placeholder="Ingrese su nombre">
+              <%= f.email_field :email, autofocus: true, class:"form-control"  %>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group text-center">
+        <div id="button" >
+          <%= f.submit "Resend confirmation instructions ", class:"btn btn-primary" %>
+        </div><br></br>
+      </div>
+
+
+      <%= render "customers/shared/links" %>
+      
+    </form>
+    </div>
+  </div>
+  <% end %>
+</div>
 </div>
