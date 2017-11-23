@@ -64,5 +64,18 @@ class Worker < ApplicationRecord
 
     semanario
   end
+  
+  def calificacion 
+    if self.complete_works.count != 0
+      ans = 0
+      self.complete_works.each do |cw|
+        ans += sw.calificacion
+      end
+      
+      ans / self.complete_works.count
+    else
+      2
+    end
+  end
   # Worker.first.citas_agendadas(2018,4).count
 end

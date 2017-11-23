@@ -1,5 +1,5 @@
 
-<div class="fondo-loginold" style="margin-top:32px;">
+<div class="fondo-login" style="margin-top:32px;">
 <div class="container">
   <div class="row main">
 
@@ -48,12 +48,10 @@
       <div class="form-group text-center">
         <div id="button" >
           <%= f.submit "Entrar ", class:"btn btn-primary" %>
-        </div><br></br>
-        <div id="button" >
-           <%= link_to "Soy Tecnico", new_worker_session_path, class:"btn btn-info" %>
+          <%= link_to "Soy Técnico", new_worker_session_path, class:"btn btn-info" %>
         </div>
       </div>
-
+ 
 
       <%= render "customers/shared/links" %>
       

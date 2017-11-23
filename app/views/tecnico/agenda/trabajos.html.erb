@@ -45,9 +45,13 @@
                 <tr>
                   <td><%= job.customer.name %></td>
                   <td><%= job.service.description %></td>
-                  <td><button class="btn btn-primary btn-md"><span class="fa fa-eye"><%= link_to "peticion", tecnico_free_service_path(job.request.id) , :style=> 'color:#FFFFFF; font-family:Open Sans;' %></span></button></td>
-                  <td><button class="btn btn-danger btn-md"><span class="glyphicon glyphicon-trash" ><%= link_to "Cancelar", tecnico_agenda_cancelar_path(:destr => job), method: :delete, :style=> 'color:#FFFFFF; font-family:Open Sans;' %></td>
-                </button></span></tr>
+                  <td><%= link_to tecnico_free_service_path(job.request.id) , :style=> 'color:#FFFFFF; font-family:Open Sans;', class:"btn btn-primary btn-md" do %>
+                  <span class="fa fa-eye"></span> Peticion
+                  <% end %>
+                  </td>
+                  <td><%= link_to tecnico_agenda_cancelar_path(:destr => job), method: :delete, :style=> 'color:#FFFFFF; font-family:Open Sans;', class:"btn btn-danger btn-md" do %>
+                <span class="glyphicon glyphicon-trash" ></span> Cancelar
+                      <% end %></td></tr>
               <% end %>
             </tbody>
           </table>

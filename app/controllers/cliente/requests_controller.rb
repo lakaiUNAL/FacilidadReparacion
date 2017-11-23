@@ -1,6 +1,14 @@
 class Cliente::RequestsController < ApplicationController
   before_action :authenticate_customer!
-
+  
+  def servicios
+    consulta = params[:consulta]
+    @resultado = Service.where( "description LIKE ?", "%#{consulta}%")
+    respond_to do |format|
+      format.json {render :json => @resultado.to_json}
+    end
+  end
+  
   # GET /requests
   # GET /requests.json
   def index

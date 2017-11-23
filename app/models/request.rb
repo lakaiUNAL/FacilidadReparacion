@@ -1,7 +1,7 @@
 class Request < ApplicationRecord
-    belongs_to :customer
+	belongs_to :customer
 	belongs_to :service
-	has_many :proposal
+	has_many :proposal, dependent: :delete_all
 	
 	validates :article, presence: true
 	validates :description, presence: true

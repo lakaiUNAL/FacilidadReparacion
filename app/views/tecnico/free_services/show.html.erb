@@ -43,6 +43,11 @@
         <% end %>          
       </div>
 
+      <td>
+        <%= link_to "Aceptar Servicio", tecnico_accept_agree_path(:client => @peticion.customer.id, :request => @peticion.id), method: :post, class:"btn btn-info" %>
+      </td>
+
+
       <%@corc1 = @peticion.customer.latitude %>
       <%@corc2 = @peticion.customer.longitude %>
       <%@cort1 = current_worker.latitude %>
@@ -116,7 +121,7 @@
       </div>
   
     </div>
-
+    
   </div>
   
   <!-- Para quemar el mapa en la vista 
