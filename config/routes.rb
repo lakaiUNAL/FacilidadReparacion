@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :administrators
 
   get 'admins/index'
 
@@ -57,4 +56,6 @@ Rails.application.routes.draw do
   # Aquí todas la peticiones de inicio de sesión
   devise_for :workers , controllers:{registrations: 'workers/registrations', sessions: 'workers/sessions'} 
   devise_for :customers, controllers:{registrations: 'customers/registrations', sessions: 'customers/sessions', omniauth_callbacks: "customers/omniauth_callbacks" }  
+
+  devise_for :administrators , controllers:{registrations: 'administrators/registrations', sessions: 'administrators/sessions'} 
 end
