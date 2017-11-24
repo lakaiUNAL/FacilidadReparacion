@@ -1,0 +1,64 @@
+
+<div class="fondo-login">
+<div class="container">
+  <div class="row main">
+
+    <div class="col-lg-6 fondo-caja-login col-lg-offset-3 text-center">
+            <h2>REGISTRO DE ADMINISTRADOR</h2>
+      
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class=" form-group">
+          <div class="field">
+            <%= f.label :email %><br />
+            <div class="col-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                <div placeholder="Ingrese su Email">
+                  <%= f.email_field :email, autofocus: true, class:"form-control" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class=" form-group">
+          <div class="field"></br></br>
+            <div class="col-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                              <%= f.label :password, class:"col-sm-2 control-label" %> </br><% if @minimum_password_length %> 
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %>
+              <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
+              </div>
+
+            </div>
+          </div>
+          
+        </div>
+      
+        <div class=" form-group">
+          <div class="field"><br></br>
+          <%= f.label :password_confirmation, class:"cols-sm-2 control-label"  %><br /
+          ></div>
+          <div class="col-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
+              </div>
+            </div>
+        </div>
+      
+        <div class="actions form-group"><br></br>
+          <%= f.submit "Crear Administrador", class:"btn btn-primary" %>
+        </div>
+      <% end %>
+      
+      <%= render "administrators/shared/links" %>
+
+    </div>
+  </div>
+</div>
+</div>
